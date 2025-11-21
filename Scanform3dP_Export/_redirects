@@ -1,0 +1,11 @@
+  [[redirects]]
+    from = "http://mk3dprint.org/*"
+    to = "https://mk3dprint.org/:splat"
+    status = 301
+    force = true
+
+  [[redirects]]
+    from = "http://www.mk3dprint.org/*"
+    to = "https://www.mk3dprint.org/:splat"
+    status = 301
+    force = true
