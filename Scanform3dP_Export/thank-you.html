@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - MK 3D Printing and investments CC</title>
+  <meta name="description" content="Thank you for contacting MK 3D Printing. We'll get back to you within 24 hours.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Thank You Page Specific Styles */
+    .thank-you-container {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-5xl) 0;
+    }
+
+    .thank-you-card {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-4xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-2xl);
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: scaleIn 0.5s ease-out;
+    }
+
+    .success-icon svg {
+      width: 50px;
+      height: 50px;
+      color: var(--color-white);
+      stroke-width: 3;
+    }
+
+    @keyframes scaleIn {
+      0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    .thank-you-card h1 {
+      font-size: 2.5rem;
+      color: var(--color-text);
+      margin-bottom: var(--space-lg);
+      background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .thank-you-card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--color-text);
+      margin-bottom: var(--space-xl);
+    }
+
+    .next-steps {
+      background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(229, 245, 243, 0.5) 100%);
+      border-radius: var(--radius-lg);
+      padding: var(--space-2xl);
+      margin: var(--space-3xl) 0;
+      text-align: left;
+    }
+
+    .next-steps h2 {
+      font-size: 1.5rem;
+      color: var(--color-primary-dark);
+      margin-bottom: var(--space-lg);
+      text-align: center;
+    }
+
+    .next-steps ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .next-steps li {
+      padding-left: var(--space-xl);
+      margin-bottom: var(--space-md);
+      position: relative;
+      font-size: 1rem;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    .next-steps li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .contact-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-3xl) 0;
+    }
+
+    .contact-option {
+      background: var(--color-white);
+      border: 2px solid var(--color-primary-light);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      transition: all var(--transition-base);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .contact-option:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-option svg {
+      width: 32px;
+      height: 32px;
+      color: var(--color-primary);
+    }
+
+    .contact-option span {
+      font-weight: 600;
+      color: var(--color-text);
+      font-size: 0.95rem;
+    }
+
+    .contact-option small {
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      justify-content: center;
+      margin-top: var(--space-3xl);
+    }
+
+    @media (max-width: 768px) {
+      .thank-you-card {
+        padding: var(--space-3xl) var(--space-xl);
+      }
+
+      .thank-you-card h1 {
+        font-size: 2rem;
+      }
+
+      .success-icon {
+        width: 70px;
+        height: 70px;
+      }
+
+      .success-icon svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      .next-steps {
+        padding: var(--space-xl);
+      }
+
+      .action-buttons {
+        flex-direction: column;
+      }
+
+      .action-buttons .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <a href="/">
+            <img src="/images/branding/logo.png" alt="MK 3D Printing and investments CC Logo" style="height: 80px; width: auto;">
+          </a>
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="nav" id="nav">
+          <a href="/#home">Home</a>
+          <a href="/#services">Services</a>
+          <a href="/#shop">Shop</a>
+          <a href="/#scanning">3D Scanning</a>
+          <a href="/#imports">Imports</a>
+          <a href="/#gallery">Gallery</a>
+          <a href="/#about">About</a>
+          <a href="/#quote">Quote</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <a href="https://wa.me/264834290501" class="btn btn-primary btn-sm header-whatsapp-btn">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Thank You Section -->
+  <section class="thank-you-container">
+    <div class="container">
+      <div class="thank-you-card">
+        <!-- Success Icon -->
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h1>Thank You!</h1>
+        <p>We've received your quote request and appreciate you reaching out to MK 3D Printing and investments CC.</p>
+
+        <!-- Next Steps -->
+        <div class="next-steps">
+          <h2>What Happens Next?</h2>
+          <ul>
+            <li>We'll review your project details carefully</li>
+            <li>You'll receive a personalized quote within 24 hours</li>
+            <li>Our response will include pricing, timeline, and material recommendations</li>
+            <li>We'll answer any questions you may have about your project</li>
+          </ul>
+        </div>
+
+        <p><strong>Need immediate assistance?</strong><br>Feel free to reach out through any of these channels:</p>
+
+        <!-- Contact Options -->
+        <div class="contact-options">
+          <a href="https://wa.me/264834290501?text=Hi%2C%20I%20just%20submitted%20a%20quote%20request" class="contact-option">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>WhatsApp</span>
+            <small>+264 83 429 0501</small>
+          </a>
+
+          <a href="mailto:info@mk3dprint.org" class="contact-option">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span>Email</span>
+            <small>info@mk3dprint.org</small>
+          </a>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <a href="/" class="btn btn-primary">Back to Homepage</a>
+          <a href="/#services" class="btn btn-secondary">View Our Services</a>
+        </div>
+
+        <p style="margin-top: var(--space-2xl); font-size: 0.9rem; color: var(--color-text-muted);">
+          We look forward to bringing your project to life!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>&copy; 2025 mk3dprint.org Scan • Print • Build.</p>
+        <p>Precision 3D Printing & Manufacturing Solutions in Windhoek, Namibia</p>
+        <p><a href="mailto:info@mk3dprint.org" style="color: #e5f5f3; text-decoration: underline;">info@mk3dprint.org</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/264834290501?text=Hi%2C%20I%27m%20interested%20in%20your%203D%20printing%20services"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.738 5.483 2.031 7.788L0 32l8.463-2.031A15.921 15.921 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.412c-2.431 0-4.75-.631-6.738-1.744l-.488-.287-4.894 1.181 1.181-4.894-.287-.488A13.313 13.313 0 012.588 16C2.588 8.581 8.581 2.588 16 2.588S29.412 8.581 29.412 16 23.419 29.412 16 29.412z"/>
+      <path d="M23.381 19.419c-.406-.206-2.4-1.188-2.775-1.325-.375-.137-.65-.206-.925.206-.275.406-1.063 1.325-1.306 1.594-.238.275-.481.306-.887.1-.406-.206-1.719-.631-3.269-2.019-1.206-1.075-2.019-2.406-2.256-2.813-.238-.406-.025-.625.175-.825.181-.181.406-.481.606-.719.206-.238.275-.406.413-.681.137-.275.069-.512-.031-.719-.1-.206-.925-2.212-1.263-3.031-.331-.8-.669-.688-.925-.7-.238-.013-.512-.013-.787-.013s-.719.1-1.094.512c-.375.413-1.438 1.4-1.438 3.419s1.475 3.969 1.681 4.244c.206.275 2.906 4.431 7.031 6.213.981.425 1.75.681 2.344.875.987.319 1.881.275 2.588.169.787-.119 2.4-.975 2.738-1.919.337-.944.337-1.75.238-1.919-.1-.169-.375-.275-.781-.481z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.getElementById('header');
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('nav');
+
+      // Header scroll effect
+      window.addEventListener('scroll', function() {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+      });
+
+      // Hamburger menu toggle
+      hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+      });
+
+      // Close menu when clicking nav links
+      const navLinks = nav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -16,7 +16,16 @@
         <div class="logo">
           <img src="/images/branding/logo.png" alt="MK 3D Printing and investments CC Logo" style="height: 80px; width: auto;">
         </div>
-        <nav class="nav">
+
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="nav" id="nav">
           <a href="#home">Home</a>
           <a href="#services">Services</a>
           <a href="#shop">Shop</a>
@@ -27,7 +36,7 @@
           <a href="#quote">Quote</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a href="https://wa.me/264834290501" class="btn btn-primary btn-sm">
+        <a href="https://wa.me/264834290501" class="btn btn-primary btn-sm header-whatsapp-btn">
           <span>WhatsApp</span>
         </a>
       </div>
@@ -356,7 +365,7 @@
       <h2 class="section-title">Request a Quote</h2>
       <p class="section-intro">Tell us about your project, and we'll provide a detailed quote</p>
 
-      <form class="quote-form" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="quote-form" name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="quote" />
         <p style="display: none;">
           <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -384,19 +393,6 @@
               <option value="3d-printing">3D Printing</option>
               <option value="3d-scanning">3D Scanning</option>
               <option value="import-usa">Import from USA</option>
-            </select>
-          </label>
-
-          <label>
-            <span>Material Preference</span>
-            <select name="material" required>
-              <option value="">Select material...</option>
-              <option value="pla">PLA Plastic</option>
-              <option value="abs">ABS Plastic</option>
-              <option value="nylon">Nylon</option>
-              <option value="resin">Resin</option>
-              <option value="flexible">Flexible TPU</option>
-              <option value="unsure">Not sure yet</option>
             </select>
           </label>
 
@@ -465,6 +461,18 @@
     </div>
   </footer>
 
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/264834290501?text=Hi%2C%20I%27m%20interested%20in%20your%203D%20printing%20services"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.738 5.483 2.031 7.788L0 32l8.463-2.031A15.921 15.921 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.412c-2.431 0-4.75-.631-6.738-1.744l-.488-.287-4.894 1.181 1.181-4.894-.287-.488A13.313 13.313 0 012.588 16C2.588 8.581 8.581 2.588 16 2.588S29.412 8.581 29.412 16 23.419 29.412 16 29.412z"/>
+      <path d="M23.381 19.419c-.406-.206-2.4-1.188-2.775-1.325-.375-.137-.65-.206-.925.206-.275.406-1.063 1.325-1.306 1.594-.238.275-.481.306-.887.1-.406-.206-1.719-.631-3.269-2.019-1.206-1.075-2.019-2.406-2.256-2.813-.238-.406-.025-.625.175-.825.181-.181.406-.481.606-.719.206-.238.275-.406.413-.681.137-.275.069-.512-.031-.719-.1-.206-.925-2.212-1.263-3.031-.331-.8-.669-.688-.925-.7-.238-.013-.512-.013-.787-.013s-.719.1-1.094.512c-.375.413-1.438 1.4-1.438 3.419s1.475 3.969 1.681 4.244c.206.275 2.906 4.431 7.031 6.213.981.425 1.75.681 2.344.875.987.319 1.881.275 2.588.169.787-.119 2.4-.975 2.738-1.919.337-.944.337-1.75.238-1.919-.1-.169-.375-.275-.781-.481z"/>
+    </svg>
+  </a>
+
   <!-- 3D Lightbox Modal -->
   <div id="lightbox" class="lightbox">
     <button class="lightbox-close" id="lightbox-close">&times;</button>
@@ -484,8 +492,39 @@
     // Smooth scroll and header shadow on scroll
     document.addEventListener('DOMContentLoaded', function() {
       const header = document.getElementById('header');
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('nav');
+
+      // Header scroll effect
       window.addEventListener('scroll', function() {
         header.classList.toggle('scrolled', window.scrollY > 10);
+      });
+
+      // Hamburger menu toggle
+      hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+      });
+
+      // Close menu when clicking nav links
+      const navLinks = nav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
       });
 
       // Smooth scroll for anchor links

@@ -1032,6 +1032,49 @@ a:hover {
   }
 }
 
+/* ============================================================================
+   HAMBURGER MENU (Mobile Only)
+   ============================================================================ */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  transition: transform var(--transition-base);
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--color-text);
+  border-radius: 3px;
+  transition: all var(--transition-base);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
 @media (max-width: 768px) {
   :root {
     --space-5xl: 3.5rem;
@@ -1039,31 +1082,74 @@ a:hover {
   }
 
   .site-header {
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   .header-inner {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     gap: var(--space-md);
     padding: var(--space-md) 0;
-  }
-
-  .nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: var(--space-md);
-    padding-top: var(--space-md);
-    border-top: 1px solid var(--color-border);
+    flex-wrap: wrap;
   }
 
   .logo {
-    width: 100%;
-    justify-content: center;
+    order: 1;
+  }
+
+  .hamburger {
+    display: flex;
+    order: 2;
+  }
+
+  .header-whatsapp-btn {
+    order: 3;
+  }
+
+  /* Mobile Navigation Styles */
+  .nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--color-white);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    padding: 80px var(--space-xl) var(--space-xl);
+    gap: var(--space-sm);
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow-y: auto;
+    order: 4;
+  }
+
+  .nav.active {
+    right: 0;
   }
 
   .nav a {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    background-color: transparent;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav a:hover,
+  .nav a:active {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+  }
+
+  .nav a::after {
+    display: none;
   }
 
   .section {
@@ -1233,6 +1319,69 @@ a:hover {
 
   .price-tag {
     font-size: 1.2rem;
+  }
+}
+
+/* ============================================================================
+   FLOATING WHATSAPP BUTTON
+   ============================================================================ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+  background-color: #20BA5A;
+}
+
+.whatsapp-float:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 24px rgba(37, 211, 102, 0.7);
+  }
+}
+
+/* Mobile WhatsApp button positioning */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
