@@ -2053,3 +2053,355 @@ body.menu-open {
   }
 }
 
+/* ============================================================================
+   BROWSE 3D MODELS SECTION
+   ============================================================================ */
+
+/* Unified Search Widget */
+.unified-search {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  margin-bottom: var(--space-4xl);
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.search-unified-title {
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.search-unified-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-unified-input {
+  width: 100%;
+  padding: var(--space-lg);
+  font-size: 1rem;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  transition: all var(--transition-base);
+  margin-bottom: var(--space-lg);
+}
+
+.search-unified-input:focus {
+  outline: none;
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 0 3px rgba(54, 193, 179, 0.1);
+}
+
+.quick-search-buttons {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-search {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+/* Platform Cards Grid */
+.platform-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.platform-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.platform-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.platform-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.platform-card:hover::before {
+  transform: scaleX(1);
+}
+
+.platform-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--space-lg);
+  color: var(--color-primary);
+  stroke-width: 1.5;
+}
+
+.platform-card h3 {
+  margin-bottom: var(--space-md);
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.platform-card p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+.platform-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-xl) 0;
+}
+
+.platform-features li {
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-sm);
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.platform-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.browse-models-footer {
+  text-align: center;
+  padding: var(--space-2xl);
+  background: linear-gradient(135deg, rgba(54, 193, 179, 0.1) 0%, rgba(54, 193, 179, 0.05) 100%);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-3xl);
+}
+
+.browse-models-footer p {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text);
+}
+
+/* ============================================================================
+   HOW IT WORKS SECTION
+   ============================================================================ */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.step-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  position: relative;
+  text-align: center;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  margin: var(--space-xl) auto var(--space-lg);
+  color: var(--color-primary);
+}
+
+.step-card h3 {
+  margin-bottom: var(--space-md);
+  font-size: 1.3rem;
+  color: var(--color-text);
+}
+
+.step-card p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.how-it-works-footer {
+  text-align: center;
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, rgba(54, 193, 179, 0.1) 0%, rgba(54, 193, 179, 0.05) 100%);
+  border-radius: var(--radius-lg);
+}
+
+.how-it-works-footer p {
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* ============================================================================
+   FOOTER ENHANCEMENTS
+   ============================================================================ */
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3xl);
+  padding: var(--space-4xl) 0 var(--space-2xl);
+}
+
+.footer-section h4 {
+  color: var(--color-primary-light);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-lg);
+  font-weight: 600;
+}
+
+.footer-section p {
+  color: #d1d5db;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: var(--space-sm) 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-links a {
+  color: #d1d5db;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(229, 245, 243, 0.2);
+  padding-top: var(--space-lg);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN FOR NEW SECTIONS
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .unified-search {
+    padding: var(--space-2xl);
+  }
+
+  .search-unified-title {
+    font-size: 1.4rem;
+  }
+
+  .quick-search-buttons {
+    flex-direction: column;
+  }
+
+  .btn-search {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .platform-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .unified-search {
+    padding: var(--space-lg);
+  }
+
+  .search-unified-title {
+    font-size: 1.2rem;
+  }
+
+  .platform-card {
+    padding: var(--space-xl);
+  }
+
+  .step-card {
+    padding: var(--space-xl) var(--space-lg);
+  }
+}
+
