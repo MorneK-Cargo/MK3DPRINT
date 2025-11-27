@@ -2213,8 +2213,22 @@ body.menu-open {
 }
 
 /* ============================================================================
-   HOW IT WORKS SECTION
+   HOW IT WORKS SECTION (within Browse Models)
    ============================================================================ */
+
+.how-it-works-subsection {
+  margin-top: var(--space-4xl);
+  padding-top: var(--space-4xl);
+  border-top: 2px solid rgba(54, 193, 179, 0.2);
+}
+
+.section-subtitle {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  font-weight: 700;
+}
 
 .steps-grid {
   display: grid;
