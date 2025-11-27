@@ -191,8 +191,76 @@
     </div>
   </section>
 
+  <!-- 3D Scanning Section -->
+  <section class="section section-alt" id="scanning">
+    <div class="container">
+      <h2 class="section-title">3D Scanning</h2>
+      <p class="section-intro">Precision 3D scanning to digitize your physical objects</p>
+
+      <!-- Scanner Demo Images -->
+      <div class="scanner-demo-grid">
+        <div class="scanner-demo-item" data-lightbox="scanning" data-index="0">
+          <img src="/images/scanning/scanner-demo-1.jpg" alt="3D Scanning Demo 1">
+        </div>
+        <div class="scanner-demo-item" data-lightbox="scanning" data-index="1">
+          <img src="/images/scanning/scanner-demo-2.jpg" alt="3D Scanning Demo 2">
+        </div>
+        <div class="scanner-demo-item" data-lightbox="scanning" data-index="2">
+          <img src="/images/scanning/scanner-demo-3.jpg" alt="3D Scanning Demo 3">
+        </div>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-text">
+          <h3>Our Scanning Technology</h3>
+          <p>We use the advanced Creality CR-Scan Otter, a professional-grade 3D scanner that captures intricate details with remarkable accuracy. This portable scanner allows us to digitize almost any object, creating precise 3D models for reproduction, modification, or archival purposes.</p>
+          <p>The CR-Scan Otter features innovative 4-lens stereo vision, achieving up to 0.02mm accuracy with 24-bit full-color capture. It can scan black and metal objects without spraying, handles objects between 10-2000mm, and includes anti-shaking technology for smooth, precise scanning.</p>
+          <p>From small mechanical parts to larger sculptures, our scanning technology preserves every detail of your object in the digital realm—ready for analysis, modification, or 3D printing reproduction.</p>
+        </div>
+        <div class="about-benefits">
+          <h3>What We Can Scan</h3>
+          <ul class="benefits-list">
+            <li>Small to medium objects: jewelry, mechanical parts, household items, sculptures</li>
+            <li>Complex geometries: intricate details, curved surfaces, hard-to-measure components</li>
+            <li>Reverse engineering: create CAD models from existing parts for reproduction or modification</li>
+            <li>Quality control: compare manufactured parts against original designs</li>
+            <li>Digital archiving: preserve physical objects as accurate digital models</li>
+            <li>Works with various materials: plastic, metal, wood, ceramic</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Shop Section -->
+  <section class="section" id="shop">
+    <div class="container">
+      <h2 class="section-title">Shop</h2>
+      <p class="section-intro">Items already printed</p>
+
+      <div class="shop-slider-container">
+        <button class="shop-slider-btn shop-slider-prev" id="shop-prev" aria-label="Previous products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <div class="shop-slider-wrapper">
+          <div class="shop-grid shop-slider" id="shop-grid">
+            <!-- Products will be loaded dynamically from shop.json -->
+          </div>
+        </div>
+        <button class="shop-slider-btn shop-slider-next" id="shop-next" aria-label="Next products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- Browse 3D Models Section -->
-  <section class="section" id="browse-models">
+  <section class="section section-alt" id="browse-models">
     <div class="container">
       <h2 class="section-title">Explore 3D Printable Designs</h2>
       <p class="section-intro">Find the perfect design from the world's largest 3D model libraries</p>
@@ -209,21 +277,21 @@
             required
           >
           <div class="quick-search-buttons">
-            <button type="button" onclick="searchPlatform('yeggi')" class="btn btn-search">
+            <button type="button" onclick="searchPlatform('yeggi')" class="btn btn-primary btn-search">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
                 <circle cx="11" cy="11" r="8"/>
                 <path d="M21 21l-4.35-4.35"/>
               </svg>
               Search All Sites (Yeggi)
             </button>
-            <button type="button" onclick="searchPlatform('printables')" class="btn btn-search btn-secondary">
+            <button type="button" onclick="searchPlatform('printables')" class="btn btn-primary btn-search">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
                 <circle cx="11" cy="11" r="8"/>
                 <path d="M21 21l-4.35-4.35"/>
               </svg>
               Printables
             </button>
-            <button type="button" onclick="searchPlatform('makerworld')" class="btn btn-search btn-secondary">
+            <button type="button" onclick="searchPlatform('makerworld')" class="btn btn-primary btn-search">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
                 <circle cx="11" cy="11" r="8"/>
                 <path d="M21 21l-4.35-4.35"/>
@@ -276,7 +344,7 @@
           <div class="platform-icon">
             <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M32 12L12 24v16l20 12 20-12V24z" fill="currentColor" opacity="0.1"/>
-              <path d="M32 12L12 24M32 12L52 24M32 12v16M12 24v16M52 24v16M12 40l20 12M52 40l32 12" stroke-width="2"/>
+              <path d="M32 12L12 24M32 12L52 24M32 12v16M12 24v16M52 24v16M12 40l20 12M52 40l20 12" stroke-width="2"/>
             </svg>
           </div>
           <h3>MakerWorld</h3>
@@ -299,7 +367,7 @@
   </section>
 
   <!-- How It Works Section -->
-  <section class="section section-alt" id="how-it-works">
+  <section class="section" id="how-it-works">
     <div class="container">
       <h2 class="section-title">How It Works</h2>
       <p class="section-intro">From design to delivery in three simple steps</p>
@@ -347,96 +415,6 @@
       <div class="how-it-works-footer">
         <p>Questions? <a href="https://wa.me/264834290501" style="color: var(--color-primary); font-weight: 600;">Chat with us on WhatsApp</a> or <a href="#contact" style="color: var(--color-primary); font-weight: 600;">get in touch</a></p>
       </div>
-    </div>
-  </section>
-
-  <!-- Shop Section -->
-  <section class="section" id="shop">
-    <div class="container">
-      <h2 class="section-title">Shop</h2>
-      <p class="section-intro">Items already printed</p>
-
-      <div class="shop-slider-container">
-        <button class="shop-slider-btn shop-slider-prev" id="shop-prev" aria-label="Previous products">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 18l-6-6 6-6"/>
-          </svg>
-        </button>
-        <div class="shop-slider-wrapper">
-          <div class="shop-grid shop-slider" id="shop-grid">
-            <!-- Products will be loaded dynamically from shop.json -->
-          </div>
-        </div>
-        <button class="shop-slider-btn shop-slider-next" id="shop-next" aria-label="Next products">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 18l6-6-6-6"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- 3D Print Search -->
-      <div class="search-3d-section">
-        <h3 class="search-3d-title">Looking for something specific?</h3>
-        <p class="search-3d-subtitle">Search thousands of 3D printable designs</p>
-        <form class="search-3d-form" id="search-3d-form" onsubmit="return search3DPrints(event)">
-          <input
-            type="text"
-            id="search-3d-input"
-            class="search-3d-input"
-            placeholder="Search for 3D prints (e.g., phone stand, gear, organizer...)"
-            required
-          >
-          <button type="submit" class="btn btn-primary search-3d-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; margin-right: 8px;">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="M21 21l-4.35-4.35"/>
-            </svg>
-            Search 3D Prints
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3D Scanning Section -->
-  <section class="section section-alt" id="scanning">
-    <div class="container">
-      <h2 class="section-title">3D Scanning</h2>
-      <p class="section-intro">Precision 3D scanning to digitize your physical objects</p>
-
-      <!-- Scanner Demo Images -->
-      <div class="scanner-demo-grid">
-        <div class="scanner-demo-item" data-lightbox="scanning" data-index="0">
-          <img src="/images/scanning/scanner-demo-1.jpg" alt="3D Scanning Demo 1">
-        </div>
-        <div class="scanner-demo-item" data-lightbox="scanning" data-index="1">
-          <img src="/images/scanning/scanner-demo-2.jpg" alt="3D Scanning Demo 2">
-        </div>
-        <div class="scanner-demo-item" data-lightbox="scanning" data-index="2">
-          <img src="/images/scanning/scanner-demo-3.jpg" alt="3D Scanning Demo 3">
-        </div>
-      </div>
-
-      <div class="about-layout">
-        <div class="about-text">
-          <h3>Our Scanning Technology</h3>
-          <p>We use the advanced Creality CR-Scan Otter, a professional-grade 3D scanner that captures intricate details with remarkable accuracy. This portable scanner allows us to digitize almost any object, creating precise 3D models for reproduction, modification, or archival purposes.</p>
-          <p>The CR-Scan Otter features innovative 4-lens stereo vision, achieving up to 0.02mm accuracy with 24-bit full-color capture. It can scan black and metal objects without spraying, handles objects between 10-2000mm, and includes anti-shaking technology for smooth, precise scanning.</p>
-          <p>From small mechanical parts to larger sculptures, our scanning technology preserves every detail of your object in the digital realm—ready for analysis, modification, or 3D printing reproduction.</p>
-        </div>
-        <div class="about-benefits">
-          <h3>What We Can Scan</h3>
-          <ul class="benefits-list">
-            <li>Small to medium objects: jewelry, mechanical parts, household items, sculptures</li>
-            <li>Complex geometries: intricate details, curved surfaces, hard-to-measure components</li>
-            <li>Reverse engineering: create CAD models from existing parts for reproduction or modification</li>
-            <li>Quality control: compare manufactured parts against original designs</li>
-            <li>Digital archiving: preserve physical objects as accurate digital models</li>
-            <li>Works with various materials: plastic, metal, wood, ceramic</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
   </section>
 
