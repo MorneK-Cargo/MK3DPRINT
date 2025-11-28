@@ -1897,6 +1897,14 @@ body.menu-open {
   padding: 0;
 }
 
+/* Scanning section with 2 images - centered and symmetric */
+#scanning .scanner-demo-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .scanner-demo-item {
   width: 100%;
   height: 280px;
@@ -1918,8 +1926,9 @@ body.menu-open {
 .scanner-demo-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  background: var(--color-white);
 }
 
 /* ========================
@@ -2021,6 +2030,11 @@ body.menu-open {
     gap: var(--space-lg);
   }
 
+  /* Scanning section stays at 2 columns on tablets */
+  #scanning .scanner-demo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .scanner-demo-item {
     height: 220px;
   }
@@ -2034,6 +2048,12 @@ body.menu-open {
   .scanner-demo-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+  }
+
+  /* Both scanning and imports sections use single column on mobile */
+  #scanning .scanner-demo-grid,
+  #imports .scanner-demo-grid {
+    grid-template-columns: 1fr;
   }
 
   .scanner-demo-item {
@@ -2050,6 +2070,18 @@ body.menu-open {
 
   .process-steps {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Extra small devices (phones in portrait, less than 576px) */
+@media (max-width: 576px) {
+  .scanner-demo-item {
+    height: 220px;
+  }
+
+  #scanning .scanner-demo-grid,
+  #imports .scanner-demo-grid {
+    gap: var(--space-md);
   }
 }
 
