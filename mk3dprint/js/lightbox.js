@@ -1,4 +1,4 @@
-// Lightbox functionality
+// Lightbox functionality - Updated Nov 28, 2025
 let currentItemIndex = 0;
 let currentImageIndex = 0;
 let currentDataSource = 'shop'; // 'shop' or 'gallery'
