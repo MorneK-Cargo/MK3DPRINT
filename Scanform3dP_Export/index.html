@@ -19,6 +19,7 @@
         <nav class="nav">
           <a href="#home">Home</a>
           <a href="#services">Services</a>
+          <a href="#browse-models">Find Models</a>
           <a href="#shop">Shop</a>
           <a href="#scanning">3D Scanning</a>
           <a href="#imports">Imports</a>
@@ -42,8 +43,8 @@
           <h1>Precision 3D Printing in Windhoek</h1>
           <p>A one-man startup business specializing in 3D scanning and 3D printing for local solutions. We also source and import smaller products directly from overseas—from Amazon, Walmart, and other international retailers in the USA, Europe, and Asia—delivering them to you at significantly more affordable prices than traditional courier services. Fast, reliable, and focused on solving your sourcing challenges.</p>
           <div class="hero-actions">
-            <a href="#quote" class="btn btn-primary">Request a Quote</a>
-            <a href="https://wa.me/264834290501" class="btn btn-secondary">Chat on WhatsApp</a>
+            <a href="#browse-models" class="btn btn-primary">Browse 3D Models</a>
+            <a href="#quote" class="btn btn-secondary">Request a Quote</a>
           </div>
           <p class="hero-subtext">✓ Honest • ✓ Transparent • ✓ Open</p>
         </div>
@@ -177,6 +178,165 @@
             <li>Digital archiving</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Browse 3D Models Section -->
+  <section class="section" id="browse-models">
+    <div class="container">
+      <h2 class="section-title">Explore 3D Printable Designs</h2>
+      <p class="section-intro">Find the perfect design from the world's largest 3D model libraries</p>
+
+      <!-- Multi-Platform Search Widget -->
+      <div class="unified-search">
+        <h3 class="search-unified-title">Search Thousands of Free 3D Models</h3>
+        <form class="search-unified-form" onsubmit="return searchAllPlatforms(event)">
+          <input
+            type="text"
+            id="model-search-input"
+            class="search-unified-input"
+            placeholder="Search for 3D models (e.g., phone stand, vase, gear...)"
+            required
+          >
+          <div class="quick-search-buttons">
+            <button type="button" onclick="searchPlatform('yeggi')" class="btn btn-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              Search All Sites (Yeggi)
+            </button>
+            <button type="button" onclick="searchPlatform('printables')" class="btn btn-search btn-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              Printables
+            </button>
+            <button type="button" onclick="searchPlatform('makerworld')" class="btn btn-search btn-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              MakerWorld
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Platform Cards -->
+      <div class="platform-cards-grid">
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="32" cy="32" r="24" fill="currentColor" opacity="0.1"/>
+              <path d="M20 32l8 8 16-16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Yeggi</h3>
+          <p>The ultimate 3D model search engine. Search across millions of models from all major platforms in one place.</p>
+          <ul class="platform-features">
+            <li>Search across all sites</li>
+            <li>Millions of free models</li>
+            <li>Advanced filtering</li>
+            <li>Best for discovery</li>
+          </ul>
+          <a href="https://www.yeggi.com" target="_blank" class="btn btn-primary btn-full">Visit Yeggi</a>
+        </div>
+
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="16" y="16" width="32" height="32" rx="4" fill="currentColor" opacity="0.1"/>
+              <path d="M24 28h16M24 32h16M24 36h12" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Printables</h3>
+          <p>One of the largest communities of 3D printing enthusiasts. Thousands of high-quality, tested designs.</p>
+          <ul class="platform-features">
+            <li>100% free downloads</li>
+            <li>Active community</li>
+            <li>Tested designs</li>
+            <li>Print settings included</li>
+          </ul>
+          <a href="https://www.printables.com" target="_blank" class="btn btn-primary btn-full">Visit Printables</a>
+        </div>
+
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M32 12L12 24v16l20 12 20-12V24z" fill="currentColor" opacity="0.1"/>
+              <path d="M32 12L12 24M32 12L52 24M32 12v16M12 24v16M52 24v16M12 40l20 12M52 40l20 12" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>MakerWorld</h3>
+          <p>Bambu Lab's official platform for sharing and discovering creative 3D designs from makers worldwide.</p>
+          <ul class="platform-features">
+            <li>High-quality models</li>
+            <li>Verified creators</li>
+            <li>Print profiles</li>
+            <li>Growing library</li>
+          </ul>
+          <a href="https://makerworld.com" target="_blank" class="btn btn-primary btn-full">Visit MakerWorld</a>
+        </div>
+      </div>
+
+      <div class="browse-models-footer">
+        <p><strong>Found something you'd like to print?</strong> Send us the link and we'll provide a quote within 24 hours!</p>
+        <a href="#quote" class="btn btn-primary">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-intro">From design to delivery in three simple steps</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="32" cy="32" r="24" fill="currentColor" opacity="0.1"/>
+              <path d="M20 32l8 8 16-16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="32" cy="20" r="3" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Find or Design</h3>
+          <p>Browse <strong>Printables</strong>, <strong>MakerWorld</strong>, or <strong>Yeggi</strong> for thousands of free models, or send us your custom STL file. Can't find what you need? We can help source the perfect design.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="16" y="20" width="32" height="24" rx="2" fill="currentColor" opacity="0.1"/>
+              <path d="M24 28h16M28 32h12M26 36h14" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Get a Quote</h3>
+          <p>Submit your project details using our <a href="#quote" style="color: var(--color-primary); text-decoration: underline;">quote form</a> or send the model link via WhatsApp. We'll provide material options, pricing, and estimated production time within 24 hours.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="12" y="24" width="40" height="28" rx="2" fill="currentColor" opacity="0.1"/>
+              <path d="M32 12L12 24M32 12L52 24M32 12v12" stroke-width="2.5"/>
+              <circle cx="32" cy="38" r="4" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3>We Print & Deliver</h3>
+          <p>Once approved, your item is printed with precision using quality materials. We'll keep you updated on progress and deliver your finished print directly to you in Windhoek.</p>
+        </div>
+      </div>
+
+      <div class="how-it-works-footer">
+        <p>Questions? <a href="https://wa.me/264834290501" style="color: var(--color-primary); font-weight: 600;">Chat with us on WhatsApp</a> or <a href="#contact" style="color: var(--color-primary); font-weight: 600;">get in touch</a></p>
       </div>
     </div>
   </section>
