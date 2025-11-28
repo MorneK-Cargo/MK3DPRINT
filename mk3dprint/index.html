@@ -16,7 +16,16 @@
         <div class="logo">
           <img src="/images/branding/logo.png" alt="MK 3D Printing and investments CC Logo" style="height: 80px; width: auto;">
         </div>
-        <nav class="nav">
+
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="nav" id="nav">
           <a href="#home">Home</a>
           <a href="#services">Services</a>
           <a href="#browse-models">Find Models</a>
@@ -28,7 +37,7 @@
           <a href="#quote">Quote</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a href="https://wa.me/264834290501" class="btn btn-primary btn-sm">
+        <a href="https://wa.me/264834290501" class="btn btn-primary btn-sm header-whatsapp-btn">
           <span>WhatsApp</span>
         </a>
       </div>
@@ -182,6 +191,7 @@
     </div>
   </section>
 
+<<<<<<< HEAD:Scanform3dP_Export/index.html
   <!-- Browse 3D Models Section -->
   <section class="section" id="browse-models">
     <div class="container">
@@ -389,6 +399,8 @@
     </div>
   </section>
 
+=======
+>>>>>>> 3f94e37e0710560529208333093e32f5dd8fa933:mk3dprint/index.html
   <!-- 3D Scanning Section -->
   <section class="section section-alt" id="scanning">
     <div class="container">
@@ -428,6 +440,201 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Shop Section -->
+  <section class="section" id="shop">
+    <div class="container">
+      <h2 class="section-title">Shop</h2>
+      <p class="section-intro">Items already printed</p>
+
+      <div class="shop-slider-container">
+        <button class="shop-slider-btn shop-slider-prev" id="shop-prev" aria-label="Previous products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <div class="shop-slider-wrapper">
+          <div class="shop-grid shop-slider" id="shop-grid">
+            <!-- Products will be loaded dynamically from shop.json -->
+          </div>
+        </div>
+        <button class="shop-slider-btn shop-slider-next" id="shop-next" aria-label="Next products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section section-alt" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-intro">Showcase of our completed projects</p>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Gallery will be loaded dynamically from gallery.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Browse 3D Models Section -->
+  <section class="section section-alt" id="browse-models">
+    <div class="container">
+      <h2 class="section-title">Explore 3D Printable Designs</h2>
+      <p class="section-intro">Find the perfect design from the world's largest 3D model libraries</p>
+
+      <!-- Multi-Platform Search Widget -->
+      <div class="unified-search">
+        <h3 class="search-unified-title">Search Thousands of Free 3D Models</h3>
+        <form class="search-unified-form" onsubmit="return searchAllPlatforms(event)">
+          <input
+            type="text"
+            id="model-search-input"
+            class="search-unified-input"
+            placeholder="Search for 3D models (e.g., phone stand, vase, gear...)"
+            required
+          >
+          <div class="quick-search-buttons">
+            <button type="button" onclick="searchPlatform('yeggi')" class="btn btn-primary btn-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              Search All Sites (Yeggi)
+            </button>
+            <button type="button" onclick="searchPlatform('printables')" class="btn btn-primary btn-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              Printables
+            </button>
+            <button type="button" onclick="searchPlatform('makerworld')" class="btn btn-primary btn-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              MakerWorld
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Platform Cards -->
+      <div class="platform-cards-grid">
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="32" cy="32" r="24" fill="currentColor" opacity="0.1"/>
+              <path d="M20 32l8 8 16-16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Yeggi</h3>
+          <p>The ultimate 3D model search engine. Search across millions of models from all major platforms in one place.</p>
+          <ul class="platform-features">
+            <li>Search across all sites</li>
+            <li>Millions of free models</li>
+            <li>Advanced filtering</li>
+            <li>Best for discovery</li>
+          </ul>
+          <a href="https://www.yeggi.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">Visit Yeggi</a>
+        </div>
+
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="16" y="16" width="32" height="32" rx="4" fill="currentColor" opacity="0.1"/>
+              <path d="M24 28h16M24 32h16M24 36h12" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Printables</h3>
+          <p>One of the largest communities of 3D printing enthusiasts. Thousands of high-quality, tested designs.</p>
+          <ul class="platform-features">
+            <li>100% free downloads</li>
+            <li>Active community</li>
+            <li>Tested designs</li>
+            <li>Print settings included</li>
+          </ul>
+          <a href="https://www.printables.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">Visit Printables</a>
+        </div>
+
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M32 12L12 24v16l20 12 20-12V24z" fill="currentColor" opacity="0.1"/>
+              <path d="M32 12L12 24M32 12L52 24M32 12v16M12 24v16M52 24v16M12 40l20 12M52 40l20 12" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>MakerWorld</h3>
+          <p>Bambu Lab's official platform for sharing and discovering creative 3D designs from makers worldwide.</p>
+          <ul class="platform-features">
+            <li>High-quality models</li>
+            <li>Verified creators</li>
+            <li>Print profiles</li>
+            <li>Growing library</li>
+          </ul>
+          <a href="https://makerworld.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">Visit MakerWorld</a>
+        </div>
+      </div>
+
+      <div class="browse-models-footer">
+        <p><strong>Found something you'd like to print?</strong> Send us the link and we'll provide a quote within 24 hours!</p>
+        <a href="#quote" class="btn btn-primary">Get a Quote</a>
+      </div>
+
+      <!-- How It Works - Part of Browse Models Section -->
+      <div class="how-it-works-subsection" id="how-it-works">
+        <h3 class="section-subtitle">How It Works</h3>
+        <p class="section-intro">From design to delivery in three simple steps</p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="32" cy="32" r="24" fill="currentColor" opacity="0.1"/>
+                <path d="M20 32l8 8 16-16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="32" cy="20" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Find or Design</h3>
+            <p>Browse <strong>Printables</strong>, <strong>MakerWorld</strong>, or <strong>Yeggi</strong> for thousands of free models, or send us your custom STL file. Can't find what you need? We can help source the perfect design.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="16" y="20" width="32" height="24" rx="2" fill="currentColor" opacity="0.1"/>
+                <path d="M24 28h16M28 32h12M26 36h14" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Get a Quote</h3>
+            <p>Submit your project details using our <a href="#quote" style="color: var(--color-primary); text-decoration: underline;">quote form</a> or send the model link via WhatsApp. We'll provide material options, pricing, and estimated production time within 24 hours.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="12" y="24" width="40" height="28" rx="2" fill="currentColor" opacity="0.1"/>
+                <path d="M32 12L12 24M32 12L52 24M32 12v12" stroke-width="2.5"/>
+                <circle cx="32" cy="38" r="4" stroke-width="2.5"/>
+              </svg>
+            </div>
+            <h3>We Print & Deliver</h3>
+            <p>Once approved, your item is printed with precision using quality materials. We'll keep you updated on progress and deliver your finished print directly to you in Windhoek.</p>
+          </div>
+        </div>
+
+        <div class="how-it-works-footer">
+          <p>Questions? <a href="https://wa.me/264834290501" style="color: var(--color-primary); font-weight: 600;">Chat with us on WhatsApp</a> or <a href="#contact" style="color: var(--color-primary); font-weight: 600;">get in touch</a></p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -472,18 +679,6 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section class="section section-alt" id="gallery">
-    <div class="container">
-      <h2 class="section-title">Gallery</h2>
-      <p class="section-intro">Showcase of our completed projects</p>
-
-      <div class="gallery-grid" id="gallery-grid">
-        <!-- Gallery will be loaded dynamically from gallery.json -->
-      </div>
-    </div>
-  </section>
-
   <!-- About Section -->
   <section class="section" id="about">
     <div class="container">
@@ -516,14 +711,11 @@
       <h2 class="section-title">Request a Quote</h2>
       <p class="section-intro">Tell us about your project, and we'll provide a detailed quote</p>
 
-       <form class="quote-form" name="quote" method="POST" 
-  data-netlify="true" netlify-honeypot="bot-field">
-       <input type="hidden" name="form-name" 
-  value="quote" />
-       <p style="display: none;">
-         <label>Don't fill this out if you're human:
-  <input name="bot-field" /></label>
-       </p>
+      <form class="quote-form" name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="quote" />
+        <p style="display: none;">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
         <div class="form-grid">
           <label>
             <span>Full Name</span>
@@ -607,13 +799,59 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-inner">
-        <p>&copy; 2025 mk3dprint.org Scan • Print • Build.</p>
-        <p>Precision 3D Printing & Manufacturing Solutions in Windhoek, Namibia</p>
-        <p><a href="mailto:info@mk3dprint.org" style="color: #e5f5f3; text-decoration: underline;">info@mk3dprint.org</a></p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>MK 3D Printing</h4>
+          <p>Scan • Print • Build</p>
+          <p>Precision 3D Printing & Manufacturing Solutions in Windhoek, Namibia</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Browse 3D Models</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.yeggi.com" target="_blank" rel="noopener noreferrer">Yeggi - Search All Sites</a></li>
+            <li><a href="https://www.printables.com" target="_blank" rel="noopener noreferrer">Printables - Free Models</a></li>
+            <li><a href="https://makerworld.com" target="_blank" rel="noopener noreferrer">MakerWorld - Bambu Lab</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#browse-models">Find 3D Models</a></li>
+            <li><a href="#quote">Request a Quote</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:info@mk3dprint.org">info@mk3dprint.org</a></li>
+            <li><a href="https://wa.me/264834290501">WhatsApp: +264 83 429 0501</a></li>
+            <li>Windhoek, Namibia</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 mk3dprint.org. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/264834290501?text=Hi%2C%20I%27m%20interested%20in%20your%203D%20printing%20services"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.738 5.483 2.031 7.788L0 32l8.463-2.031A15.921 15.921 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.412c-2.431 0-4.75-.631-6.738-1.744l-.488-.287-4.894 1.181 1.181-4.894-.287-.488A13.313 13.313 0 012.588 16C2.588 8.581 8.581 2.588 16 2.588S29.412 8.581 29.412 16 23.419 29.412 16 29.412z"/>
+      <path d="M23.381 19.419c-.406-.206-2.4-1.188-2.775-1.325-.375-.137-.65-.206-.925.206-.275.406-1.063 1.325-1.306 1.594-.238.275-.481.306-.887.1-.406-.206-1.719-.631-3.269-2.019-1.206-1.075-2.019-2.406-2.256-2.813-.238-.406-.025-.625.175-.825.181-.181.406-.481.606-.719.206-.238.275-.406.413-.681.137-.275.069-.512-.031-.719-.1-.206-.925-2.212-1.263-3.031-.331-.8-.669-.688-.925-.7-.238-.013-.512-.013-.787-.013s-.719.1-1.094.512c-.375.413-1.438 1.4-1.438 3.419s1.475 3.969 1.681 4.244c.206.275 2.906 4.431 7.031 6.213.981.425 1.75.681 2.344.875.987.319 1.881.275 2.588.169.787-.119 2.4-.975 2.738-1.919.337-.944.337-1.75.238-1.919-.1-.169-.375-.275-.781-.481z"/>
+    </svg>
+  </a>
 
   <!-- 3D Lightbox Modal -->
   <div id="lightbox" class="lightbox">
@@ -634,8 +872,39 @@
     // Smooth scroll and header shadow on scroll
     document.addEventListener('DOMContentLoaded', function() {
       const header = document.getElementById('header');
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('nav');
+
+      // Header scroll effect
       window.addEventListener('scroll', function() {
         header.classList.toggle('scrolled', window.scrollY > 10);
+      });
+
+      // Hamburger menu toggle
+      hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+      });
+
+      // Close menu when clicking nav links
+      const navLinks = nav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
       });
 
       // Smooth scroll for anchor links
@@ -702,6 +971,34 @@ Additional notes: `;
         searchInput.value = ''; // Clear input
       }
 
+      return false;
+    }
+
+    // Handle platform-specific search from Browse Models section
+    function searchPlatform(platform) {
+      const query = document.getElementById('model-search-input').value.trim();
+
+      if (!query) {
+        document.getElementById('model-search-input').focus();
+        return;
+      }
+
+      const urls = {
+        'printables': `https://www.printables.com/search/models?q=${encodeURIComponent(query)}`,
+        'makerworld': `https://makerworld.com/en/search/model?keyword=${encodeURIComponent(query)}`,
+        'yeggi': `https://www.yeggi.com/q/${encodeURIComponent(query)}/`
+      };
+
+      if (urls[platform]) {
+        window.open(urls[platform], '_blank', 'noopener,noreferrer');
+        document.getElementById('model-search-input').value = ''; // Clear input
+      }
+    }
+
+    // Handle "Search All Platforms" form submission
+    function searchAllPlatforms(event) {
+      event.preventDefault();
+      searchPlatform('yeggi'); // Default to Yeggi which searches all platforms
       return false;
     }
 
