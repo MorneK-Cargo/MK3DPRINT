@@ -155,19 +155,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const imageData = {
     scanning: [
       {
-        src: '/images/scanning/scanner-demo-1.jpg',
-        title: '3D Scanner Capabilities',
-        description: 'The CR-Scan Otter can digitize a wide range of objects - from small items like coins and jewelry to larger decorative pieces. Perfect for creating digital archives or 3D printing replicas.'
+        src: '/images/scanning/raptor-versatile-scanning.png',
+        title: 'Creality Raptor - Versatile Scanning for All Sizes',
+        description: 'Combining line lasers with infrared structured light, the CR-Scan Raptor can scan objects ranging from tiny 5×5×5 mm³ components to large 2000×2000×2000 mm³ items. Effortlessly scans small figurines, bolts, faces, human bodies, automotive components, and more.'
       },
       {
-        src: '/images/scanning/scanner-demo-2.jpg',
-        title: 'CR-Scan Otter Handheld Scanner',
-        description: 'Our professional-grade handheld 3D scanner captures intricate details with remarkable accuracy. Portable and easy to use for scanning objects of various sizes.'
-      },
-      {
-        src: '/images/scanning/scanner-demo-3.jpg',
-        title: 'Scan Black & Metal Objects',
-        description: 'Advanced technology allows scanning of black and metal objects without spraying. Perfect for automotive parts, electronics, and other reflective or dark surfaces.'
+        src: '/images/scanning/raptor-infrared-scanning.png',
+        title: 'Creality Raptor - Infrared Structured Light Scanning',
+        description: 'The CR-Scan Raptor utilizes speckle matching 3D imaging with markerless scanning capability. No markers needed for feature-rich workpieces - objects can be scanned quickly and directly, making it ideal for reverse engineering, quality control, and digital archiving.'
       }
     ],
     imports: [
