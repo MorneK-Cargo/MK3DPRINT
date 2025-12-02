@@ -1,11 +1,6 @@
-  [[redirects]]
-    from = "http://mk3dprint.org/*"
-    to = "https://mk3dprint.org/:splat"
-    status = 301
-    force = true
+# Redirect HTTP to HTTPS
+http://mk3dprint.org/*  https://mk3dprint.org/:splat  301!
+http://www.mk3dprint.org/*  https://mk3dprint.org/:splat  301!
 
-  [[redirects]]
-    from = "http://www.mk3dprint.org/*"
-    to = "https://www.mk3dprint.org/:splat"
-    status = 301
-    force = true
+# Redirect www to non-www
+https://www.mk3dprint.org/*  https://mk3dprint.org/:splat  301!
