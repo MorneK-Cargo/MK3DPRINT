@@ -3,6 +3,7 @@ import Hero from '@/components/hero';
 import Services from '@/components/services';
 import ScanningSection from '@/components/scanning-section';
 import ShopSection from '@/components/shop-section';
+import ThingiverseBrowser from '@/components/thingiverse-browser';
 import Gallery from '@/components/gallery';
 import ImportsSection from '@/components/imports-section';
 import AboutSection from '@/components/about-section';
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Services />
       <ShopSection />
+      <ThingiverseBrowser />
       <ScanningSection />
       <ImportsSection />
       <Gallery />

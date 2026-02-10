@@ -45,7 +45,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
-            <Link href="#shop" className="btn-apple btn-primary text-lg px-8 py-4">
+            <Link href="#thingiverse-browser" className="btn-apple btn-primary text-lg px-8 py-4">
               Browse 3D Models
             </Link>
             <Link href="#quote" className="btn-apple btn-secondary text-lg px-8 py-4">

@@ -10,6 +10,7 @@ const navItems = [
   { href: '#home', label: 'Home' },
   { href: '#services', label: 'Services' },
   { href: '#shop', label: 'Shop' },
+  { href: '#thingiverse-browser', label: 'Browse Models' },
   { href: '#scanning', label: '3D Scanning' },
   { href: '#imports', label: 'Imports' },
   { href: '#gallery', label: 'Gallery' },
