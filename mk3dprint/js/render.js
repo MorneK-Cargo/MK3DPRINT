@@ -3,63 +3,10 @@ async function loadJSON(url) {
   return await response.json();
 }
 
-// Store shop, gallery, scanning, and imports data globally for lightbox access
-window.shopDataGlobal = [];
+// Store gallery, scanning, and imports data globally for lightbox access
 window.galleryDataGlobal = [];
 window.scanningDataGlobal = [];
 window.importsDataGlobal = [];
-
-async function renderShop() {
-  const shopData = await loadJSON('/data/shop.json');
-  window.shopDataGlobal = shopData;
-  const container = document.getElementById('shop-grid');
-
-  container.innerHTML = shopData.map((item, index) => {
-    const firstImage = item.images && item.images.length > 0 ? item.images[0] : '';
-
-    // Create WhatsApp order message
-    const whatsappMessage = `Hello SCANFORM 3DP! 👋
-
-I would like to place an order:
-
-📦 *ORDER DETAILS*
-━━━━━━━━━━━━━━━━━━━
-Product: *${item.title}*
-Price: *${item.price}*
-Description: ${item.description}
-
-Quantity: _____ (I will fill this in)
-
-👤 *MY DETAILS*
-━━━━━━━━━━━━━━━━━━━
-Name:
-Phone:
-Delivery Address:
-
-📝 *ADDITIONAL NOTES*
-━━━━━━━━━━━━━━━━━━━
-(Add any special requests, color preferences, etc.)
-
-Thank you!`;
-
-    const whatsappLink = `https://wa.me/264834290501?text=${encodeURIComponent(whatsappMessage)}`;
-
-    return `
-      <div class="shop-card">
-        <div class="shop-image" onclick="openLightbox(${index}, 0)" style="cursor: pointer;">
-          ${firstImage ?
-            `<img src="${firstImage}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<div class=\\'placeholder-image\\'>3D Model</div>'">` :
-            '<div class="placeholder-image">3D Model</div>'
-          }
-        </div>
-        <h4>${item.title}</h4>
-        <p>${item.description}</p>
-        <div class="price-tag">${item.price}</div>
-        <a href="${whatsappLink}" class="btn btn-primary btn-full">Order Now</a>
-      </div>
-    `;
-  }).join('');
-}
 
 async function renderGallery() {
   const galleryData = await loadJSON('/data/gallery.json');
@@ -124,7 +71,6 @@ async function renderImports() {
   }).join('');
 }
 
-renderShop();
 renderGallery();
 renderScanning();
 renderImports();

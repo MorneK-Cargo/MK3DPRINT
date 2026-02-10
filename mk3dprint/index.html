@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MK 3D Printing and investments CC | Premium 3D Printing in Windhoek, Namibia</title>
   <meta name="description" content="Precision 3D printing, scanning, and modeling services in Windhoek, Namibia. Custom parts, rapid prototyping, and engineering solutions.">
+  <!-- Build timestamp: 2026-02-10T13:35:00Z -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,7 +30,6 @@
           <a href="#home">Home</a>
           <a href="#services">Services</a>
           <a href="#browse-models">Find Models</a>
-          <a href="#shop">Shop</a>
           <a href="#scanning">3D Scanning</a>
           <a href="#imports">Imports</a>
           <a href="#gallery">Gallery</a>
@@ -61,7 +61,7 @@
           <div class="hero-card">
             <div class="trust-badges">
               <a href="#scanning" class="badge-link">3D Scanning</a>
-              <a href="#shop" class="badge-link">3D Printing</a>
+              <a href="#browse-models" class="badge-link">3D Printing</a>
               <a href="#imports" class="badge-link">Imports</a>
             </div>
           </div>
@@ -231,32 +231,6 @@
     </div>
   </section>
 
-  <!-- Shop Section -->
-  <section class="section" id="shop">
-    <div class="container">
-      <h2 class="section-title">Shop</h2>
-      <p class="section-intro">Items already printed</p>
-
-      <div class="shop-slider-container">
-        <button class="shop-slider-btn shop-slider-prev" id="shop-prev" aria-label="Previous products">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 18l-6-6 6-6"/>
-          </svg>
-        </button>
-        <div class="shop-slider-wrapper">
-          <div class="shop-grid shop-slider" id="shop-grid">
-            <!-- Products will be loaded dynamically from shop.json -->
-          </div>
-        </div>
-        <button class="shop-slider-btn shop-slider-next" id="shop-next" aria-label="Next products">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 18l6-6-6-6"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
   <!-- Gallery Section -->
   <section class="section section-alt" id="gallery">
     <div class="container">
@@ -310,6 +284,38 @@
             </button>
           </div>
         </form>
+      </div>
+
+      <!-- Trending Designs Widget -->
+      <div class="trending-widget-section">
+        <div class="trending-widget-header">
+          <h3>🔥 Trending Designs This Week</h3>
+          <button id="trending-refresh-btn" title="Refresh trending designs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <path d="M20.49 15a9 9 0 1 1-2-8.83"></path>
+            </svg>
+            Refresh Designs
+          </button>
+        </div>
+
+        <div class="trending-search">
+          <input
+            type="text"
+            id="trending-search-input"
+            placeholder="Search for specific designs (e.g., phone holder, organizer, toy...)">
+          <button id="trending-search-btn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px; margin-right: 6px;">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+            Search
+          </button>
+        </div>
+
+        <div id="trending-widget-grid">
+          <!-- Trending designs will be loaded here by trending-widget.js -->
+        </div>
       </div>
 
       <!-- Platform Cards -->
@@ -790,84 +796,10 @@ Additional notes: `;
       return false;
     }
 
-    // Shop Slider Navigation - Infinite Carousel
-    let currentSlideIndex = 0;
-
-    function getSliderConfig() {
-      const slider = document.getElementById('shop-grid');
-      if (!slider) return { totalItems: 0, visibleItems: 1, cardWidth: 320 };
-
-      const totalItems = slider.children.length;
-      const cardWidth = 320;
-      const gap = 40;
-      const slideWidth = cardWidth + gap;
-      const containerWidth = slider.parentElement.offsetWidth;
-      const visibleItems = Math.floor(containerWidth / slideWidth);
-
-      return { totalItems, visibleItems, cardWidth, gap, slideWidth };
-    }
-
-    function updateSlider() {
-      const slider = document.getElementById('shop-grid');
-      const config = getSliderConfig();
-
-      if (slider) {
-        const translateX = currentSlideIndex * config.slideWidth;
-        slider.style.transform = `translateX(-${translateX}px)`;
-      }
-    }
-
-    function slideNext() {
-      const config = getSliderConfig();
-
-      // Infinite loop: go to start if at the end
-      if (currentSlideIndex >= config.totalItems - 1) {
-        currentSlideIndex = 0;
-      } else {
-        currentSlideIndex++;
-      }
-
-      updateSlider();
-    }
-
-    function slidePrev() {
-      const config = getSliderConfig();
-
-      // Infinite loop: go to end if at the start
-      if (currentSlideIndex <= 0) {
-        currentSlideIndex = config.totalItems - 1;
-      } else {
-        currentSlideIndex--;
-      }
-
-      updateSlider();
-    }
-
-    // Initialize slider buttons
-    document.addEventListener('DOMContentLoaded', function() {
-      const nextBtn = document.getElementById('shop-next');
-      const prevBtn = document.getElementById('shop-prev');
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-          slideNext();
-        });
-      }
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
-          slidePrev();
-        });
-      }
-
-      // Reset slider on window resize
-      window.addEventListener('resize', function() {
-        currentSlideIndex = 0;
-        updateSlider();
-      });
-    });
   </script>
   <script src="/js/render.js?v=20251128"></script>
   <script src="/js/lightbox.js?v=20251128"></script>
+  <script src="/js/thingiverse-api.js?v=20260210"></script>
+  <script src="/js/trending-widget.js?v=20260210"></script>
 </body>
 </html>
