@@ -19,7 +19,7 @@ export default function QuickPrints() {
       id: 'phone-stand',
       title: 'Phone Stand',
       emoji: '📱',
-      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Phone+Stand',
+      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%2336c1b3" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="48" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="white"%3E📱 Phone Stand%3C/text%3E%3C/svg%3E',
       description: 'Adjustable phone stand for desk and streaming',
       printTime: '2-3 hours',
       material: 'PLA'
@@ -28,7 +28,7 @@ export default function QuickPrints() {
       id: 'cable-clip',
       title: 'Cable Clips',
       emoji: '🔌',
-      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Cable+Clips',
+      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%2336c1b3" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="48" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="white"%3E🔌 Cable Clips%3C/text%3E%3C/svg%3E',
       description: 'Keep your cables organized and tidy',
       printTime: '1-2 hours',
       material: 'PLA'
@@ -37,7 +37,7 @@ export default function QuickPrints() {
       id: 'pen-holder',
       title: 'Pen Holder',
       emoji: '✏️',
-      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Pen+Holder',
+      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%2336c1b3" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="48" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="white"%3E✏️ Pen Holder%3C/text%3E%3C/svg%3E',
       description: 'Desktop organizer for pens and pencils',
       printTime: '2 hours',
       material: 'PLA'
@@ -46,7 +46,7 @@ export default function QuickPrints() {
       id: 'door-hanger',
       title: 'Door Hanger',
       emoji: '🚪',
-      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Door+Hanger',
+      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%2336c1b3" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="48" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="white"%3E🚪 Door Hanger%3C/text%3E%3C/svg%3E',
       description: 'Customizable door hanger for any message',
       printTime: '1-2 hours',
       material: 'PLA'
@@ -55,7 +55,7 @@ export default function QuickPrints() {
       id: 'plant-pot-small',
       title: 'Plant Pot',
       emoji: '🌱',
-      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Plant+Pot',
+      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%2336c1b3" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="48" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="white"%3E🌱 Plant Pot%3C/text%3E%3C/svg%3E',
       description: 'Drainage plant pot for small plants',
       printTime: '2-3 hours',
       material: 'PLA'
@@ -64,7 +64,7 @@ export default function QuickPrints() {
       id: 'desk-organizer',
       title: 'Desk Organizer',
       emoji: '📚',
-      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Desk+Organizer',
+      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%2336c1b3" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="48" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="white"%3E📚 Desk Organizer%3C/text%3E%3C/svg%3E',
       description: 'Multi-compartment desk organizer',
       printTime: '3-4 hours',
       material: 'PLA'
@@ -73,7 +73,7 @@ export default function QuickPrints() {
       id: 'battery-holder',
       title: 'Battery Holder',
       emoji: '🔋',
-      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Battery+Holder',
+      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%2336c1b3" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="48" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="white"%3E🔋 Battery Holder%3C/text%3E%3C/svg%3E',
       description: 'Organize AA and AAA batteries',
       printTime: '1 hour',
       material: 'PLA'
@@ -82,7 +82,7 @@ export default function QuickPrints() {
       id: 'cable-organizer',
       title: 'Cable Organizer',
       emoji: '🎯',
-      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Cable+Organizer',
+      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%2336c1b3" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="48" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="white"%3E🎯 Cable Organizer%3C/text%3E%3C/svg%3E',
       description: 'Desktop cable management solution',
       printTime: '2-3 hours',
       material: 'PLA'
