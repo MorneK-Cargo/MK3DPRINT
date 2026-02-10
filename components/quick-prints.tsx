@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { ShoppingCart, Zap } from 'lucide-react';
 
 interface QuickPrint {
@@ -127,12 +126,11 @@ export default function QuickPrints() {
               className="bg-[#f5f5f7] rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col group"
             >
               {/* Image Container */}
-              <div className="relative h-48 bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] overflow-hidden">
-                <Image
+              <div className="relative h-48 bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] overflow-hidden flex items-center justify-center">
+                <img
                   src={item.image}
                   alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
