@@ -78,16 +78,16 @@ export default function Hero() {
             className="mt-16 flex flex-wrap justify-center gap-4"
           >
             <Link
+              href="#quick-prints"
+              className="px-6 py-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all text-[#1d1d1f] font-medium"
+            >
+              Quick Prints
+            </Link>
+            <Link
               href="#scanning"
               className="px-6 py-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all text-[#1d1d1f] font-medium"
             >
               3D Scanning
-            </Link>
-            <Link
-              href="#shop"
-              className="px-6 py-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all text-[#1d1d1f] font-medium"
-            >
-              3D Printing
             </Link>
             <Link
               href="#imports"

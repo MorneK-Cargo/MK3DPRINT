@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navItems = [
   { href: '#home', label: 'Home' },
   { href: '#services', label: 'Services' },
-  { href: '#shop', label: 'Shop' },
+  { href: '#quick-prints', label: 'Quick Prints' },
   { href: '#thingiverse-browser', label: 'Browse Models' },
   { href: '#scanning', label: '3D Scanning' },
   { href: '#imports', label: 'Imports' },

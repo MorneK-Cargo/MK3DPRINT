@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Search, ExternalLink, Loader } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface ThingiverseModel {
@@ -13,12 +14,13 @@ interface ThingiverseModel {
   url: string;
   thumbnail: string;
   likes: number;
+  imageUrl: string;
 }
 
 export default function ThingiverseBrowser() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [trendingModels, setTrendingModels] = useState<ThingiverseModel[]>([
+  const [trendingModels] = useState<ThingiverseModel[]>([
     {
       id: 1,
       name: 'Phone Stand',
@@ -26,7 +28,8 @@ export default function ThingiverseBrowser() {
       creator: 'Community',
       url: 'https://www.thingiverse.com/search?q=phone+stand&type=things&sort=relevant',
       thumbnail: '📱',
-      likes: 5400
+      likes: 5400,
+      imageUrl: 'https://cdn.thingiverse.com/assets/1e/34/b5/7f/82/Screen_Shot_2017-06-06_at_3.46.31_PM.png'
     },
     {
       id: 2,
@@ -35,7 +38,8 @@ export default function ThingiverseBrowser() {
       creator: 'Community',
       url: 'https://www.thingiverse.com/search?q=cable+organizer&type=things&sort=relevant',
       thumbnail: '🔌',
-      likes: 3200
+      likes: 3200,
+      imageUrl: 'https://cdn.thingiverse.com/assets/2f/51/54/f3/1b/Large_Display.jpg'
     },
     {
       id: 3,
@@ -44,7 +48,8 @@ export default function ThingiverseBrowser() {
       creator: 'Community',
       url: 'https://www.thingiverse.com/search?q=plant+pot&type=things&sort=relevant',
       thumbnail: '🌱',
-      likes: 2800
+      likes: 2800,
+      imageUrl: 'https://cdn.thingiverse.com/assets/7c/fa/4f/90/f4/large_display.jpg'
     },
     {
       id: 4,
@@ -53,7 +58,8 @@ export default function ThingiverseBrowser() {
       creator: 'Community',
       url: 'https://www.thingiverse.com/search?q=desk+organizer&type=things&sort=relevant',
       thumbnail: '📚',
-      likes: 4100
+      likes: 4100,
+      imageUrl: 'https://cdn.thingiverse.com/assets/07/63/54/75/42/large_display.jpg'
     },
     {
       id: 5,
@@ -62,7 +68,8 @@ export default function ThingiverseBrowser() {
       creator: 'Community',
       url: 'https://www.thingiverse.com/search?q=door+hanger&type=things&sort=relevant',
       thumbnail: '🚪',
-      likes: 1900
+      likes: 1900,
+      imageUrl: 'https://cdn.thingiverse.com/assets/0f/47/a1/0a/92/large_display.jpg'
     },
     {
       id: 6,
@@ -71,7 +78,8 @@ export default function ThingiverseBrowser() {
       creator: 'Community',
       url: 'https://www.thingiverse.com/search?q=pen+holder&type=things&sort=relevant',
       thumbnail: '✏️',
-      likes: 3600
+      likes: 3600,
+      imageUrl: 'https://cdn.thingiverse.com/assets/87/ba/3d/c0/2f/large_display.jpg'
     }
   ]);
 
@@ -180,9 +188,18 @@ export default function ThingiverseBrowser() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col"
               >
-                {/* Model Thumbnail */}
-                <div className="h-40 bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] flex items-center justify-center text-6xl">
-                  {model.thumbnail}
+                {/* Model Image */}
+                <div className="h-40 bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] flex items-center justify-center relative overflow-hidden">
+                  <Image
+                    src={model.imageUrl}
+                    alt={model.name}
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
+                  />
                 </div>
 
                 {/* Model Info */}
