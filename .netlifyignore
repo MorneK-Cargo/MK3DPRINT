@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+.next
+out
+dist
+
+# Testing
+coverage
+
+# Production
+build
+
+# Logs
+logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
