@@ -7,8 +7,6 @@ import { ShoppingCart, Zap } from 'lucide-react';
 interface QuickPrint {
   id: string;
   title: string;
-  price: number;
-  currency: string;
   image: string;
   description: string;
   printTime: string;
@@ -20,19 +18,15 @@ export default function QuickPrints() {
     {
       id: 'phone-stand',
       title: 'Phone Stand',
-      price: 85,
-      currency: 'NAD',
-      image: 'https://cdn.thingiverse.com/assets/phone-stand.jpg',
+      image: 'https://cdn.thingiverse.com/renders/4e/15/04/ef/16/Large_Display.jpg',
       description: 'Adjustable phone stand for desk and streaming',
       printTime: '2-3 hours',
       material: 'PLA'
     },
     {
       id: 'cable-clip',
-      title: 'Cable Clips (Pack of 5)',
-      price: 65,
-      currency: 'NAD',
-      image: 'https://cdn.thingiverse.com/assets/cable-clip.jpg',
+      title: 'Cable Clips',
+      image: 'https://cdn.thingiverse.com/renders/e5/2c/5b/f3/1b/Large_Display.jpg',
       description: 'Keep your cables organized and tidy',
       printTime: '1-2 hours',
       material: 'PLA'
@@ -40,9 +34,7 @@ export default function QuickPrints() {
     {
       id: 'pen-holder',
       title: 'Pen Holder',
-      price: 75,
-      currency: 'NAD',
-      image: 'https://cdn.thingiverse.com/assets/pen-holder.jpg',
+      image: 'https://cdn.thingiverse.com/renders/2a/4b/8c/d0/2f/Large_Display.jpg',
       description: 'Desktop organizer for pens and pencils',
       printTime: '2 hours',
       material: 'PLA'
@@ -50,19 +42,15 @@ export default function QuickPrints() {
     {
       id: 'door-hanger',
       title: 'Door Hanger',
-      price: 45,
-      currency: 'NAD',
-      image: 'https://cdn.thingiverse.com/assets/door-hanger.jpg',
+      image: 'https://cdn.thingiverse.com/renders/7f/3c/1a/9e/92/Large_Display.jpg',
       description: 'Customizable door hanger for any message',
       printTime: '1-2 hours',
       material: 'PLA'
     },
     {
       id: 'plant-pot-small',
-      title: 'Small Plant Pot',
-      price: 55,
-      currency: 'NAD',
-      image: 'https://cdn.thingiverse.com/assets/plant-pot.jpg',
+      title: 'Plant Pot',
+      image: 'https://cdn.thingiverse.com/renders/5d/8f/2b/7a/f4/Large_Display.jpg',
       description: 'Drainage plant pot for small plants',
       printTime: '2-3 hours',
       material: 'PLA'
@@ -70,9 +58,7 @@ export default function QuickPrints() {
     {
       id: 'desk-organizer',
       title: 'Desk Organizer',
-      price: 95,
-      currency: 'NAD',
-      image: 'https://cdn.thingiverse.com/assets/desk-organizer.jpg',
+      image: 'https://cdn.thingiverse.com/renders/1c/6e/4a/5f/42/Large_Display.jpg',
       description: 'Multi-compartment desk organizer',
       printTime: '3-4 hours',
       material: 'PLA'
@@ -80,9 +66,7 @@ export default function QuickPrints() {
     {
       id: 'battery-holder',
       title: 'Battery Holder',
-      price: 40,
-      currency: 'NAD',
-      image: 'https://cdn.thingiverse.com/assets/battery-holder.jpg',
+      image: 'https://cdn.thingiverse.com/renders/3b/9d/7e/c1/1c/Large_Display.jpg',
       description: 'Organize AA and AAA batteries',
       printTime: '1 hour',
       material: 'PLA'
@@ -90,9 +74,7 @@ export default function QuickPrints() {
     {
       id: 'cable-organizer',
       title: 'Cable Organizer',
-      price: 85,
-      currency: 'NAD',
-      image: 'https://cdn.thingiverse.com/assets/cable-organizer.jpg',
+      image: 'https://cdn.thingiverse.com/renders/6f/4a/2d/b8/3a/Large_Display.jpg',
       description: 'Desktop cable management solution',
       printTime: '2-3 hours',
       material: 'PLA'
@@ -100,7 +82,7 @@ export default function QuickPrints() {
   ];
 
   const handleOrderClick = (item: QuickPrint) => {
-    const message = `Hi, I'm interested in the ${item.title} (NAD ${item.price})`;
+    const message = `Hi, I'm interested in the ${item.title}`;
     window.open(`https://wa.me/264836750117?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -120,7 +102,7 @@ export default function QuickPrints() {
             <Zap className="w-6 h-6 text-[#36c1b3]" />
           </div>
           <p className="section-intro">
-            Pre-designed items under NAD 100 - ready to print! No quotes needed, just order via WhatsApp.
+            Ready-to-print designs - just order via WhatsApp and we'll print it for you!
           </p>
         </motion.div>
 
@@ -147,10 +129,6 @@ export default function QuickPrints() {
                     target.style.display = 'none';
                   }}
                 />
-                {/* Price Badge */}
-                <div className="absolute top-4 right-4 bg-[#36c1b3] text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
-                  NAD {item.price}
-                </div>
               </div>
 
               {/* Content */}
@@ -176,7 +154,7 @@ export default function QuickPrints() {
                   className="w-full btn-apple btn-primary flex items-center justify-center gap-2 py-2"
                 >
                   <ShoppingCart className="w-4 h-4" />
-                  Order Now
+                  Get Quote
                 </button>
               </div>
             </motion.div>
@@ -192,15 +170,15 @@ export default function QuickPrints() {
           className="bg-gradient-to-r from-[#36c1b3]/10 to-[#36c1b3]/5 rounded-3xl p-8 max-w-3xl mx-auto text-center"
         >
           <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-4">
-            Ready to Go! 🚀
+            Ready to Print! 🚀
           </h3>
           <p className="text-[#86868b] mb-6 leading-relaxed">
-            All our Quick Prints are pre-configured and ready for immediate printing. Simply select your item, click "Order Now", and we'll print and deliver it to you as soon as possible!
+            Found something you like? Simply click "Get Quote" and send us a message on WhatsApp. We'll calculate the exact cost based on your specifications and print it for you!
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-white rounded-2xl p-4">
               <div className="text-3xl mb-2">📦</div>
-              <p className="text-sm font-medium text-[#1d1d1f]">Same-Day Printing</p>
+              <p className="text-sm font-medium text-[#1d1d1f]">Fast Printing</p>
             </div>
             <div className="bg-white rounded-2xl p-4">
               <div className="text-3xl mb-2">💚</div>
@@ -213,7 +191,7 @@ export default function QuickPrints() {
           </div>
         </motion.div>
 
-        {/* Custom Order CTA */}
+        {/* Custom Design CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -222,7 +200,7 @@ export default function QuickPrints() {
           className="mt-12 text-center"
         >
           <p className="text-[#86868b] mb-6">
-            Don't see what you're looking for? We can custom-design and print anything you want!
+            Have a custom design in mind? We can help bring your ideas to life!
           </p>
           <a
             href="https://wa.me/264836750117?text=Hi%2C%20I%20have%20a%20custom%203D%20printing%20project"

@@ -29,7 +29,7 @@ export default function ThingiverseBrowser() {
       url: 'https://www.thingiverse.com/search?q=phone+stand&type=things&sort=relevant',
       thumbnail: '📱',
       likes: 5400,
-      imageUrl: 'https://cdn.thingiverse.com/assets/1e/34/b5/7f/82/Screen_Shot_2017-06-06_at_3.46.31_PM.png'
+      imageUrl: 'https://cdn.thingiverse.com/renders/4e/15/04/ef/16/Large_Display.jpg'
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export default function ThingiverseBrowser() {
       url: 'https://www.thingiverse.com/search?q=cable+organizer&type=things&sort=relevant',
       thumbnail: '🔌',
       likes: 3200,
-      imageUrl: 'https://cdn.thingiverse.com/assets/2f/51/54/f3/1b/Large_Display.jpg'
+      imageUrl: 'https://cdn.thingiverse.com/renders/e5/2c/5b/f3/1b/Large_Display.jpg'
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ export default function ThingiverseBrowser() {
       url: 'https://www.thingiverse.com/search?q=plant+pot&type=things&sort=relevant',
       thumbnail: '🌱',
       likes: 2800,
-      imageUrl: 'https://cdn.thingiverse.com/assets/7c/fa/4f/90/f4/large_display.jpg'
+      imageUrl: 'https://cdn.thingiverse.com/renders/5d/8f/2b/7a/f4/Large_Display.jpg'
     },
     {
       id: 4,
@@ -59,7 +59,7 @@ export default function ThingiverseBrowser() {
       url: 'https://www.thingiverse.com/search?q=desk+organizer&type=things&sort=relevant',
       thumbnail: '📚',
       likes: 4100,
-      imageUrl: 'https://cdn.thingiverse.com/assets/07/63/54/75/42/large_display.jpg'
+      imageUrl: 'https://cdn.thingiverse.com/renders/1c/6e/4a/5f/42/Large_Display.jpg'
     },
     {
       id: 5,
@@ -69,7 +69,7 @@ export default function ThingiverseBrowser() {
       url: 'https://www.thingiverse.com/search?q=door+hanger&type=things&sort=relevant',
       thumbnail: '🚪',
       likes: 1900,
-      imageUrl: 'https://cdn.thingiverse.com/assets/0f/47/a1/0a/92/large_display.jpg'
+      imageUrl: 'https://cdn.thingiverse.com/renders/7f/3c/1a/9e/92/Large_Display.jpg'
     },
     {
       id: 6,
@@ -79,7 +79,7 @@ export default function ThingiverseBrowser() {
       url: 'https://www.thingiverse.com/search?q=pen+holder&type=things&sort=relevant',
       thumbnail: '✏️',
       likes: 3600,
-      imageUrl: 'https://cdn.thingiverse.com/assets/87/ba/3d/c0/2f/large_display.jpg'
+      imageUrl: 'https://cdn.thingiverse.com/renders/2a/4b/8c/d0/2f/Large_Display.jpg'
     }
   ]);
 
