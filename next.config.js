@@ -14,6 +14,7 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   images: { unoptimized: true },
+  skipTrailingSlashRedirect: true,
 };
 
 module.exports = nextConfig;
