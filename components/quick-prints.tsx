@@ -1,13 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { ShoppingCart, Zap } from 'lucide-react';
 
 interface QuickPrint {
   id: string;
   title: string;
-  image: string;
+  emoji: string;
   description: string;
   printTime: string;
   material: string;
@@ -18,7 +17,7 @@ export default function QuickPrints() {
     {
       id: 'phone-stand',
       title: 'Phone Stand',
-      image: 'https://cdn.thingiverse.com/renders/4e/15/04/ef/16/Large_Display.jpg',
+      emoji: '📱',
       description: 'Adjustable phone stand for desk and streaming',
       printTime: '2-3 hours',
       material: 'PLA'
@@ -26,7 +25,7 @@ export default function QuickPrints() {
     {
       id: 'cable-clip',
       title: 'Cable Clips',
-      image: 'https://cdn.thingiverse.com/renders/e5/2c/5b/f3/1b/Large_Display.jpg',
+      emoji: '🔌',
       description: 'Keep your cables organized and tidy',
       printTime: '1-2 hours',
       material: 'PLA'
@@ -34,7 +33,7 @@ export default function QuickPrints() {
     {
       id: 'pen-holder',
       title: 'Pen Holder',
-      image: 'https://cdn.thingiverse.com/renders/2a/4b/8c/d0/2f/Large_Display.jpg',
+      emoji: '✏️',
       description: 'Desktop organizer for pens and pencils',
       printTime: '2 hours',
       material: 'PLA'
@@ -42,7 +41,7 @@ export default function QuickPrints() {
     {
       id: 'door-hanger',
       title: 'Door Hanger',
-      image: 'https://cdn.thingiverse.com/renders/7f/3c/1a/9e/92/Large_Display.jpg',
+      emoji: '🚪',
       description: 'Customizable door hanger for any message',
       printTime: '1-2 hours',
       material: 'PLA'
@@ -50,7 +49,7 @@ export default function QuickPrints() {
     {
       id: 'plant-pot-small',
       title: 'Plant Pot',
-      image: 'https://cdn.thingiverse.com/renders/5d/8f/2b/7a/f4/Large_Display.jpg',
+      emoji: '🌱',
       description: 'Drainage plant pot for small plants',
       printTime: '2-3 hours',
       material: 'PLA'
@@ -58,7 +57,7 @@ export default function QuickPrints() {
     {
       id: 'desk-organizer',
       title: 'Desk Organizer',
-      image: 'https://cdn.thingiverse.com/renders/1c/6e/4a/5f/42/Large_Display.jpg',
+      emoji: '📚',
       description: 'Multi-compartment desk organizer',
       printTime: '3-4 hours',
       material: 'PLA'
@@ -66,7 +65,7 @@ export default function QuickPrints() {
     {
       id: 'battery-holder',
       title: 'Battery Holder',
-      image: 'https://cdn.thingiverse.com/renders/3b/9d/7e/c1/1c/Large_Display.jpg',
+      emoji: '🔋',
       description: 'Organize AA and AAA batteries',
       printTime: '1 hour',
       material: 'PLA'
@@ -74,7 +73,7 @@ export default function QuickPrints() {
     {
       id: 'cable-organizer',
       title: 'Cable Organizer',
-      image: 'https://cdn.thingiverse.com/renders/6f/4a/2d/b8/3a/Large_Display.jpg',
+      emoji: '🎯',
       description: 'Desktop cable management solution',
       printTime: '2-3 hours',
       material: 'PLA'
@@ -117,18 +116,9 @@ export default function QuickPrints() {
               transition={{ duration: 0.6, delay: index * 0.05 }}
               className="bg-[#f5f5f7] rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col group"
             >
-              {/* Image Container */}
-              <div className="relative h-48 bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                  }}
-                />
+              {/* Emoji Container */}
+              <div className="relative h-48 bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <span className="text-6xl">{item.emoji}</span>
               </div>
 
               {/* Content */}
