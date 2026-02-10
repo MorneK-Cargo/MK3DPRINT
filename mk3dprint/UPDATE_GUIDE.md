@@ -73,7 +73,7 @@
 6. Re-upload to Netlify
 
 **Common things to update:**
-- Phone: `+264 83 429 0501`
+- Phone: `+264 83 675 0117`
 - Email: `info@scanform3dp.com`
 - Address: `Windhoek, Namibia`
 

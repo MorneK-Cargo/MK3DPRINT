@@ -30,7 +30,7 @@ Update your email address in `index.html`:
 
 ## 📞 Contact
 
-WhatsApp: +264 83 429 0501
+WhatsApp: +264 83 675 0117
 Location: Windhoek, Namibia
 
 ---

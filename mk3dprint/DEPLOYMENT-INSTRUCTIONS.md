@@ -337,7 +337,7 @@ If you encounter any issues during deployment:
 
 For urgent issues, contact via:
 - Email: info@mk3dprint.org
-- WhatsApp: +264 83 429 0501
+- WhatsApp: +264 83 675 0117
 
 ---
 
