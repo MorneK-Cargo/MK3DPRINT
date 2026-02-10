@@ -78,7 +78,7 @@ export default function ShopSection() {
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-[#36c1b3]">{product.price}</span>
                     <a
-                      href={`https://wa.me/264834290501?text=Hi%2C%20I%27m%20interested%20in%20${product.whatsapp}`}
+                      href={`https://wa.me/264836750117?text=Hi%2C%20I%27m%20interested%20in%20${product.whatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-apple btn-primary text-sm px-4 py-2"
@@ -138,7 +138,7 @@ export default function ShopSection() {
               <div className="flex items-center justify-between">
                 <span className="text-3xl font-bold text-[#36c1b3]">{selectedProduct.price}</span>
                 <a
-                  href={`https://wa.me/264834290501?text=Hi%2C%20I%27m%20interested%20in%20${selectedProduct.whatsapp}`}
+                  href={`https://wa.me/264836750117?text=Hi%2C%20I%27m%20interested%20in%20${selectedProduct.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-apple btn-primary px-6 py-3"

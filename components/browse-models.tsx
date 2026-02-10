@@ -182,7 +182,7 @@ export default function BrowseModels() {
           <div className="text-center mt-12">
             <p className="text-[#86868b]">
               Questions?{' '}
-              <a href="https://wa.me/264834290501" className="text-[#36c1b3] font-semibold hover:underline">
+              <a href="https://wa.me/264836750117" className="text-[#36c1b3] font-semibold hover:underline">
                 Chat with us on WhatsApp
               </a>{' '}
               or{' '}
