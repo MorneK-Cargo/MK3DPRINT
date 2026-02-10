@@ -1,6 +1,0 @@
-# Redirect HTTP to HTTPS
-http://mk3dprint.org/*  https://mk3dprint.org/:splat  301!
-http://www.mk3dprint.org/*  https://mk3dprint.org/:splat  301!
-
-# Redirect www to non-www
-https://www.mk3dprint.org/*  https://mk3dprint.org/:splat  301!
