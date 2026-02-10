@@ -1,13 +1,8 @@
-# Netlify Configuration for mk3dprint.org - Next.js App Router
+# Netlify Configuration for mk3dprint.org - Next.js Static Export
 
 [build]
-  command = "npm run build"
-  functions = ".next/server"
-  publish = ".next/static"
-
-# Use Netlify's built-in Next.js support
-[buildsettings]
-  framework = "nextjs"
+  command = "npm install && npm run build"
+  publish = "out"
 
 [[redirects]]
   from = "http://*"
