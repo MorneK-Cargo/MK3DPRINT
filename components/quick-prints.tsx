@@ -20,7 +20,7 @@ export default function QuickPrints() {
       id: 'phone-stand',
       title: 'Phone Stand',
       emoji: '📱',
-      image: 'https://images.unsplash.com/photo-1586253408a59e4c5d51ba01fe88b51c8e24f0de?w=400&h=300&fit=crop',
+      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Phone+Stand',
       description: 'Adjustable phone stand for desk and streaming',
       printTime: '2-3 hours',
       material: 'PLA'
@@ -29,7 +29,7 @@ export default function QuickPrints() {
       id: 'cable-clip',
       title: 'Cable Clips',
       emoji: '🔌',
-      image: 'https://images.unsplash.com/photo-1621259382019-6f41ee1f2739?w=400&h=300&fit=crop',
+      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Cable+Clips',
       description: 'Keep your cables organized and tidy',
       printTime: '1-2 hours',
       material: 'PLA'
@@ -38,7 +38,7 @@ export default function QuickPrints() {
       id: 'pen-holder',
       title: 'Pen Holder',
       emoji: '✏️',
-      image: 'https://images.unsplash.com/photo-1589939705882-02ac192626d0?w=400&h=300&fit=crop',
+      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Pen+Holder',
       description: 'Desktop organizer for pens and pencils',
       printTime: '2 hours',
       material: 'PLA'
@@ -47,7 +47,7 @@ export default function QuickPrints() {
       id: 'door-hanger',
       title: 'Door Hanger',
       emoji: '🚪',
-      image: 'https://images.unsplash.com/photo-1564399579883-451a5f44f0c5?w=400&h=300&fit=crop',
+      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Door+Hanger',
       description: 'Customizable door hanger for any message',
       printTime: '1-2 hours',
       material: 'PLA'
@@ -56,7 +56,7 @@ export default function QuickPrints() {
       id: 'plant-pot-small',
       title: 'Plant Pot',
       emoji: '🌱',
-      image: 'https://images.unsplash.com/photo-1599599810694-e19ad3087f2f?w=400&h=300&fit=crop',
+      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Plant+Pot',
       description: 'Drainage plant pot for small plants',
       printTime: '2-3 hours',
       material: 'PLA'
@@ -65,7 +65,7 @@ export default function QuickPrints() {
       id: 'desk-organizer',
       title: 'Desk Organizer',
       emoji: '📚',
-      image: 'https://images.unsplash.com/photo-1584932917843-c50d5b47b47e?w=400&h=300&fit=crop',
+      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Desk+Organizer',
       description: 'Multi-compartment desk organizer',
       printTime: '3-4 hours',
       material: 'PLA'
@@ -74,7 +74,7 @@ export default function QuickPrints() {
       id: 'battery-holder',
       title: 'Battery Holder',
       emoji: '🔋',
-      image: 'https://images.unsplash.com/photo-1619983081563-430f63602796?w=400&h=300&fit=crop',
+      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Battery+Holder',
       description: 'Organize AA and AAA batteries',
       printTime: '1 hour',
       material: 'PLA'
@@ -83,7 +83,7 @@ export default function QuickPrints() {
       id: 'cable-organizer',
       title: 'Cable Organizer',
       emoji: '🎯',
-      image: 'https://images.unsplash.com/photo-1552512737d65c1594968a6e1daa1f74ce1dd0b12?w=400&h=300&fit=crop',
+      image: 'https://via.placeholder.com/400x300/36c1b3/ffffff?text=Cable+Organizer',
       description: 'Desktop cable management solution',
       printTime: '2-3 hours',
       material: 'PLA'
