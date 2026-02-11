@@ -6,6 +6,7 @@ import ShopSection from '@/components/shop-section';
 import Gallery from '@/components/gallery';
 import BrowseModels from '@/components/browse-models';
 import TrendingPrints from '@/components/trending-prints';
+import FeaturedProducts from '@/components/featured-products';
 import ImportsSection from '@/components/imports-section';
 import AboutSection from '@/components/about-section';
 import QuoteCalculator from '@/components/quote-calculator';
@@ -20,6 +21,7 @@ export default function Home() {
       <Services />
       <BrowseModels />
       <TrendingPrints />
+      <FeaturedProducts />
       <ShopSection />
       <ScanningSection />
       <ImportsSection />

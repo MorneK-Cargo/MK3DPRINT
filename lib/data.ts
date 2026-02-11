@@ -192,6 +192,25 @@ export const aboutInfo = {
   ]
 };
 
+export const featuredProducts = [
+  {
+    id: 'darth-vader-monitor',
+    title: 'Darth Vader Monitor Figurine',
+    price: 'N$ 150',
+    image: '/images/figurines/darth-vader.jpg',
+    description: 'Premium Darth Vader collectible figurine - perfect desk companion',
+    whatsapp: 'Darth%20Vader%20Monitor%20Figurine'
+  },
+  {
+    id: 'stormtrooper-figurine',
+    title: 'Stormtrooper Figurine',
+    price: 'N$ 150',
+    image: '/images/figurines/stormtrooper.jpg',
+    description: 'Classic Stormtrooper figurine - premium quality',
+    whatsapp: 'Stormtrooper%20Figurine'
+  }
+];
+
 export const contactInfo = {
   email: 'info@mk3dprint.org',
   whatsapp: '+264 83 675 0117',
