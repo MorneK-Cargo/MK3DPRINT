@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Search, ExternalLink, Check } from 'lucide-react';
-import { platforms } from '@/lib/data';
+import { Search } from 'lucide-react';
 import Link from 'next/link';
 
 export default function BrowseModels() {
@@ -56,65 +55,19 @@ export default function BrowseModels() {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for 3D models (e.g., phone stand, vase, gear...)"
               className="w-full pl-12 pr-4 py-4 bg-[#f5f5f7] rounded-xl border-2 border-transparent focus:border-[#36c1b3] transition-colors text-[#1d1d1f]"
-              onKeyDown={(e) => e.key === 'Enter' && searchPlatform('yeggi')}
+              onKeyDown={(e) => e.key === 'Enter' && searchPlatform('makerworld')}
             />
           </div>
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex justify-center">
             <button
-              onClick={() => searchPlatform('yeggi')}
+              onClick={() => searchPlatform('makerworld')}
               className="btn-apple btn-primary px-6 py-3 flex items-center gap-2"
             >
               <Search className="w-4 h-4" />
-              Search All Sites (Yeggi)
-            </button>
-            <button
-              onClick={() => searchPlatform('printables')}
-              className="btn-apple btn-secondary px-6 py-3"
-            >
-              Printables
-            </button>
-            <button
-              onClick={() => searchPlatform('makerworld')}
-              className="btn-apple btn-secondary px-6 py-3"
-            >
-              MakerWorld
+              Search MakerWorld
             </button>
           </div>
         </motion.div>
-
-        {/* Platform Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {platforms.map((platform, index) => (
-            <motion.div
-              key={platform.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-3">{platform.name}</h3>
-              <p className="text-[#86868b] mb-6">{platform.description}</p>
-              <ul className="space-y-2 mb-6">
-                {platform.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-[#1d1d1f]">
-                    <Check className="w-4 h-4 text-[#36c1b3]" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={platform.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-apple btn-primary w-full flex items-center justify-center gap-2"
-              >
-                Visit {platform.name}
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </motion.div>
-          ))}
-        </div>
 
         {/* CTA */}
         <motion.div
@@ -182,7 +135,7 @@ export default function BrowseModels() {
           <div className="text-center mt-12">
             <p className="text-[#86868b]">
               Questions?{' '}
-              <a href="https://wa.me/264834290501" className="text-[#36c1b3] font-semibold hover:underline">
+              <a href="https://wa.me/264836750117" className="text-[#36c1b3] font-semibold hover:underline">
                 Chat with us on WhatsApp
               </a>{' '}
               or{' '}
