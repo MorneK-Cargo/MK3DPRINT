@@ -7,7 +7,7 @@ import { featuredProducts } from '@/lib/data';
 
 export default function FeaturedProducts() {
   const handleWhatsApp = (product: typeof featuredProducts[0]) => {
-    const message = `Hi! I'm interested in the ${product.title} for N$ 150. Can you provide more details?`;
+    const message = `Hi! I'm interested in the ${product.title} for ${product.price}. Can you provide more details?`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/264836750117?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
@@ -58,9 +58,9 @@ export default function FeaturedProducts() {
                 <Image
                   src={product.image}
                   alt={product.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = '/images/placeholder-3d.svg';
