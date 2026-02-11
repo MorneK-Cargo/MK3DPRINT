@@ -44,7 +44,11 @@ export const shopProducts = [
     id: 'sample-item-1',
     title: 'Drill Dust Collector',
     price: 'N$ 35',
-    images: [],
+    images: [
+      '/images/products/sample-item-1/image1.jpg',
+      '/images/products/sample-item-1/image2.jpg',
+      '/images/products/sample-item-1/image3.jpg'
+    ],
     description: 'What happens in the wall... stays OFF the floor! This genius dust catcher saves you from the "oops I drilled without a vacuum again" dance. No more explaining to your spouse why there\'s concrete dust on the cat. Works for both lefties and righties because discrimination is SO last century. 360° protection from your own mess!',
     whatsapp: 'Drill Dust Collector'
   },
@@ -52,7 +56,11 @@ export const shopProducts = [
     id: 'sample-item-2',
     title: 'Screw Measuring Tool, M2-M10, 4-120mm',
     price: 'N$ 50',
-    images: [],
+    images: [
+      '/images/products/sample-item-2/image1.jpg',
+      '/images/products/sample-item-2/image2.jpg',
+      '/images/products/sample-item-2/image3.jpg'
+    ],
     description: 'End the "is this M6 or M8?" guessing game forever! Tired of making three trips to the hardware store because you SWORE it was the right size? This magical ruler identifies M2-M10 screws from 4-120mm instantly.',
     whatsapp: 'Screw%20Measuring%20Tool'
   },
@@ -60,7 +68,11 @@ export const shopProducts = [
     id: 'sample-item-3',
     title: 'Door Hanger - Downloading',
     price: 'N$ 45',
-    images: [],
+    images: [
+      '/images/products/sample-item-3/image1.jpg',
+      '/images/products/sample-item-3/image2.jpg',
+      '/images/products/sample-item-3/image3.jpg'
+    ],
     description: 'The perfect bathroom door hanger for those extended "downloads". Hang this on your door and everyone will know you\'re in the middle of an important data transfer. Features a progress bar that\'s way more honest than your web browser\'s.',
     whatsapp: 'Door%20Hanger%20Downloading'
   },
@@ -68,7 +80,11 @@ export const shopProducts = [
     id: 'sample-item-4',
     title: 'Battery Holder AA & AAA',
     price: 'N$ 40',
-    images: [],
+    images: [
+      '/images/products/sample-item-4/image1.jpg',
+      '/images/products/sample-item-4/image2.jpg',
+      '/images/products/sample-item-4/image3.jpg'
+    ],
     description: 'Stop the battery chaos! Keep your AA and AAA batteries neatly organized in one convenient holder. No more digging through junk drawers or testing dead batteries. Simple, practical, and keeps you organized.',
     whatsapp: 'Battery%20Holder'
   },
@@ -76,7 +92,11 @@ export const shopProducts = [
     id: 'sample-item-5',
     title: 'Gravity Towel Hook',
     price: 'N$ 25',
-    images: [],
+    images: [
+      '/images/products/sample-item-5/image1.jpg',
+      '/images/products/sample-item-5/image2.jpg',
+      '/images/products/sample-item-5/image3.jpg'
+    ],
     description: 'Defying physics, one towel at a time! This hook uses the ancient power of gravity (discovered by that apple guy) to keep your towels exactly where you hung them. No screws, no anchors, no "oops I drilled into a water pipe" moments.',
     whatsapp: 'Gravity%20Towel%20Hook'
   }
