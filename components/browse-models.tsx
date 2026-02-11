@@ -55,16 +55,16 @@ export default function BrowseModels() {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for 3D models (e.g., phone stand, vase, gear...)"
               className="w-full pl-12 pr-4 py-4 bg-[#f5f5f7] rounded-xl border-2 border-transparent focus:border-[#36c1b3] transition-colors text-[#1d1d1f]"
-              onKeyDown={(e) => e.key === 'Enter' && searchPlatform('makerworld')}
+              onKeyDown={(e) => e.key === 'Enter' && searchPlatform('printables')}
             />
           </div>
           <div className="flex justify-center">
             <button
-              onClick={() => searchPlatform('makerworld')}
+              onClick={() => searchPlatform('printables')}
               className="btn-apple btn-primary px-6 py-3 flex items-center gap-2"
             >
               <Search className="w-4 h-4" />
-              Search MakerWorld
+              Search Printables
             </button>
           </div>
         </motion.div>
