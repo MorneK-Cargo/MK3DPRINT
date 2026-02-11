@@ -197,7 +197,7 @@ export const featuredProducts = [
     id: 'darth-vader-monitor',
     title: 'Darth Vader Monitor Figurine',
     price: 'N$ 100',
-    image: '/images/figurines/darth-vader.jpg',
+    image: 'https://cdn.jsdelivr.net/gh/MorneK-Cargo/mk3dprint@main/public/images/figurines/darth-vader.jpg',
     description: 'Premium Darth Vader collectible figurine - perfect desk companion',
     whatsapp: 'Darth%20Vader%20Monitor%20Figurine'
   },
@@ -205,7 +205,7 @@ export const featuredProducts = [
     id: 'stormtrooper-figurine',
     title: 'Stormtrooper Figurine',
     price: 'N$ 100',
-    image: '/images/figurines/stormtrooper.jpg',
+    image: 'https://cdn.jsdelivr.net/gh/MorneK-Cargo/mk3dprint@main/public/images/figurines/stormtrooper.jpg',
     description: 'Classic Stormtrooper figurine - premium quality',
     whatsapp: 'Stormtrooper%20Figurine'
   }
