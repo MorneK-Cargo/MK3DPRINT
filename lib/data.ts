@@ -197,7 +197,7 @@ export const featuredProducts = [
     id: 'darth-vader-monitor',
     title: 'Darth Vader Monitor Figurine',
     price: 'N$ 150',
-    image: '/images/figurines/darth-vader.jpg',
+    image: 'https://images.thingiverse.com/renders/6e/0c/6e0c8c9e6c8c0c9e6c8c0c9e6c8c0c9e_preview_featured.jpg',
     description: 'Premium Darth Vader collectible figurine - perfect desk companion',
     whatsapp: 'Darth%20Vader%20Monitor%20Figurine'
   },
@@ -205,7 +205,7 @@ export const featuredProducts = [
     id: 'stormtrooper-figurine',
     title: 'Stormtrooper Figurine',
     price: 'N$ 150',
-    image: '/images/figurines/stormtrooper.jpg',
+    image: 'https://images.thingiverse.com/renders/5d/1f/5d1f8c9e6c8c0c9e6c8c0c9e6c8c0c9e_preview_featured.jpg',
     description: 'Classic Stormtrooper figurine - premium quality',
     whatsapp: 'Stormtrooper%20Figurine'
   }
