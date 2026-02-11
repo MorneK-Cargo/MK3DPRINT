@@ -60,6 +60,7 @@ export default function FeaturedProducts() {
                   alt={product.title}
                   width={400}
                   height={400}
+                  unoptimized={product.image.startsWith('http')}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
