@@ -14,7 +14,7 @@ export default function BrowseModels() {
     const urls: Record<string, string> = {
       'yeggi': `https://www.yeggi.com/q/${encodeURIComponent(searchQuery)}/`,
       'printables': `https://www.printables.com/search/models?q=${encodeURIComponent(searchQuery)}`,
-      'makerworld': `https://makerworld.com/en/search/model?keyword=${encodeURIComponent(searchQuery)}`
+      'makerworld': `https://makerworld.com/en/search?q=${encodeURIComponent(searchQuery)}`
     };
     
     if (urls[platform]) {
