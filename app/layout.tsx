@@ -25,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <script src="https://apps.abacus.ai/chatllm/appllm-lib.js"></script>
       </head>
       <body className="antialiased">
