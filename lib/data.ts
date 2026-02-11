@@ -174,7 +174,7 @@ export const aboutInfo = {
 
 export const contactInfo = {
   email: 'info@mk3dprint.org',
-  whatsapp: '+264 83 675 0117',
-  whatsappLink: 'https://wa.me/264836750117',
+  whatsapp: '+264 83 429 0501',
+  whatsappLink: 'https://wa.me/264834290501',
   location: 'Windhoek, Namibia'
 };

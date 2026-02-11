@@ -45,7 +45,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
-            <Link href="#thingiverse-browser" className="btn-apple btn-primary text-lg px-8 py-4">
+            <Link href="#browse-models" className="btn-apple btn-primary text-lg px-8 py-4">
               Browse 3D Models
             </Link>
             <Link href="#quote" className="btn-apple btn-secondary text-lg px-8 py-4">
@@ -78,16 +78,16 @@ export default function Hero() {
             className="mt-16 flex flex-wrap justify-center gap-4"
           >
             <Link
-              href="#quick-prints"
-              className="px-6 py-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all text-[#1d1d1f] font-medium"
-            >
-              Quick Prints
-            </Link>
-            <Link
               href="#scanning"
               className="px-6 py-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all text-[#1d1d1f] font-medium"
             >
               3D Scanning
+            </Link>
+            <Link
+              href="#shop"
+              className="px-6 py-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all text-[#1d1d1f] font-medium"
+            >
+              3D Printing
             </Link>
             <Link
               href="#imports"

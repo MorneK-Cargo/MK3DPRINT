@@ -1,0 +1,102 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║          🚀 DEPLOY YOUR SITE IN 2 MINUTES - DO THIS NOW                  ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+YOUR SITE IS COMPLETELY READY. FOLLOW THESE EXACT STEPS:
+
+════════════════════════════════════════════════════════════════════════════
+STEP 1: GO TO NETLIFY (30 seconds)
+════════════════════════════════════════════════════════════════════════════
+
+Open in browser: https://app.netlify.com
+
+Sign in with your GitHub account.
+
+════════════════════════════════════════════════════════════════════════════
+STEP 2: ADD NEW SITE (1 minute)
+════════════════════════════════════════════════════════════════════════════
+
+Click: "Add new site" → "Import an existing project"
+
+Select: "GitHub" 
+
+Authorize Netlify if asked.
+
+Choose repository: MorneK-Cargo/MK3DPRINT
+
+Click: "Deploy site"
+
+════════════════════════════════════════════════════════════════════════════
+STEP 3: WAIT FOR BUILD (2-3 minutes)
+════════════════════════════════════════════════════════════════════════════
+
+Netlify will automatically:
+  ✓ Detect build settings from netlify.toml
+  ✓ Run: npm run build
+  ✓ Deploy to CDN
+
+Watch the build logs. You should see:
+  ✓ "Build complete"
+  ✓ Site URL assigned (xxxxx.netlify.app)
+
+════════════════════════════════════════════════════════════════════════════
+STEP 4: UPDATE CLOUDFLARE DNS (2 minutes)
+════════════════════════════════════════════════════════════════════════════
+
+1. Go to: https://dash.cloudflare.com
+2. Select domain: mk3dprint.org
+3. Go to: DNS → Records
+4. Find the CNAME or A record pointing to old host
+5. Click "Edit"
+6. Change to:
+   Type: CNAME
+   Name: mk3dprint.org
+   Target: [YOUR_NETLIFY_URL].netlify.app
+   (Replace [YOUR_NETLIFY_URL] with the URL from Netlify)
+7. Click "Save"
+
+════════════════════════════════════════════════════════════════════════════
+STEP 5: VERIFY (1 minute)
+════════════════════════════════════════════════════════════════════════════
+
+Wait 5 minutes for DNS propagation.
+
+Then open: https://mk3dprint.org
+
+You should see your NEW site with the Abacus design!
+
+Check:
+  ✓ Homepage loads
+  ✓ All sections visible
+  ✓ Lock icon (HTTPS) visible
+  ✓ Images display
+  ✓ Mobile responsive
+
+THAT'S IT! YOU'RE DONE! 🎉
+
+════════════════════════════════════════════════════════════════════════════
+WHAT IF SOMETHING GOES WRONG?
+════════════════════════════════════════════════════════════════════════════
+
+Site shows old version?
+  → Hard refresh: Cmd+Shift+R or Ctrl+Shift+R
+  → Wait 10 more minutes
+
+Build failed?
+  → Check Netlify build logs for error
+  → Make sure netlify.toml is in repo root
+  → See NETLIFY_DEPLOYMENT.md for help
+
+Images not loading?
+  → Press F12 to check console for errors
+  → Verify Cloudflare isn't blocking
+
+════════════════════════════════════════════════════════════════════════════
+
+Ready? Open https://app.netlify.com and start!
+
+Your site will be LIVE in ~10-15 minutes total! 🚀
+
+════════════════════════════════════════════════════════════════════════════
