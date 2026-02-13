@@ -3,6 +3,7 @@ import Hero from '@/components/hero';
 import FeaturedProducts from '@/components/featured-products';
 import Gallery from '@/components/gallery';
 import AboutSection from '@/components/about-section';
+import QuoteCalculator from '@/components/quote-calculator';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 
@@ -19,6 +20,7 @@ export default function Home() {
       <FeaturedProducts />
       <Gallery />
       <AboutSection />
+      <QuoteCalculator />
       <Contact />
       <Footer />
     </main>
