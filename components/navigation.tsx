@@ -7,16 +7,13 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
-  { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Services' },
-  { href: '#browse-models', label: 'Find Models' },
-  { href: '#shop', label: 'Shop' },
+  { href: '/', label: 'Home' },
   { href: '/3d-scanning', label: '3D Scanning' },
-  { href: '#imports', label: 'Imports' },
-  { href: '#gallery', label: 'Gallery' },
-  { href: '#about', label: 'About' },
-  { href: '#quote', label: 'Quote' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/imports', label: 'Imports' },
+  { href: '/shop', label: 'Shop' },
+  { href: '/#about', label: 'About' },
+  { href: '/quote', label: 'Quote' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export default function Navigation() {

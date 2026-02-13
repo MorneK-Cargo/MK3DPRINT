@@ -1,31 +1,24 @@
 import Navigation from '@/components/navigation';
 import Hero from '@/components/hero';
-import Services from '@/components/services';
-import ScanningSection from '@/components/scanning-section';
-import ShopSection from '@/components/shop-section';
-import Gallery from '@/components/gallery';
-import BrowseModels from '@/components/browse-models';
 import FeaturedProducts from '@/components/featured-products';
-import ImportsSection from '@/components/imports-section';
+import Gallery from '@/components/gallery';
 import AboutSection from '@/components/about-section';
-import QuoteCalculator from '@/components/quote-calculator';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
+
+export const metadata = {
+  title: 'MK 3D Printing - Precision 3D Printing in Windhoek',
+  description: 'Professional 3D printing services in Windhoek. High-quality 3D models and prints for manufacturing, prototyping, and more.',
+};
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Navigation />
       <Hero />
-      <Services />
-      <BrowseModels />
       <FeaturedProducts />
-      <ShopSection />
-      <ScanningSection />
-      <ImportsSection />
       <Gallery />
       <AboutSection />
-      <QuoteCalculator />
       <Contact />
       <Footer />
     </main>
