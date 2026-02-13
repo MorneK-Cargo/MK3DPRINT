@@ -69,33 +69,6 @@ export default function Hero() {
               <span className="text-[#36c1b3]">✓</span> Open
             </span>
           </motion.div>
-
-          {/* Service Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-16 flex flex-wrap justify-center gap-4"
-          >
-            <Link
-              href="#scanning"
-              className="px-6 py-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all text-[#1d1d1f] font-medium"
-            >
-              3D Scanning
-            </Link>
-            <Link
-              href="#shop"
-              className="px-6 py-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all text-[#1d1d1f] font-medium"
-            >
-              3D Printing
-            </Link>
-            <Link
-              href="#imports"
-              className="px-6 py-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all text-[#1d1d1f] font-medium"
-            >
-              Imports
-            </Link>
-          </motion.div>
         </div>
       </div>
     </section>

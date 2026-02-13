@@ -25,22 +25,58 @@ export default function ThingiversePopular() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl overflow-hidden shadow-lg bg-[#f5f5f7] w-full max-w-5xl mx-auto p-8 md:p-12"
+          className="rounded-2xl overflow-hidden shadow-lg w-full max-w-5xl mx-auto"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { title: 'Mechanical Design', count: '50K+', desc: 'Engineering components' },
-              { title: 'Miniatures', count: '30K+', desc: 'Collectibles & gaming' },
-              { title: 'Household', count: '45K+', desc: 'Practical objects' },
-              { title: 'Prototypes', count: '25K+', desc: 'Experimental designs' },
-              { title: 'Art & Fashion', count: '35K+', desc: 'Creative projects' },
-              { title: 'Replacement Parts', count: '28K+', desc: 'Fix & upgrade items' }
+              { 
+                title: 'Mechanical Design', 
+                desc: 'Engineering components',
+                image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop'
+              },
+              { 
+                title: 'Miniatures', 
+                desc: 'Collectibles & gaming',
+                image: 'https://images.unsplash.com/photo-1606664515524-2c3c2b1c9a34?w=400&h=300&fit=crop'
+              },
+              { 
+                title: 'Household', 
+                desc: 'Practical objects',
+                image: 'https://images.unsplash.com/photo-1532635255-c1a23266385d?w=400&h=300&fit=crop'
+              },
+              { 
+                title: 'Prototypes', 
+                desc: 'Experimental designs',
+                image: 'https://images.unsplash.com/photo-1581092195953-66302748bb9d?w=400&h=300&fit=crop'
+              },
+              { 
+                title: 'Art & Fashion', 
+                desc: 'Creative projects',
+                image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop'
+              },
+              { 
+                title: 'Replacement Parts', 
+                desc: 'Fix & upgrade items',
+                image: 'https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=400&h=300&fit=crop'
+              }
             ].map((category, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-6 text-center hover:shadow-md transition-shadow">
-                <div className="text-3xl font-bold text-[#36c1b3] mb-2">{category.count}</div>
-                <h4 className="font-semibold text-[#1d1d1f] mb-1">{category.title}</h4>
-                <p className="text-sm text-[#86868b]">{category.desc}</p>
-              </div>
+              <a 
+                key={idx} 
+                href="https://www.thingiverse.com/search?sort=popular"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-xl h-48 bg-[#e5e5ea]"
+              >
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-300 flex flex-col justify-end p-4 text-white">
+                  <h4 className="font-semibold text-lg mb-1">{category.title}</h4>
+                  <p className="text-sm text-white/90">{category.desc}</p>
+                </div>
+              </a>
             ))}
           </div>
         </motion.div>

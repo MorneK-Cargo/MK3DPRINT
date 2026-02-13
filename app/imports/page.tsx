@@ -13,63 +13,37 @@ export default function ImportsPage() {
     <main className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Hero Section - Matches 3D Scanning Page */}
-      <section className="relative pt-32 pb-20 px-4 bg-gradient-to-br from-white via-[#f5f5f7] to-white overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#36c1b3]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#36c1b3]/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-
-        <div className="container-apple relative z-10">
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center pt-16 bg-[#f5f5f7]">
+        <div className="container-apple py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#1d1d1f] mb-6">
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
               Global <span className="text-[#36c1b3]">Imports</span>
             </h1>
-
-            <p className="text-xl md:text-2xl text-[#86868b] mb-8 max-w-3xl mx-auto leading-relaxed">
-              Access premium products from Amazon, Walmart, and international retailers at significantly better prices than traditional courier services.
+            
+            <p className="text-xl md:text-2xl text-[#86868b] leading-relaxed mb-8 max-w-3xl mx-auto">
+              Access premium products from Amazon, Walmart, and international retailers at significantly better prices.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <a
-                href="#imports-products"
-                className="btn-apple btn-primary px-8 py-4 text-lg inline-flex items-center justify-center"
-              >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <a href="#imports-products" className="btn-apple btn-primary text-lg px-8 py-4">
                 Browse Imports
               </a>
-              <a
-                href="/#quote"
-                className="btn-apple btn-secondary px-8 py-4 text-lg"
-              >
+              <a href="/#quote" className="btn-apple btn-secondary text-lg px-8 py-4">
                 Request Quote
               </a>
             </div>
 
-            {/* Feature Cards */}
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-[#36c1b3]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🌍</span>
-                </div>
-                <h3 className="text-xl font-semibold text-[#1d1d1f] mb-2">Global Sources</h3>
-                <p className="text-[#86868b]">Access products from USA, Europe, and Asia retailers</p>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-[#36c1b3]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">💰</span>
-                </div>
-                <h3 className="text-xl font-semibold text-[#1d1d1f] mb-2">Save 30-50%</h3>
-                <p className="text-[#86868b]">Better pricing than direct international shipping</p>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-[#36c1b3]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">📦</span>
-                </div>
-                <h3 className="text-xl font-semibold text-[#1d1d1f] mb-2">Fast Delivery</h3>
-                <p className="text-[#86868b]">Consolidated shipments with expedited delivery options</p>
-              </div>
+            <div className="flex flex-wrap justify-center gap-8 text-[#86868b]">
+              <span className="flex items-center gap-2">
+                <span className="text-[#36c1b3]">✓</span> Global Sources
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="text-[#36c1b3]">✓</span> Save 30-50%
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="text-[#36c1b3]">✓</span> Fast Delivery
+              </span>
             </div>
           </div>
         </div>
