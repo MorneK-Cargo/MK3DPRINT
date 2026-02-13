@@ -1,8 +1,9 @@
 import Navigation from '@/components/navigation';
 import Hero from '@/components/hero';
 import FeaturedProducts from '@/components/featured-products';
+import TrendingModels from '@/components/trending-models';
 import Gallery from '@/components/gallery';
-import AboutSection from '@/components/about-section';
+import WhyWorkWithMe from '@/components/why-work-with-me';
 import QuoteCalculator from '@/components/quote-calculator';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
@@ -18,8 +19,9 @@ export default function Home() {
       <Navigation />
       <Hero />
       <FeaturedProducts />
+      <TrendingModels />
       <Gallery />
-      <AboutSection />
+      <WhyWorkWithMe />
       <QuoteCalculator />
       <Contact />
       <Footer />
