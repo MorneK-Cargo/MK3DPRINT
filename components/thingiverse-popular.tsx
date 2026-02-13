@@ -19,21 +19,30 @@ export default function ThingiversePopular() {
           </p>
         </motion.div>
 
-        {/* Thingiverse Popular Embed */}
+        {/* Thingiverse Popular Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl overflow-hidden shadow-lg bg-[#f5f5f7] aspect-video w-full max-w-5xl mx-auto"
+          className="rounded-2xl overflow-hidden shadow-lg bg-[#f5f5f7] w-full max-w-5xl mx-auto p-8 md:p-12"
         >
-          <iframe
-            src="https://www.thingiverse.com/"
-            title="Thingiverse Popular Models"
-            className="w-full h-full border-0"
-            loading="lazy"
-            style={{ minHeight: '600px' }}
-          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: 'Mechanical Design', count: '50K+', desc: 'Engineering components' },
+              { title: 'Miniatures', count: '30K+', desc: 'Collectibles & gaming' },
+              { title: 'Household', count: '45K+', desc: 'Practical objects' },
+              { title: 'Prototypes', count: '25K+', desc: 'Experimental designs' },
+              { title: 'Art & Fashion', count: '35K+', desc: 'Creative projects' },
+              { title: 'Replacement Parts', count: '28K+', desc: 'Fix & upgrade items' }
+            ].map((category, idx) => (
+              <div key={idx} className="bg-white rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+                <div className="text-3xl font-bold text-[#36c1b3] mb-2">{category.count}</div>
+                <h4 className="font-semibold text-[#1d1d1f] mb-1">{category.title}</h4>
+                <p className="text-sm text-[#86868b]">{category.desc}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Explore Thingiverse Button */}

@@ -15,51 +15,51 @@ interface ScanExample {
 const scanExamples: ScanExample[] = [
   {
     id: '1',
-    title: 'Mechanical Components',
-    category: 'Industrial',
-    description: 'Precision scanning of complex mechanical parts for reverse engineering and CAD modeling',
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=400&fit=crop',
-    capabilities: ['High precision', 'Complex geometry', 'Material analysis']
+    title: 'Industrial Parts',
+    category: 'Manufacturing',
+    description: 'Reverse engineering complex mechanical components with precision scanning for CAD recreation and production.',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop',
+    capabilities: ['±0.05mm accuracy', 'Complex geometry', 'Full CAD output']
   },
   {
     id: '2',
-    title: 'Ornamental Objects',
-    category: 'Art & Design',
-    description: 'Detailed scanning of sculptures and decorative items for digital archiving and reproduction',
-    image: 'https://images.unsplash.com/photo-1578321272176-e69dccd4bda9?w=500&h=400&fit=crop',
-    capabilities: ['Fine details', 'Surface texture', 'Artistic reproduction']
+    title: '3D Printed Models',
+    category: 'Verification',
+    description: 'Quality control and verification of 3D printed prototypes to ensure dimensional accuracy and tolerances.',
+    image: 'https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=500&h=400&fit=crop',
+    capabilities: ['Surface analysis', 'Tolerance checking', 'QA documentation']
   },
   {
     id: '3',
-    title: 'Electronic Devices',
-    category: 'Technology',
-    description: 'Scanning of circuit boards and electronic components for analysis and modification',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop',
-    capabilities: ['PCB analysis', 'Component mapping', 'CAD integration']
+    title: 'Product Design',
+    category: 'Development',
+    description: 'Capturing existing product dimensions for rapid prototyping and design iteration cycles.',
+    image: 'https://images.unsplash.com/photo-1586253408161-4674a45a0b15?w=500&h=400&fit=crop',
+    capabilities: ['Design capture', 'Comparison analysis', 'Modification mapping']
   },
   {
     id: '4',
-    title: 'Jewelry & Accessories',
-    category: 'Fashion',
-    description: 'High-precision scanning of delicate items for duplication and custom modifications',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=400&fit=crop',
-    capabilities: ['Micron precision', 'Delicate handling', 'Material preservation']
+    title: 'Tooling & Molds',
+    category: 'Manufacturing',
+    description: 'Precise scanning of custom tooling and injection molds for documentation and reproduction.',
+    image: 'https://images.unsplash.com/photo-1581092168562-40038f63dd5b?w=500&h=400&fit=crop',
+    capabilities: ['Mold documentation', 'Insert positioning', 'Flow analysis']
   },
   {
     id: '5',
-    title: 'Archaeological Artifacts',
-    category: 'Heritage',
-    description: 'Non-destructive scanning of historical items for preservation and study',
-    image: 'https://images.unsplash.com/photo-1578271074443-cf4ffee58578?w=500&h=400&fit=crop',
-    capabilities: ['Non-destructive', 'Historical preservation', 'Digital archiving']
+    title: 'Consumer Products',
+    category: 'Benchmarking',
+    description: 'Digitizing existing consumer products for competitive analysis and reverse engineering studies.',
+    image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=500&h=400&fit=crop',
+    capabilities: ['Product digitization', 'Competitor analysis', 'Feature mapping']
   },
   {
     id: '6',
-    title: 'Anatomical Models',
-    category: 'Medical',
-    description: 'Precision scanning of anatomical structures for medical models and patient-specific implants',
-    image: 'https://images.unsplash.com/photo-1576091160550-112173f7f869?w=500&h=400&fit=crop',
-    capabilities: ['Medical accuracy', 'Bio-compatible modeling', 'Surgical planning']
+    title: 'Custom Components',
+    category: 'Adaptation',
+    description: 'Scanning specialized components for custom fitting and integration into new assemblies.',
+    image: 'https://images.unsplash.com/photo-1531492746076-161ca9bcad58?w=500&h=400&fit=crop',
+    capabilities: ['Precision mounting', 'Assembly integration', 'Custom fitting']
   }
 ];
 
