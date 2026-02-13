@@ -14,7 +14,7 @@ export default function ShopPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-16 bg-[#f5f5f7]">
+      <section className="min-h-screen flex items-center justify-center pt-32 bg-[#f5f5f7]">
         <div className="container-apple py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
