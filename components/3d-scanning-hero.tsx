@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Zap, Cube, Eye } from 'lucide-react';
+import { Zap, Box, Eye } from 'lucide-react';
 
 export default function ThreeDScanningHero() {
   const containerVariants = {
@@ -92,7 +92,7 @@ export default function ThreeDScanningHero() {
                 animate="animate"
                 className="w-16 h-16 bg-[#36c1b3]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#36c1b3] transition-colors"
               >
-                <Cube className="w-8 h-8 text-[#36c1b3] group-hover:text-white transition-colors" />
+                <Box className="w-8 h-8 text-[#36c1b3] group-hover:text-white transition-colors" />
               </motion.div>
               <h3 className="text-xl font-semibold text-[#1d1d1f] mb-2">Precision</h3>
               <p className="text-[#86868b]">High-accuracy 3D models suitable for manufacturing and CAD workflows</p>
