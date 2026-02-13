@@ -10,29 +10,65 @@ export const metadata = {
 
 export default function ShopPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="section bg-gradient-to-br from-[#f5f5f7] to-white pt-32 pb-12">
-        <div className="container-apple">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-bold text-[#1d1d1f] mb-6">Shop Premium 3D Prints</h1>
-            <p className="text-xl text-[#86868b] mb-8">
-              Discover our curated collection of high-quality 3D printed products, custom designs, and specialty items crafted with precision and care.
+      {/* Hero Section - Matches 3D Scanning Page */}
+      <section className="relative pt-32 pb-20 px-4 bg-gradient-to-br from-white via-[#f5f5f7] to-white overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#36c1b3]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#36c1b3]/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+
+        <div className="container-apple relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#1d1d1f] mb-6">
+              Premium 3D <span className="text-[#36c1b3]">Shop</span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-[#86868b] mb-8 max-w-3xl mx-auto leading-relaxed">
+              Discover our curated collection of high-quality 3D printed products, custom designs, and specialty items crafted with precision.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl text-[#36c1b3]">✓</span>
-                <span className="text-[#1d1d1f]">Custom Orders Available</span>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <a
+                href="#shop-products"
+                className="btn-apple btn-primary px-8 py-4 text-lg inline-flex items-center justify-center"
+              >
+                Browse Products
+              </a>
+              <a
+                href="/#quote"
+                className="btn-apple btn-secondary px-8 py-4 text-lg"
+              >
+                Custom Orders
+              </a>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-[#36c1b3]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">✓</span>
+                </div>
+                <h3 className="text-xl font-semibold text-[#1d1d1f] mb-2">Custom Orders</h3>
+                <p className="text-[#86868b]">Design your own or modify existing products to your specifications</p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl text-[#36c1b3]">✓</span>
-                <span className="text-[#1d1d1f]">Fast Turnaround</span>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-[#36c1b3]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-semibold text-[#1d1d1f] mb-2">Fast Turnaround</h3>
+                <p className="text-[#86868b]">Quick production and shipping to get your products when you need them</p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl text-[#36c1b3]">✓</span>
-                <span className="text-[#1d1d1f]">Competitive Pricing</span>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-[#36c1b3]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">💎</span>
+                </div>
+                <h3 className="text-xl font-semibold text-[#1d1d1f] mb-2">Quality Materials</h3>
+                <p className="text-[#86868b]">Premium materials and professional finishing for exceptional results</p>
               </div>
             </div>
           </div>

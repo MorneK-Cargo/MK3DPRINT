@@ -15,51 +15,35 @@ interface ScanExample {
 const scanExamples: ScanExample[] = [
   {
     id: '1',
-    title: 'Industrial Parts',
-    category: 'Manufacturing',
-    description: 'Reverse engineering complex mechanical components with precision scanning for CAD recreation and production.',
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop',
-    capabilities: ['±0.05mm accuracy', 'Complex geometry', 'Full CAD output']
+    title: 'Auto Parts',
+    category: 'Automotive',
+    description: 'Precision scanning of automotive components for reverse engineering, manufacturing, and quality assurance.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop',
+    capabilities: ['OEM specifications', 'Manufacturing ready', 'CAD integration']
   },
   {
     id: '2',
-    title: '3D Printed Models',
-    category: 'Verification',
-    description: 'Quality control and verification of 3D printed prototypes to ensure dimensional accuracy and tolerances.',
-    image: 'https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=500&h=400&fit=crop',
-    capabilities: ['Surface analysis', 'Tolerance checking', 'QA documentation']
+    title: 'Reverse Engineering',
+    category: 'Manufacturing',
+    description: 'Complex mechanical assemblies scanned to exact specifications for replication, improvement, and CAD documentation.',
+    image: 'https://images.unsplash.com/photo-1581092168562-40038f63dd5b?w=500&h=400&fit=crop',
+    capabilities: ['Full assembly capture', 'Tolerance analysis', 'Production CAD']
   },
   {
     id: '3',
-    title: 'Product Design',
-    category: 'Development',
-    description: 'Capturing existing product dimensions for rapid prototyping and design iteration cycles.',
-    image: 'https://images.unsplash.com/photo-1586253408161-4674a45a0b15?w=500&h=400&fit=crop',
-    capabilities: ['Design capture', 'Comparison analysis', 'Modification mapping']
+    title: 'Medical Devices',
+    category: 'Healthcare',
+    description: 'Precision scanning of dental, orthopedic, and medical devices for patient-specific applications and manufacturing.',
+    image: 'https://images.unsplash.com/photo-1576091160550-112173f7f869?w=500&h=400&fit=crop',
+    capabilities: ['Biocompatible', 'Patient-specific', 'Surgical accuracy']
   },
   {
     id: '4',
-    title: 'Tooling & Molds',
-    category: 'Manufacturing',
-    description: 'Precise scanning of custom tooling and injection molds for documentation and reproduction.',
-    image: 'https://images.unsplash.com/photo-1581092168562-40038f63dd5b?w=500&h=400&fit=crop',
-    capabilities: ['Mold documentation', 'Insert positioning', 'Flow analysis']
-  },
-  {
-    id: '5',
-    title: 'Consumer Products',
-    category: 'Benchmarking',
-    description: 'Digitizing existing consumer products for competitive analysis and reverse engineering studies.',
-    image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=500&h=400&fit=crop',
-    capabilities: ['Product digitization', 'Competitor analysis', 'Feature mapping']
-  },
-  {
-    id: '6',
-    title: 'Custom Components',
-    category: 'Adaptation',
-    description: 'Scanning specialized components for custom fitting and integration into new assemblies.',
-    image: 'https://images.unsplash.com/photo-1531492746076-161ca9bcad58?w=500&h=400&fit=crop',
-    capabilities: ['Precision mounting', 'Assembly integration', 'Custom fitting']
+    title: 'Industrial Equipment',
+    category: 'Industrial',
+    description: 'Heavy machinery and industrial components scanned for maintenance, spare parts, and process optimization.',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop',
+    capabilities: ['Large format', 'Material analysis', 'Documentation']
   }
 ];
 
@@ -129,80 +113,6 @@ export default function ScanningExamples() {
           ))}
         </div>
 
-        {/* Technology Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-16 pt-12 border-t-2 border-[#d5d5d7]"
-        >
-          <div className="bg-white rounded-2xl p-8 md:p-12">
-            <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-6">Our Scanning Technology</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-semibold text-[#1d1d1f] mb-3">Creality CR-Scan Raptor</h4>
-                <p className="text-[#86868b] mb-4">
-                  Professional-grade 3D scanner combining line lasers with infrared structured light technology for exceptional accuracy and versatility.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex gap-2">
-                    <span className="text-[#36c1b3] font-bold shrink-0">→</span>
-                    <span className="text-[#1d1d1f] text-sm">Scan range: 5mm to 2000mm</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#36c1b3] font-bold shrink-0">→</span>
-                    <span className="text-[#1d1d1f] text-sm">No markers required for feature-rich objects</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#36c1b3] font-bold shrink-0">→</span>
-                    <span className="text-[#1d1d1f] text-sm">Works with various materials</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-[#1d1d1f] mb-3">What We Can Do</h4>
-                <p className="text-[#86868b] mb-4">
-                  From quality control to reverse engineering, our scanning capabilities enable precision digital modeling.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex gap-2">
-                    <span className="text-[#36c1b3] font-bold shrink-0">→</span>
-                    <span className="text-[#1d1d1f] text-sm">Reverse engineering of existing parts</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#36c1b3] font-bold shrink-0">→</span>
-                    <span className="text-[#1d1d1f] text-sm">Quality control and inspection</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#36c1b3] font-bold shrink-0">→</span>
-                    <span className="text-[#1d1d1f] text-sm">Digital archiving and preservation</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-12 text-center"
-        >
-          <p className="text-[#86868b] mb-6">
-            Have an object that needs scanning? Let's discuss your project.
-          </p>
-          <a
-            href="/#quote"
-            className="btn-apple btn-primary px-8 py-3"
-          >
-            Request a Scan Quote
-          </a>
-        </motion.div>
       </div>
     </section>
   );
