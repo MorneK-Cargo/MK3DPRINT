@@ -45,9 +45,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
-            <Link href="#browse-models" className="btn-apple btn-primary text-lg px-8 py-4">
+            <a href="https://makerworld.com" target="_blank" rel="noopener noreferrer" className="btn-apple btn-primary text-lg px-8 py-4">
               Browse 3D Models
-            </Link>
+            </a>
             <Link href="#quote" className="btn-apple btn-secondary text-lg px-8 py-4">
               Request a Quote
             </Link>

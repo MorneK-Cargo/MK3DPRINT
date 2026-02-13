@@ -1,7 +1,6 @@
 import Navigation from '@/components/navigation';
 import Hero from '@/components/hero';
 import FeaturedProducts from '@/components/featured-products';
-import Gallery from '@/components/gallery';
 import QuoteCalculator from '@/components/quote-calculator';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
@@ -17,7 +16,6 @@ export default function Home() {
       <Navigation />
       <Hero />
       <FeaturedProducts />
-      <Gallery />
       <QuoteCalculator />
       <Contact />
       <Footer />
