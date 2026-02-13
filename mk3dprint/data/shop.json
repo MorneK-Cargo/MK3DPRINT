@@ -1,70 +1,182 @@
 [
   {
-    "id": "sample-item-1",
-    "title": "Drill Dust Collector",
-    "price": "N$ 35",
+    "id": "darth-vader",
+    "title": "Darth Vader",
+    "price": "N$ 485",
     "images": [
-      "/images/products/sample-item-1/image1.jpg",
-      "/images/products/sample-item-1/image2.jpg",
-      "/images/products/sample-item-1/image3.jpg"
+      "https://images.unsplash.com/photo-1599599810694-b5ac4dd0c4b7?w=400&h=400&fit=crop"
     ],
-    "description": "What happens in the wall... stays OFF the floor! This genius dust catcher saves you from the 'oops I drilled without a vacuum again' dance. No more explaining to your spouse why there's concrete dust on the cat. Works for both lefties and righties because discrimination is SO last century. 360° protection from your own mess!",
-    "whatsapp": "Drill Dust Collector"
+    "whatsapp": "Darth%20Vader"
   },
   {
-    "id": "sample-item-2",
-    "title": "Screw Measuring Tool, M2-M10, 4-120mm",
-    "price": "N$ 50",
+    "id": "stormtrooper",
+    "title": "Stormtrooper",
+    "price": "N$ 465",
     "images": [
-      "/images/products/sample-item-2/image1.jpg",
-      "/images/products/sample-item-2/image2.jpg",
-      "/images/products/sample-item-2/image3.jpg"
+      "https://images.unsplash.com/photo-1535016120754-fd45c1d5a4fa?w=400&h=400&fit=crop"
     ],
-    "description": "End the 'is this M6 or M8?' guessing game forever! Tired of making three trips to the hardware store because you SWORE it was the right size? This magical ruler identifies M2-M10 screws from 4-120mm instantly. No more squinting, no more 'close enough', no more disappointed sighs from the hardware store guy who's seen you twice today. Science!",
-    "whatsapp": "Screw%20Measuring%20Tool"
+    "whatsapp": "Stormtrooper"
   },
   {
-    "id": "sample-item-3",
-    "title": "Door Hanger - Downloading",
-    "price": "N$ 45",
+    "id": "yoda",
+    "title": "Yoda",
+    "price": "N$ 425",
     "images": [
-      "/images/products/sample-item-3/image1.jpg",
-      "/images/products/sample-item-3/image2.jpg",
-      "/images/products/sample-item-3/image3.jpg"
+      "https://images.unsplash.com/photo-1552960562-40f2ffad04e5?w=400&h=400&fit=crop"
     ],
-    "description": "The perfect bathroom door hanger for those extended 'downloads'. Hang this on your door and everyone will know you're in the middle of an important data transfer. Features a progress bar that's way more honest than your web browser's. Supports all file sizes!",
-    "whatsapp": "Door%20Hanger%20Downloading"
+    "whatsapp": "Yoda"
   },
   {
-    "id": "sample-item-4",
-    "title": "Battery Holder AA & AAA",
-    "price": "N$ 40",
+    "id": "baby-yoda",
+    "title": "Baby Yoda (Grogu)",
+    "price": "N$ 395",
     "images": [
-      "/images/products/sample-item-4/image1.jpg",
-      "/images/products/sample-item-4/image2.jpg",
-      "/images/products/sample-item-4/image3.jpg"
+      "https://images.unsplash.com/photo-1589985648686-c8b4b7d7a48f?w=400&h=400&fit=crop"
     ],
-    "description": "Stop the battery chaos! Keep your AA and AAA batteries neatly organized in one convenient holder. No more digging through junk drawers or testing dead batteries. Simple, practical, and keeps you organized.",
-    "whatsapp": "Battery%20Holder"
+    "whatsapp": "Baby%20Yoda"
   },
   {
-    "id": "sample-item-5",
-    "title": "Gravity Towel Hook",
-    "price": "N$ 25",
+    "id": "boba-fett",
+    "title": "Boba Fett",
+    "price": "N$ 495",
     "images": [
-      "/images/products/sample-item-5/image1.jpg",
-      "/images/products/sample-item-5/image2.jpg",
-      "/images/products/sample-item-5/image3.jpg"
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=400&fit=crop"
     ],
-    "description": "Defying physics, one towel at a time! This hook uses the ancient power of gravity (discovered by that apple guy) to keep your towels exactly where you hung them. No screws, no anchors, no 'oops I drilled into a water pipe' moments. Just pure gravitational excellence. Your towel stays up, Isaac Newton stays happy, and your landlord never needs to know!",
-    "whatsapp": "Gravity%20Towel%20Hook"
+    "whatsapp": "Boba%20Fett"
   },
   {
-    "id": "sample-item-6",
-    "title": "Coming Soon - Item 6",
-    "price": "N$ TBA",
-    "images": [],
-    "description": "New product coming soon! Check back later for details.",
-    "whatsapp": "Product%20Inquiry"
+    "id": "han-solo",
+    "title": "Han Solo",
+    "price": "N$ 455",
+    "images": [
+      "https://images.unsplash.com/photo-1578090965759-9db7f3c32d02?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Han%20Solo"
+  },
+  {
+    "id": "chewbacca",
+    "title": "Chewbacca",
+    "price": "N$ 445",
+    "images": [
+      "https://images.unsplash.com/photo-1531746790731-6c087fecd65b?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Chewbacca"
+  },
+  {
+    "id": "bb8",
+    "title": "BB-8",
+    "price": "N$ 415",
+    "images": [
+      "https://images.unsplash.com/photo-1613533348722-92db42c6c857?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "BB-8"
+  },
+  {
+    "id": "c3po",
+    "title": "C-3PO",
+    "price": "N$ 435",
+    "images": [
+      "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "C-3PO"
+  },
+  {
+    "id": "r2d2",
+    "title": "R2-D2",
+    "price": "N$ 425",
+    "images": [
+      "https://images.unsplash.com/photo-1590080876008-5aa3b5ce98f3?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "R2-D2"
+  },
+  {
+    "id": "kylo-ren",
+    "title": "Kylo Ren",
+    "price": "N$ 475",
+    "images": [
+      "https://images.unsplash.com/photo-1578108615703-b6f0cd13f8e0?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Kylo%20Ren"
+  },
+  {
+    "id": "luke-skywalker",
+    "title": "Luke Skywalker",
+    "price": "N$ 465",
+    "images": [
+      "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Luke%20Skywalker"
+  },
+  {
+    "id": "princess-leia",
+    "title": "Princess Leia",
+    "price": "N$ 455",
+    "images": [
+      "https://images.unsplash.com/photo-1524712245610-24dd4e5a6ca6?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Princess%20Leia"
+  },
+  {
+    "id": "lando-calrissian",
+    "title": "Lando Calrissian",
+    "price": "N$ 445",
+    "images": [
+      "https://images.unsplash.com/photo-1531746790731-6c087fecd65b?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Lando%20Calrissian"
+  },
+  {
+    "id": "maz-kanata",
+    "title": "Maz Kanata",
+    "price": "N$ 405",
+    "images": [
+      "https://images.unsplash.com/photo-1578108615703-b6f0cd13f8e0?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Maz%20Kanata"
+  },
+  {
+    "id": "ewok",
+    "title": "Ewok",
+    "price": "N$ 385",
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Ewok"
+  },
+  {
+    "id": "tusken-raider",
+    "title": "Tusken Raider",
+    "price": "N$ 435",
+    "images": [
+      "https://images.unsplash.com/photo-1577720643272-265e434f0ad2?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Tusken%20Raider"
+  },
+  {
+    "id": "jabba-hutt",
+    "title": "Jabba the Hutt",
+    "price": "N$ 505",
+    "images": [
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Jabba%20the%20Hutt"
+  },
+  {
+    "id": "gamorrean-guard",
+    "title": "Gamorrean Guard",
+    "price": "N$ 415",
+    "images": [
+      "https://images.unsplash.com/photo-1577720643272-265e434f0ad2?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Gamorrean%20Guard"
+  },
+  {
+    "id": "bounty-hunter",
+    "title": "Bounty Hunter",
+    "price": "N$ 485",
+    "images": [
+      "https://images.unsplash.com/photo-1589985648686-c8b4b7d7a48f?w=400&h=400&fit=crop"
+    ],
+    "whatsapp": "Bounty%20Hunter"
   }
 ]

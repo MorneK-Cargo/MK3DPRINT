@@ -527,10 +527,32 @@ a:hover {
 }
 
 .shop-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-2xl);
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   scroll-behavior: smooth;
+}
+
+/* Responsive grid layout */
+@media (max-width: 1024px) {
+  .shop-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
 }
 
 .shop-slider .shop-card {
@@ -611,6 +633,18 @@ a:hover {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.shop-image-wrapper {
+  position: relative;
+}
+
+.shop-overlay {
+  transition: opacity 0.3s ease;
+}
+
+.shop-card:hover .shop-overlay {
+  opacity: 1 !important;
 }
 
 .shop-card:hover {

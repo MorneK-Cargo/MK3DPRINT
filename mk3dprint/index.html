@@ -235,24 +235,18 @@
   <section class="section" id="shop">
     <div class="container">
       <h2 class="section-title">Shop</h2>
-      <p class="section-intro">Items already printed</p>
+      <p class="section-intro">Pre-printed items available for purchase</p>
 
-      <div class="shop-slider-container">
-        <button class="shop-slider-btn shop-slider-prev" id="shop-prev" aria-label="Previous products">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 18l-6-6 6-6"/>
-          </svg>
-        </button>
-        <div class="shop-slider-wrapper">
-          <div class="shop-grid shop-slider" id="shop-grid">
-            <!-- Products will be loaded dynamically from shop.json -->
-          </div>
+      <div class="shop-grid-container">
+        <div class="shop-grid" id="shop-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; margin-bottom: 40px;">
+          <!-- Products will be loaded dynamically from shop.json -->
         </div>
-        <button class="shop-slider-btn shop-slider-next" id="shop-next" aria-label="Next products">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 18l6-6-6-6"/>
-          </svg>
-        </button>
+      </div>
+
+      <div style="text-align: center; padding: 40px 20px; background: #f9f9f9; border-radius: 12px;">
+        <h3 style="margin-bottom: 16px;">Don't see what you're looking for?</h3>
+        <p style="margin-bottom: 24px; color: #666;">Request a custom quote or browse more options</p>
+        <a href="#quote" class="btn btn-primary">Custom Orders</a>
       </div>
     </div>
   </section>
@@ -427,10 +421,15 @@
   </section>
 
   <!-- Product Imports Section -->
-  <section class="section" id="imports">
+  <section class="section" id="imports" style="padding-top: 60px; padding-bottom: 80px;">
     <div class="container">
-      <h2 class="section-title">Product Imports</h2>
+      <h2 class="section-title">Global Imports</h2>
       <p class="section-intro">Affordable international product sourcing</p>
+
+      <div style="text-align: center; margin-bottom: 48px;">
+        <p style="margin-bottom: 20px; font-size: 18px; color: #333;">Browse products from Amazon and other international retailers</p>
+        <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-block;">Browse Products on Amazon</a>
+      </div>
 
       <!-- Import Demo Images -->
       <div class="scanner-demo-grid">

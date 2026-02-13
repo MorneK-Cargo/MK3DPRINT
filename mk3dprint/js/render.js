@@ -18,7 +18,7 @@ async function renderShop() {
     const firstImage = item.images && item.images.length > 0 ? item.images[0] : '';
 
     // Create WhatsApp order message
-    const whatsappMessage = `Hello SCANFORM 3DP! 👋
+    const whatsappMessage = `Hello MK 3D Printing! 👋
 
 I would like to place an order:
 
@@ -26,7 +26,6 @@ I would like to place an order:
 ━━━━━━━━━━━━━━━━━━━
 Product: *${item.title}*
 Price: *${item.price}*
-Description: ${item.description}
 
 Quantity: _____ (I will fill this in)
 
@@ -46,16 +45,23 @@ Thank you!`;
 
     return `
       <div class="shop-card">
-        <div class="shop-image" onclick="openLightbox(${index}, 0)" style="cursor: pointer;">
-          ${firstImage ?
-            `<img src="${firstImage}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<div class=\\'placeholder-image\\'>3D Model</div>'">` :
-            '<div class="placeholder-image">3D Model</div>'
-          }
+        <div class="shop-image-wrapper" style="position: relative;">
+          <div class="shop-image" onclick="openLightbox(${index}, 0)" style="cursor: pointer; aspect-ratio: 1; width: 100%; overflow: hidden;">
+            ${firstImage ?
+              `<img src="${firstImage}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<div class=\\'placeholder-image\\'>3D Model</div>'">` :
+              '<div class="placeholder-image">3D Model</div>'
+            }
+          </div>
+          <div class="shop-price-badge" style="position: absolute; top: 12px; right: 12px; background-color: #36c1b3; color: white; padding: 6px 12px; border-radius: 6px; font-weight: 600; font-size: 14px; z-index: 10;">
+            ${item.price}
+          </div>
+          <div class="shop-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; z-index: 5;">
+            <a href="${whatsappLink}" class="btn btn-primary" style="white-space: nowrap;">Get Quote</a>
+          </div>
         </div>
-        <h4>${item.title}</h4>
-        <p>${item.description}</p>
-        <div class="price-tag">${item.price}</div>
-        <a href="${whatsappLink}" class="btn btn-primary btn-full">Order Now</a>
+        <div class="shop-card-body" style="padding: 12px 0;">
+          <h4 style="margin: 0; font-size: 14px; font-weight: 600;">${item.title}</h4>
+        </div>
       </div>
     `;
   }).join('');
