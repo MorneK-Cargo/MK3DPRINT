@@ -244,10 +244,12 @@ a:hover {
 }
 
 .logo img {
-  height: 50px;
+  height: 120px;
   width: auto;
   display: block;
   transition: transform var(--transition-base);
+  mix-blend-mode: darken;
+  opacity: 0.95;
 }
 
 .logo:hover img {
@@ -1367,7 +1369,7 @@ body.menu-open {
   }
 
   .logo img {
-    height: 40px;
+    height: 100px;
   }
 
   .nav {
