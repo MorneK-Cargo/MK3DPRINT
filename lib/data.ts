@@ -108,6 +108,18 @@ export const galleryItems = [
     title: 'Photo to Trophy',
     images: ['/images/gallery/photo-trophy-1.jpg', '/images/gallery/photo-trophy-2.jpg'],
     description: 'Transform your favorite photo into a stunning 3D printed trophy! We take any regular photo and create a personalized, custom trophy complete with names, dates, and decorative elements. Perfect for birthdays, anniversaries, achievements, or just celebrating someone special. From digital image to golden tribute - your memories, immortalized in 3D!'
+  },
+  {
+    id: 'stormtrooper-display',
+    title: 'Stormtrooper Figurine',
+    images: ['https://cdn.jsdelivr.net/gh/MorneK-Cargo/mk3dprint@main/public/images/figurines/stormtrooper.jpg'],
+    description: 'Premium Stormtrooper collectible figurine - precision 3D printed with exceptional detail. This iconic Star Wars character makes a perfect desk companion or collectible for any fan. Each piece is carefully printed and finished to showcase intricate armor details.'
+  },
+  {
+    id: 'recent-print-3',
+    title: 'Custom Design Print',
+    images: ['/images/gallery/recent-print-3.jpg'],
+    description: 'Showcase of our latest custom design project. We specialize in bringing your unique ideas to life with precision 3D printing and expert craftsmanship.'
   }
 ];
 
