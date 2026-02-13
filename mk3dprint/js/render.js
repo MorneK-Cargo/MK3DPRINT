@@ -131,6 +131,7 @@ async function renderImports() {
 }
 
 renderShop();
-renderGallery();
+// Gallery section removed - replaced with featured prints
+// renderGallery();
 renderScanning();
 renderImports();
