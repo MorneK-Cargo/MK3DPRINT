@@ -130,6 +130,18 @@ export default function ThreeDScanningHero() {
               <p className="text-[#86868b]">Output in STL, OBJ, PLY, and CAD-ready formats for any application</p>
             </motion.div>
           </motion.div>
+
+          {/* Scanner Specifications Image */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-16 max-w-4xl mx-auto"
+          >
+            <img
+              src="/images/scanning/scanner-specifications.png"
+              alt="Creality CR-Scan Raptor Specifications"
+              className="w-full h-auto rounded-2xl shadow-xl"
+            />
+          </motion.div>
         </motion.div>
       </div>
 

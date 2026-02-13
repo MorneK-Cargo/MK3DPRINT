@@ -6,11 +6,18 @@ import { galleryItems } from '@/lib/data';
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+interface GalleryItem {
+  id: string;
+  title: string;
+  images: string[];
+  description: string;
+}
+
 export default function Gallery() {
-  const [selectedItem, setSelectedItem] = useState<typeof galleryItems[0] | null>(null);
+  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const openLightbox = (item: typeof galleryItems[0]) => {
+  const openLightbox = (item: GalleryItem) => {
     setSelectedItem(item);
     setCurrentImageIndex(0);
   };
@@ -27,6 +34,10 @@ export default function Gallery() {
     }
   };
 
+  if (galleryItems.length === 0) {
+    return null;
+  }
+
   return (
     <section id="gallery" className="section section-alt">
       <div className="container-apple">
@@ -41,7 +52,7 @@ export default function Gallery() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {galleryItems.map((item, index) => (
+          {galleryItems.map((item: GalleryItem, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}

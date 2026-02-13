@@ -18,32 +18,24 @@ const scanExamples: ScanExample[] = [
     title: 'Auto Parts',
     category: 'Automotive',
     description: 'Precision scanning of automotive components for reverse engineering, manufacturing, and quality assurance.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop',
+    image: '/images/scanning/auto-parts-scan.jpg',
     capabilities: ['OEM specifications', 'Manufacturing ready', 'CAD integration']
   },
   {
     id: '2',
-    title: 'Reverse Engineering',
-    category: 'Manufacturing',
-    description: 'Complex mechanical assemblies scanned to exact specifications for replication, improvement, and CAD documentation.',
-    image: 'https://images.unsplash.com/photo-1581092168562-40038f63dd5b?w=500&h=400&fit=crop',
-    capabilities: ['Full assembly capture', 'Tolerance analysis', 'Production CAD']
-  },
-  {
-    id: '3',
     title: 'Medical Devices',
     category: 'Healthcare',
     description: 'Precision scanning of dental, orthopedic, and medical devices for patient-specific applications and manufacturing.',
-    image: 'https://images.unsplash.com/photo-1576091160550-112173f7f869?w=500&h=400&fit=crop',
+    image: '/images/scanning/medical-scan.jpg',
     capabilities: ['Biocompatible', 'Patient-specific', 'Surgical accuracy']
   },
   {
-    id: '4',
-    title: 'Industrial Equipment',
-    category: 'Industrial',
-    description: 'Heavy machinery and industrial components scanned for maintenance, spare parts, and process optimization.',
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop',
-    capabilities: ['Large format', 'Material analysis', 'Documentation']
+    id: '3',
+    title: 'Reverse Engineering',
+    category: 'Manufacturing',
+    description: 'Complex mechanical assemblies scanned to exact specifications for replication, improvement, and CAD documentation.',
+    image: '/images/scanning/reverse-engineering-scan.jpg',
+    capabilities: ['Full assembly capture', 'Tolerance analysis', 'Production CAD']
   }
 ];
 
@@ -65,7 +57,7 @@ export default function ScanningExamples() {
         </motion.div>
 
         {/* Examples Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {scanExamples.map((example, index) => (
             <motion.div
               key={example.id}
