@@ -1,6 +1,7 @@
 # Netlify Configuration for mk3dprint
 
 [build]
+  base = "."
   command = "npm run build"
   publish = "out"
 
