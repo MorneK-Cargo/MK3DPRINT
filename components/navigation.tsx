@@ -11,7 +11,7 @@ const navItems = [
   { href: '/3d-scanning', label: '3D Scanning' },
   { href: '/imports', label: 'Imports' },
   { href: '/shop', label: 'Shop' },
-  { href: '/#about', label: 'About' },
+  { href: '/about', label: 'About' },
   { href: '/quote', label: 'Quote' },
   { href: '/#contact', label: 'Contact' },
 ];

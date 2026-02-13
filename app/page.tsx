@@ -1,9 +1,8 @@
 import Navigation from '@/components/navigation';
 import Hero from '@/components/hero';
 import FeaturedProducts from '@/components/featured-products';
-import TrendingModels from '@/components/trending-models';
+import ThingiversePopular from '@/components/thingiverse-popular';
 import Gallery from '@/components/gallery';
-import WhyWorkWithMe from '@/components/why-work-with-me';
 import QuoteCalculator from '@/components/quote-calculator';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
@@ -19,9 +18,8 @@ export default function Home() {
       <Navigation />
       <Hero />
       <FeaturedProducts />
-      <TrendingModels />
+      <ThingiversePopular />
       <Gallery />
-      <WhyWorkWithMe />
       <QuoteCalculator />
       <Contact />
       <Footer />
