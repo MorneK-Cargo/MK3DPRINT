@@ -163,9 +163,9 @@ export const importsInfo = {
     'Perfect for specialized tools, electronics, hobby items, and more'
   ],
   images: [
-    '/images/imports/import-demo-1.jpg',
-    '/images/imports/import-demo-2.jpg',
-    '/images/imports/import-demo-3.jpg'
+    'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1491841573634-28fb1df537d1?w=600&h=400&fit=crop'
   ]
 };
 
