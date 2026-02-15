@@ -137,7 +137,7 @@ export default function ThreeDScanningHero() {
             className="mt-16 max-w-4xl mx-auto"
           >
             <img
-              src="/images/scanning/scanner-specifications.png"
+              src="/images/scanning/raptor-versatile-scanning.png"
               alt="Creality CR-Scan Raptor Specifications"
               className="w-full h-auto rounded-2xl shadow-xl"
             />

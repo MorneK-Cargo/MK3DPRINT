@@ -18,7 +18,7 @@ const scanExamples: ScanExample[] = [
     title: 'Auto Parts',
     category: 'Automotive',
     description: 'Precision scanning of automotive components for reverse engineering, manufacturing, and quality assurance.',
-    image: '/images/scanning/auto-parts-scan.jpg',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop',
     capabilities: ['OEM specifications', 'Manufacturing ready', 'CAD integration']
   },
   {
@@ -26,7 +26,7 @@ const scanExamples: ScanExample[] = [
     title: 'Medical Devices',
     category: 'Healthcare',
     description: 'Precision scanning of dental, orthopedic, and medical devices for patient-specific applications and manufacturing.',
-    image: '/images/scanning/medical-scan.jpg',
+    image: 'https://images.unsplash.com/photo-1576091160550-112173f7f869?w=500&h=400&fit=crop',
     capabilities: ['Biocompatible', 'Patient-specific', 'Surgical accuracy']
   },
   {
@@ -34,7 +34,7 @@ const scanExamples: ScanExample[] = [
     title: 'Reverse Engineering',
     category: 'Manufacturing',
     description: 'Complex mechanical assemblies scanned to exact specifications for replication, improvement, and CAD documentation.',
-    image: '/images/scanning/reverse-engineering-scan.jpg',
+    image: 'https://images.unsplash.com/photo-1581092168562-40038f63dd5b?w=500&h=400&fit=crop',
     capabilities: ['Full assembly capture', 'Tolerance analysis', 'Production CAD']
   }
 ];
