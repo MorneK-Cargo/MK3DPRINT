@@ -26,7 +26,7 @@ export default function ImportsPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <a href="#imports-products" className="btn-apple btn-primary text-lg px-8 py-4">
+              <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" className="btn-apple btn-primary text-lg px-8 py-4">
                 Browse Imports
               </a>
               <a href="/#quote" className="btn-apple btn-secondary text-lg px-8 py-4">
