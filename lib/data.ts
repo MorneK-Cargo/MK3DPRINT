@@ -188,11 +188,11 @@ export const aboutInfo = {
 export const featuredProducts = [
   {
     id: 'photo-trophy',
-    title: 'Photo to Trophy',
-    price: 'N$ 150',
+    title: 'Photo to 3D Print',
+    price: 'TBC',
     image: '/images/gallery/photo-trophy-1.jpg',
     description: 'Transform your favorite photo into a stunning 3D printed trophy! Personalized with names, dates, and decorative elements. Perfect for birthdays, anniversaries, and achievements.',
-    whatsapp: 'Photo%20to%20Trophy'
+    whatsapp: 'Photo%20to%203D%20Print'
   },
   {
     id: 'darth-vader-monitor',

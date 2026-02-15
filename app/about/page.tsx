@@ -14,7 +14,7 @@ export default function AboutPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-32 bg-[#f5f5f7]">
+      <section className="relative pt-32 pb-20 px-4 bg-gradient-to-br from-white via-[#f5f5f7] to-white overflow-hidden">
         <div className="container-apple py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
@@ -51,31 +51,6 @@ export default function AboutPage() {
 
       {/* About Content */}
       <AboutSection />
-      
-      {/* Stats Section */}
-      <section className="section bg-[#f5f5f7]">
-        <div className="container-apple">
-          <h2 className="section-title text-center mb-12">Our Impact</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="bg-white rounded-2xl p-8 text-center">
-              <div className="text-4xl font-bold text-[#36c1b3] mb-2">500+</div>
-              <p className="text-[#86868b]">Successful Projects</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 text-center">
-              <div className="text-4xl font-bold text-[#36c1b3] mb-2">100%</div>
-              <p className="text-[#86868b]">Client Satisfaction</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 text-center">
-              <div className="text-4xl font-bold text-[#36c1b3] mb-2">24h</div>
-              <p className="text-[#86868b]">Standard Turnaround</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 text-center">
-              <div className="text-4xl font-bold text-[#36c1b3] mb-2">3</div>
-              <p className="text-[#86868b]">Service Divisions</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <Contact />
       <Footer />

@@ -42,7 +42,7 @@ export default function FeaturedProducts() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
         >
           {featuredProducts.map((product, index) => (
             <motion.div
