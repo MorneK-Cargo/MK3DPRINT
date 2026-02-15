@@ -50,7 +50,7 @@ export default function SpecsSpotlight() {
       title: 'Automotive Parts',
       description:
         'Precision scanning of engine components, brackets, and assemblies for reverse engineering, quality control, and manufacturing optimization.',
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop',
+      image: 'https://www.javelin-tech.com/3d/wp-content/uploads/bb-plugin/cache/honda-engine-3d-scan-landscape-f390fdf9c2b13dff88df35dd7b33da37-.jpg',
       benefits: [
         'OEM specifications capture',
         'Manufacturing-ready models',
@@ -63,7 +63,7 @@ export default function SpecsSpotlight() {
       title: 'Reverse Engineering',
       description:
         'Capture complex mechanical assemblies to exact specifications for replication, improvement, and complete CAD documentation.',
-      image: 'https://images.unsplash.com/photo-1581092168562-40038f63dd5b?w=600&h=400&fit=crop',
+      image: 'https://www.javelin-tech.com/3d/wp-content/uploads/bb-plugin/cache/compressor-3d-scan-landscape-9c850b5d6a446e3b2e775698d4082bb2-.jpg',
       benefits: [
         'Full assembly capture',
         'Complete geometry preservation',
@@ -76,7 +76,7 @@ export default function SpecsSpotlight() {
       title: 'Medical Devices',
       description:
         'Precision scanning for dental implants, orthopedic components, and surgical instruments with biocompatible accuracy requirements.',
-      image: 'https://images.unsplash.com/photo-1576091160550-112173f7f869?w=600&h=400&fit=crop',
+      image: 'https://www.javelin-tech.com/3d/wp-content/uploads/bb-plugin/cache/teeth-3d-scan-landscape-262b206285198c0bdf49a2c259c28667-.jpg',
       benefits: [
         'Biocompatible specifications',
         'Patient-specific models',
@@ -146,15 +146,6 @@ export default function SpecsSpotlight() {
             <p className="text-[#86868b] leading-relaxed">
               Our professional 3D scanner delivers metrology-grade accuracy with flexible working modes for everything from precise industrial parts to larger assemblies. Whether you need high-speed scanning or maximum detail, this tool handles complex geometries with ease.
             </p>
-
-            <a
-              href="https://www.creality.com/products/creality-cr-scan-raptor"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block btn-apple btn-primary"
-            >
-              View Product Page
-            </a>
           </motion.div>
         </div>
 
