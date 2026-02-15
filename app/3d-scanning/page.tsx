@@ -3,7 +3,6 @@ import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 import ThreeDScanningForm from '@/components/3d-scanning-form';
 import ThreeDScanningHero from '@/components/3d-scanning-hero';
-import ScanningExamples from '@/components/scanning-examples';
 import SpecsSpotlight from '@/components/specs-spotlight';
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default function ThreeDScanningPage() {
       <Navigation />
       <ThreeDScanningHero />
       <SpecsSpotlight />
-      <ScanningExamples />
       <ThreeDScanningForm />
       <Footer />
     </main>

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Zap, Box, Eye } from 'lucide-react';
-import ScannerCollage from './scanner-collage';
 
 export default function ThreeDScanningHero() {
   const containerVariants = {
@@ -145,9 +144,6 @@ export default function ThreeDScanningHero() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Image Collage */}
-      <ScannerCollage />
 
       {/* How It Works Section */}
       <motion.section
