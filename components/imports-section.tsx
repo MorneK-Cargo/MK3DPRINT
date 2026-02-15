@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { importsInfo } from '@/lib/data';
 
 export default function ImportsSection() {
@@ -32,13 +31,12 @@ export default function ImportsSection() {
               href="https://www.amazon.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="aspect-video relative rounded-2xl overflow-hidden bg-[#f5f5f7] shadow-lg hover:shadow-2xl transition-all duration-300 group"
+              className="aspect-video relative rounded-2xl overflow-hidden bg-[#f5f5f7] shadow-lg hover:shadow-2xl transition-all duration-300 group block"
             >
-              <Image
+              <img
                 src={item.image}
                 alt={item.title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
             </a>
