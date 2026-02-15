@@ -169,11 +169,11 @@ export const importsInfo = {
     },
     {
       title: 'Smart Home & Automation',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&q=80'
+      image: 'https://m.media-amazon.com/images/I/71l8yIZfSZL._AC_SY879_.jpg'
     },
     {
-      title: 'Beauty & Personal Care',
-      image: 'https://images.unsplash.com/photo-1596462502278-af242a5b8b91?w=600&h=400&fit=crop&q=80'
+      title: 'Home Security & Smart Devices',
+      image: 'https://m.media-amazon.com/images/I/71Z7yDRK5kL._AC_SY879_.jpg'
     }
   ]
 };
