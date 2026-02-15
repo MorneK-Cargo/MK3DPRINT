@@ -52,7 +52,7 @@ export default function ScanningExamples() {
         >
           <h2 className="section-title">Scanning Capabilities & Examples</h2>
           <p className="text-center text-[#86868b] text-lg max-w-2xl mx-auto">
-            See what we can scan and digitize. From precision industrial parts to delicate artifacts, our Creality CR-Scan Raptor handles it all.
+            See what we can scan and digitize. From precision industrial parts to delicate artifacts, our professional 3D scanner handles it all.
           </p>
         </motion.div>
 
