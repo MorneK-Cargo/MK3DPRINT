@@ -1,6 +1,7 @@
 import Navigation from '@/components/navigation';
 import Hero from '@/components/hero';
 import FeaturedProducts from '@/components/featured-products';
+import ThingiverseConveyor from '@/components/thingiverse-conveyor';
 import QuoteCalculator from '@/components/quote-calculator';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
@@ -16,6 +17,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <FeaturedProducts />
+      <ThingiverseConveyor />
       <QuoteCalculator />
       <Contact />
       <Footer />
