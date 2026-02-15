@@ -165,15 +165,15 @@ export const importsInfo = {
   images: [
     {
       title: 'Electronics & Audio Equipment',
-      image: 'https://m.media-amazon.com/images/I/61LfYiNLJ6L._AC_SL1500_.jpg'
+      image: 'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Smart Home & Automation',
-      image: 'https://m.media-amazon.com/images/I/51P+ZD3VnlL._AC_SL1000_.jpg'
+      image: 'https://images.pexels.com/photos/3824517/pexels-photo-3824517.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Home Security & Smart Devices',
-      image: 'https://m.media-amazon.com/images/I/71xMwW5u8QL._AC_SL1000_.jpg'
+      image: 'https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=600'
     }
   ]
 };
