@@ -103,7 +103,7 @@ export default function ThreeDScanningForm() {
   }
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section id="scan-form" className="py-20 px-4 bg-white">
       <div className="container-apple">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
