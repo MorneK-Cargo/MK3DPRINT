@@ -3,11 +3,8 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { importsInfo } from '@/lib/data';
-import { useState } from 'react';
 
 export default function ImportsSection() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
   return (
     <section id="imports" className="section bg-white">
       <div className="container-apple">
@@ -21,7 +18,7 @@ export default function ImportsSection() {
           <p className="section-intro">Affordable international product sourcing</p>
         </motion.div>
 
-        {/* Import Demo Images */}
+        {/* Import Demo Images - Clickable to Amazon */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,19 +26,22 @@ export default function ImportsSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16"
         >
-          {importsInfo.images.map((img, index) => (
-            <div
+          {importsInfo.images.map((item, index) => (
+            <a
               key={index}
-              onClick={() => setSelectedImage(img)}
-              className="aspect-video relative rounded-2xl overflow-hidden bg-[#f5f5f7] shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+              href="https://www.amazon.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="aspect-video relative rounded-2xl overflow-hidden bg-[#f5f5f7] shadow-lg hover:shadow-2xl transition-all duration-300 group"
             >
               <Image
-                src={img}
-                alt={`Import demo ${index + 1}`}
+                src={item.image}
+                alt={item.title}
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
-            </div>
+              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+            </a>
           ))}
         </motion.div>
 
@@ -80,30 +80,6 @@ export default function ImportsSection() {
           </motion.div>
         </div>
       </div>
-
-      {/* Lightbox */}
-      {selectedImage && (
-        <div
-          className="lightbox-overlay"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative max-w-4xl max-h-[90vh] p-4">
-            <Image
-              src={selectedImage}
-              alt="Import demo"
-              width={800}
-              height={600}
-              className="rounded-2xl object-contain max-h-[80vh] w-auto"
-            />
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 w-10 h-10 bg-white rounded-full flex items-center justify-center text-2xl"
-            >
-              ×
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
