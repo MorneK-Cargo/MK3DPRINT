@@ -169,7 +169,7 @@ export const importsInfo = {
     },
     {
       title: 'Smart Home & Automation',
-      image: 'https://images.pexels.com/photos/3824517/pexels-photo-3824517.jpeg?auto=compress&cs=tinysrgb&w=600'
+      image: 'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Home Security & Smart Devices',
