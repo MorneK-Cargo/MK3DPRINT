@@ -54,10 +54,6 @@ export default function InspirationCard({ item, index }: InspirationCardProps) {
         >
           {categoryMeta?.name}
         </span>
-        {/* Price Badge */}
-        <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-[#1d1d1f] px-3 py-1 rounded-full text-xs font-semibold">
-          N${item.priceEstimate.min}–{item.priceEstimate.max}
-        </span>
       </div>
 
       {/* Content */}

@@ -19,7 +19,6 @@ export interface InspirationItem {
   description: string;
   category: Exclude<Category, 'all'>;
   image: string;
-  priceEstimate: { min: number; max: number };
   material: string;
 }
 
@@ -40,7 +39,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Modern minimalist planter for succulents and small plants',
     category: 'home-and-living',
     image: '/images/trending/plant-pot.jpg',
-    priceEstimate: { min: 50, max: 80 },
+
     material: 'PLA',
   },
   {
@@ -49,7 +48,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Fully poseable dragon with moving joints — a top seller worldwide',
     category: 'gifts-and-personalized',
     image: '/images/trending/articulated-dragon.png',
-    priceEstimate: { min: 60, max: 100 },
+
     material: 'PLA',
   },
   {
@@ -58,7 +57,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Set of 6 adhesive cable organizers for a clean desk setup',
     category: 'gadgets-and-tech',
     image: '/images/trending/cable-clips.jpg',
-    priceEstimate: { min: 30, max: 50 },
+
     material: 'PLA',
   },
   {
@@ -67,7 +66,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Adjustable phone dock for desk or bedside — fits all phones',
     category: 'gadgets-and-tech',
     image: '/images/trending/phone-stand.jpg',
-    priceEstimate: { min: 40, max: 60 },
+
     material: 'PLA',
   },
   {
@@ -76,7 +75,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Articulated dinosaur with satisfying movement — kids love it',
     category: 'gifts-and-personalized',
     image: '/images/trending/flexi-trex.jpg',
-    priceEstimate: { min: 40, max: 60 },
+
     material: 'PLA',
   },
   {
@@ -85,7 +84,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Clean desk aesthetic — mount under any desk edge',
     category: 'gadgets-and-tech',
     image: '/images/trending/headphone-stand.webp',
-    priceEstimate: { min: 40, max: 60 },
+
     material: 'PLA',
   },
   {
@@ -94,7 +93,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Stackable compartments for pens, cards, and small items',
     category: 'functional-and-tools',
     image: '/images/trending/desk-organizer.png',
-    priceEstimate: { min: 50, max: 80 },
+
     material: 'PLA',
   },
   {
@@ -103,7 +102,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Unique artisan keycaps for mechanical keyboard enthusiasts',
     category: 'gadgets-and-tech',
     image: '/images/trending/keyboard-keycaps.jpg',
-    priceEstimate: { min: 30, max: 60 },
+
     material: 'Resin',
   },
   {
@@ -112,7 +111,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Geometric Namibian wildlife art piece for shelf or desk display',
     category: 'art-and-decor',
     image: '/images/gallery_sculpture.png',
-    priceEstimate: { min: 60, max: 100 },
+
     material: 'PLA',
   },
   {
@@ -121,7 +120,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Premium collectible — the ultimate desk companion for fans',
     category: 'cosplay-and-gaming',
     image: '/images/figurines/darth-vader.jpg',
-    priceEstimate: { min: 80, max: 120 },
+
     material: 'PLA',
   },
   {
@@ -130,7 +129,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Classic Star Wars collectible — premium quality print',
     category: 'cosplay-and-gaming',
     image: '/images/figurines/stormtrooper.jpg',
-    priceEstimate: { min: 80, max: 120 },
+
     material: 'PLA',
   },
   {
@@ -139,7 +138,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Transform any photo into a personalized 3D printed award',
     category: 'gifts-and-personalized',
     image: '/images/gallery/photo-trophy-1.jpg',
-    priceEstimate: { min: 80, max: 150 },
+
     material: 'PLA',
   },
   {
@@ -148,7 +147,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Catches drill dust before it hits the floor — genius hack',
     category: 'functional-and-tools',
     image: '/images/products/sample-item-1/image1.jpg',
-    priceEstimate: { min: 25, max: 40 },
+
     material: 'PLA',
   },
   {
@@ -157,7 +156,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'Instantly identify screw sizes — no more guessing at the hardware store',
     category: 'functional-and-tools',
     image: '/images/products/sample-item-2/image1.jpg',
-    priceEstimate: { min: 35, max: 55 },
+
     material: 'PLA',
   },
   {
@@ -166,7 +165,7 @@ export const inspirationItems: InspirationItem[] = [
     description: 'No-drill wall hook using gravity — no screws needed',
     category: 'home-and-living',
     image: '/images/products/sample-item-5/image1.jpg',
-    priceEstimate: { min: 20, max: 30 },
+
     material: 'PLA',
   },
 ];
