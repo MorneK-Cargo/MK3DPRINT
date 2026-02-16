@@ -130,16 +130,6 @@ export default function ThreeDScanningForm() {
           <p className="section-intro">Tell us about your scanning needs, and we'll provide a detailed quote</p>
         </motion.div>
 
-        {/* Hidden form for Netlify detection during build */}
-        <form name="3d-scan-request" data-netlify="true" hidden>
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <input type="tel" name="phone" />
-          <input type="text" name="company" />
-          <input type="text" name="scanType" />
-          <textarea name="description"></textarea>
-        </form>
-
         <motion.form
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

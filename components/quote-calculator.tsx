@@ -116,15 +116,6 @@ function QuoteCalculatorInner() {
           <p className="section-intro">Tell us about your project, and we'll provide a detailed quote</p>
         </motion.div>
 
-        {/* Hidden form for Netlify detection during build */}
-        <form name="quote-request" data-netlify="true" hidden>
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <input type="tel" name="phone" />
-          <select name="projectType"><option value=""></option></select>
-          <textarea name="details"></textarea>
-        </form>
-
         <motion.form
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,0 +1,32 @@
+<!--
+  This file exists solely for Netlify's build-time form detection.
+  Netlify's deploy bot parses static HTML files for data-netlify="true" forms
+  and registers them. Without this, forms inside React client components are
+  invisible to Netlify's form handler.
+
+  The actual forms are rendered by React components and submit via fetch().
+-->
+<!DOCTYPE html>
+<html>
+<head><title>Forms</title></head>
+<body>
+  <form name="quote-request" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field" />
+    <input name="name" type="text" />
+    <input name="email" type="email" />
+    <input name="phone" type="tel" />
+    <input name="projectType" type="text" />
+    <textarea name="details"></textarea>
+  </form>
+
+  <form name="3d-scan-request" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field" />
+    <input name="name" type="text" />
+    <input name="email" type="email" />
+    <input name="phone" type="tel" />
+    <input name="company" type="text" />
+    <input name="scanType" type="text" />
+    <textarea name="description"></textarea>
+  </form>
+</body>
+</html>
