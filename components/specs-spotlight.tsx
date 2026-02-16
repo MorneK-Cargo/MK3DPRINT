@@ -47,41 +47,41 @@ export default function SpecsSpotlight() {
   const applications: ApplicationCard[] = [
     {
       id: 'auto',
-      title: 'Automotive Parts',
+      title: 'Automotive 3D Scanning',
       description:
-        'Precision scanning of engine components, brackets, and assemblies for reverse engineering, quality control, and manufacturing optimization.',
-      image: 'https://www.javelin-tech.com/3d/wp-content/uploads/bb-plugin/cache/honda-engine-3d-scan-landscape-f390fdf9c2b13dff88df35dd7b33da37-.jpg',
+        'Capture precise 3D scans of engine blocks, brake calipers, body panels, and custom parts. Ideal for restoration projects, aftermarket part development, and quality inspection of automotive components.',
+      image: '/images/gallery_automotive.png',
       benefits: [
-        'OEM specifications capture',
-        'Manufacturing-ready models',
-        'CAD integration',
-        'Tolerance analysis',
+        'Engine & drivetrain scanning',
+        'Custom part reproduction',
+        'Damage assessment & repair',
+        'Aftermarket fitment verification',
       ],
     },
     {
       id: 'reverse-eng',
       title: 'Reverse Engineering',
       description:
-        'Capture complex mechanical assemblies to exact specifications for replication, improvement, and complete CAD documentation.',
-      image: 'https://www.javelin-tech.com/3d/wp-content/uploads/bb-plugin/cache/compressor-3d-scan-landscape-9c850b5d6a446e3b2e775698d4082bb2-.jpg',
+        'Turn any physical object into a precise digital 3D model. Perfect for reproducing legacy parts with no existing drawings, improving existing designs, or creating CAD models from hand-made prototypes.',
+      image: '/images/gallery_mechanical.png',
       benefits: [
-        'Full assembly capture',
-        'Complete geometry preservation',
-        'Production-ready CAD',
-        'Design optimization',
+        'Legacy part reproduction',
+        'CAD model generation',
+        'Design improvement & iteration',
+        'Replacement part manufacturing',
       ],
     },
     {
       id: 'medical',
-      title: 'Medical Devices',
+      title: 'Medical & Body Scanning',
       description:
-        'Precision scanning for dental implants, orthopedic components, and surgical instruments with biocompatible accuracy requirements.',
-      image: 'https://www.javelin-tech.com/3d/wp-content/uploads/bb-plugin/cache/teeth-3d-scan-landscape-262b206285198c0bdf49a2c259c28667-.jpg',
+        'High-precision scanning of prosthetics, orthotic devices, dental models, and anatomical features. Create patient-specific 3D models for custom-fitted medical devices and surgical planning.',
+      image: '/images/gallery_medical.png',
       benefits: [
-        'Biocompatible specifications',
-        'Patient-specific models',
-        'Surgical accuracy',
-        'Regulatory compliance',
+        'Custom prosthetics & orthotics',
+        'Dental model digitisation',
+        'Anatomical documentation',
+        'Patient-specific device design',
       ],
     },
   ];
