@@ -51,7 +51,7 @@ function QuoteCalculatorInner() {
         details: formData.details,
       });
 
-      const response = await fetch('/', {
+      const response = await fetch('/.netlify/functions/submit-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: body.toString(),

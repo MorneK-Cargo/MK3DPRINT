@@ -61,7 +61,7 @@ export default function ThreeDScanningForm() {
         description: formData.description,
       });
 
-      const response = await fetch('/', {
+      const response = await fetch('/.netlify/functions/submit-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: body.toString(),
