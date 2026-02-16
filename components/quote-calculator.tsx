@@ -61,10 +61,10 @@ function QuoteCalculatorInner() {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', phone: '', projectType: '', details: '', consent: false });
       } else {
-        setError('Something went wrong. Please try WhatsApp instead.');
+        setError('Failed to submit. Please try again or contact us directly via WhatsApp.');
       }
     } catch {
-      setError('Something went wrong. Please try WhatsApp instead.');
+      setError('Failed to submit. Please try again or contact us directly via WhatsApp.');
     } finally {
       setIsSubmitting(false);
     }

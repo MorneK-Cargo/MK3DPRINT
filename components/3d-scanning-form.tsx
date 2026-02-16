@@ -71,10 +71,10 @@ export default function ThreeDScanningForm() {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', phone: '', company: '', scanType: '', description: '', consent: false });
       } else {
-        setError('Failed to submit. Please try again or contact us directly.');
+        setError('Failed to submit. Please try again or contact us directly via WhatsApp.');
       }
     } catch {
-      setError('An error occurred. Please contact us via WhatsApp or email.');
+      setError('Failed to submit. Please try again or contact us directly via WhatsApp.');
     } finally {
       setIsSubmitting(false);
     }
