@@ -198,3 +198,12 @@ input:focus, select:focus, textarea:focus {
   border-color: var(--brand);
   box-shadow: 0 0 0 4px rgba(54, 193, 179, 0.1);
 }
+
+/* Hide scrollbar for category filter */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

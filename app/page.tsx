@@ -1,5 +1,6 @@
 import Navigation from '@/components/navigation';
 import Hero from '@/components/hero';
+import InspirationGallery from '@/components/inspiration-gallery';
 import FeaturedProducts from '@/components/featured-products';
 import ThingiverseConveyor from '@/components/thingiverse-conveyor';
 import QuoteCalculator from '@/components/quote-calculator';
@@ -16,6 +17,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
+      <InspirationGallery />
       <FeaturedProducts />
       <ThingiverseConveyor />
       <QuoteCalculator />

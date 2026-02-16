@@ -12,6 +12,7 @@ export default function ThreeDScanningForm() {
     company: '',
     scanType: '',
     description: '',
+    consent: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -42,24 +43,37 @@ export default function ThreeDScanningForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.consent) {
+      setError('Please consent to data processing to submit your request.');
+      return;
+    }
     setError('');
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/3d-scan', {
+      const body = new URLSearchParams({
+        'form-name': '3d-scan-request',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        scanType: formData.scanType,
+        description: formData.description,
+      });
+
+      const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', company: '', scanType: '', description: '' });
+        setFormData({ name: '', email: '', phone: '', company: '', scanType: '', description: '', consent: false });
       } else {
         setError('Failed to submit. Please try again or contact us directly.');
       }
-    } catch (err) {
-      console.error('Error submitting scan request:', err);
+    } catch {
       setError('An error occurred. Please contact us via WhatsApp or email.');
     } finally {
       setIsSubmitting(false);
@@ -115,6 +129,16 @@ export default function ThreeDScanningForm() {
           <h2 className="section-title">Request a 3D Scan</h2>
           <p className="section-intro">Tell us about your scanning needs, and we'll provide a detailed quote</p>
         </motion.div>
+
+        {/* Hidden form for Netlify detection during build */}
+        <form name="3d-scan-request" data-netlify="true" hidden>
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="tel" name="phone" />
+          <input type="text" name="company" />
+          <input type="text" name="scanType" />
+          <textarea name="description"></textarea>
+        </form>
 
         <motion.form
           initial={{ opacity: 0, y: 30 }}
@@ -240,7 +264,7 @@ export default function ThreeDScanningForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="mb-8"
+            className="mb-6"
           >
             <label className="block text-sm font-medium text-[#1d1d1f] mb-2">Object Description *</label>
             <textarea
@@ -251,6 +275,28 @@ export default function ThreeDScanningForm() {
               required
               className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] placeholder-[#86868b] resize-none focus:outline-none focus:border-[#36c1b3] transition-colors"
             />
+          </motion.div>
+
+          {/* Consent checkbox */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.38 }}
+            className="mb-8"
+          >
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.consent}
+                onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                className="mt-1 w-4 h-4 rounded border-[#d2d2d7] text-[#36c1b3] focus:ring-[#36c1b3]"
+              />
+              <span className="text-sm text-[#86868b]">
+                I consent to the processing of my personal data for this scanning request.{' '}
+                <a href="/privacy" className="text-[#36c1b3] underline">Privacy Policy</a>
+              </span>
+            </label>
           </motion.div>
 
           {/* Submit Button */}

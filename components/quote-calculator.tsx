@@ -1,40 +1,78 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Send } from 'lucide-react';
+import { useState, useEffect, Suspense } from 'react';
+import { Send, MessageCircle } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 
-export default function QuoteCalculator() {
+function QuoteCalculatorInner() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     projectType: '',
-    details: ''
+    details: '',
+    consent: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const item = searchParams.get('item');
+    if (item) {
+      setFormData((prev) => ({
+        ...prev,
+        projectType: '3d-printing',
+        details: `I'd like to get this printed: ${item}`,
+      }));
+      // Scroll to quote section
+      document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.consent) {
+      setError('Please consent to data processing to submit your request.');
+      return;
+    }
+    setError('');
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/quote', {
+      const body = new URLSearchParams({
+        'form-name': 'quote-request',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        projectType: formData.projectType,
+        details: formData.details,
+      });
+
+      const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', projectType: '', details: '' });
+        setFormData({ name: '', email: '', phone: '', projectType: '', details: '', consent: false });
+      } else {
+        setError('Something went wrong. Please try WhatsApp instead.');
       }
-    } catch (error) {
-      console.error('Error submitting quote:', error);
+    } catch {
+      setError('Something went wrong. Please try WhatsApp instead.');
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleWhatsApp = () => {
+    const message = `Hi! I'd like a quote for ${formData.projectType || '3D printing'}.\n\nName: ${formData.name}\nEmail: ${formData.email}\n${formData.phone ? `Phone: ${formData.phone}\n` : ''}Details: ${formData.details}`;
+    window.open(`https://wa.me/264836750117?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   if (isSubmitted) {
@@ -51,7 +89,7 @@ export default function QuoteCalculator() {
             </div>
             <h3 className="text-3xl font-semibold text-[#1d1d1f] mb-4">Quote Request Sent!</h3>
             <p className="text-[#86868b] text-lg mb-8">
-              Thank you for your interest. We’ll review your project details and get back to you within 24 hours.
+              Thank you for your interest. We'll review your project details and get back to you within 24 hours.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
@@ -75,8 +113,17 @@ export default function QuoteCalculator() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">Request a Quote</h2>
-          <p className="section-intro">Tell us about your project, and we’ll provide a detailed quote</p>
+          <p className="section-intro">Tell us about your project, and we'll provide a detailed quote</p>
         </motion.div>
+
+        {/* Hidden form for Netlify detection during build */}
+        <form name="quote-request" data-netlify="true" hidden>
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="tel" name="phone" />
+          <select name="projectType"><option value=""></option></select>
+          <textarea name="details"></textarea>
+        </form>
 
         <motion.form
           initial={{ opacity: 0, y: 30 }}
@@ -95,7 +142,7 @@ export default function QuoteCalculator() {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="John Doe"
                 required
-                className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] placeholder-[#86868b]"
+                className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] placeholder-[#86868b] focus:outline-none focus:ring-2 focus:ring-[#36c1b3] focus:border-transparent"
               />
             </div>
             <div>
@@ -106,7 +153,7 @@ export default function QuoteCalculator() {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="john@example.com"
                 required
-                className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] placeholder-[#86868b]"
+                className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] placeholder-[#86868b] focus:outline-none focus:ring-2 focus:ring-[#36c1b3] focus:border-transparent"
               />
             </div>
             <div>
@@ -116,7 +163,7 @@ export default function QuoteCalculator() {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="+264 61 123 4567"
-                className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] placeholder-[#86868b]"
+                className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] placeholder-[#86868b] focus:outline-none focus:ring-2 focus:ring-[#36c1b3] focus:border-transparent"
               />
             </div>
             <div>
@@ -125,7 +172,7 @@ export default function QuoteCalculator() {
                 value={formData.projectType}
                 onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                 required
-                className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f]"
+                className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] focus:outline-none focus:ring-2 focus:ring-[#36c1b3] focus:border-transparent"
               >
                 <option value="">Select a type...</option>
                 <option value="3d-printing">3D Printing</option>
@@ -135,7 +182,7 @@ export default function QuoteCalculator() {
             </div>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6">
             <label className="block text-sm font-medium text-[#1d1d1f] mb-2">Project Details</label>
             <textarea
               value={formData.details}
@@ -143,23 +190,62 @@ export default function QuoteCalculator() {
               placeholder="Describe your project, dimensions, quantities, and any special requirements..."
               rows={5}
               required
-              className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] placeholder-[#86868b] resize-none"
+              className="w-full px-4 py-3 bg-white rounded-xl border border-[#d2d2d7] text-[#1d1d1f] placeholder-[#86868b] resize-none focus:outline-none focus:ring-2 focus:ring-[#36c1b3] focus:border-transparent"
             />
           </div>
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="btn-apple btn-primary w-full py-4 text-lg disabled:opacity-50"
-          >
-            {isSubmitting ? 'Sending...' : 'Send Quote Request'}
-          </button>
+          {/* Consent checkbox */}
+          <div className="mb-6">
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.consent}
+                onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                className="mt-1 w-4 h-4 rounded border-[#d2d2d7] text-[#36c1b3] focus:ring-[#36c1b3]"
+              />
+              <span className="text-sm text-[#86868b]">
+                I consent to the processing of my personal data for this quote request.{' '}
+                <a href="/privacy" className="text-[#36c1b3] underline">Privacy Policy</a>
+              </span>
+            </label>
+          </div>
+
+          {error && (
+            <p className="text-red-500 text-sm mb-4 text-center">{error}</p>
+          )}
+
+          <div className="flex flex-col sm:flex-row gap-3">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="btn-apple btn-primary flex-1 py-4 text-lg disabled:opacity-50 flex items-center justify-center gap-2"
+            >
+              <Send className="w-5 h-5" />
+              {isSubmitting ? 'Sending...' : 'Send Quote Request'}
+            </button>
+            <button
+              type="button"
+              onClick={handleWhatsApp}
+              className="flex-1 py-4 text-lg bg-[#25D366] hover:bg-[#20BD5A] text-white font-medium rounded-full transition-all flex items-center justify-center gap-2"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Send via WhatsApp
+            </button>
+          </div>
 
           <p className="text-sm text-[#86868b] text-center mt-6">
-            Can’t submit the form? Send your details via WhatsApp or email. We’ll respond within 24 hours.
+            We'll respond within 24 hours via your preferred contact method.
           </p>
         </motion.form>
       </div>
     </section>
+  );
+}
+
+export default function QuoteCalculator() {
+  return (
+    <Suspense>
+      <QuoteCalculatorInner />
+    </Suspense>
   );
 }

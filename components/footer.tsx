@@ -60,6 +60,11 @@ export default function Footer() {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy" className="text-[#86868b] hover:text-white transition-colors text-sm">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -85,7 +90,7 @@ export default function Footer() {
 
         <div className="border-t border-[#333] pt-8 text-center">
           <p className="text-[#86868b] text-sm">
-            © 2025 mk3dprint.org. All rights reserved.
+            © 2026 mk3dprint.org. All rights reserved.
           </p>
         </div>
       </div>

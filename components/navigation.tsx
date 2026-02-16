@@ -63,7 +63,7 @@ export default function Navigation() {
 
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/264834290501"
+            href="https://wa.me/264836750117"
             className="hidden md:flex btn-apple btn-primary text-sm px-4 py-2"
             target="_blank"
             rel="noopener noreferrer"
@@ -103,7 +103,7 @@ export default function Navigation() {
                 </Link>
               ))}
               <a
-                href="https://wa.me/264834290501"
+                href="https://wa.me/264836750117"
                 className="block py-3 text-[#36c1b3] font-semibold"
                 target="_blank"
                 rel="noopener noreferrer"
