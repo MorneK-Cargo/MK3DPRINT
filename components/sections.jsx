@@ -20,7 +20,7 @@ const Services = () => {
       title: 'Product',
       title2: 'Imports',
       body: 'Import smaller products directly from USA, Europe, and Asia. Significant cost savings on transport with fast 2–3 week delivery — without the massive costs of traditional importing. Available on request only.',
-      img: 'assets/imports/electronics.jpg',
+      img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=500&fit=crop',
       feat: [
         ['Regions', 'USA · EU · Asia'],
         ['Delivery', '2 – 3 weeks'],

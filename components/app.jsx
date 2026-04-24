@@ -12,20 +12,42 @@ const ROUTES = {
   'contact': { comp: 'ContactPage', label: 'Contact' },
 };
 
-const Topbar = ({ route, go }) => (
-  <header className="topbar">
-    <a href="#/" onClick={e=>{e.preventDefault(); go('');}} className="brand">
-      <img src="assets/mk-logo-trans.png" alt="MK 3D Printing"/>
-      <div className="loc">Windhoek · Namibia</div>
-    </a>
-    <nav className="nav">
-      {['services','scanning','imports','shop','about'].map(k => (
-        <a key={k} href={`#/${k}`} onClick={e=>{e.preventDefault(); go(k);}} className={route===k ? 'active' : ''} style={route===k ? {background:'var(--paper-2)'} : {}}>{ROUTES[k].label}</a>
-      ))}
-      <a href="#/contact" onClick={e=>{e.preventDefault(); go('contact');}} className="cta">Request a quote →</a>
-    </nav>
-  </header>
-);
+const Topbar = ({ route, go }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  return (
+    <>
+      <header className="topbar">
+        <a href="#/" onClick={e=>{e.preventDefault(); go(''); setMenuOpen(false);}} className="brand">
+          <img src="assets/mk-logo-trans.png" alt="MK 3D Printing"/>
+          <div className="loc">Windhoek · Namibia</div>
+        </a>
+        <nav className="nav">
+          {['services','scanning','imports','shop','about'].map(k => (
+            <a key={k} href={`#/${k}`} onClick={e=>{e.preventDefault(); go(k);}} className={route===k ? 'active' : ''} style={route===k ? {background:'var(--paper-2)'} : {}}>{ROUTES[k].label}</a>
+          ))}
+          <a href="#/contact" onClick={e=>{e.preventDefault(); go('contact');}} className="cta">Request a quote →</a>
+        </nav>
+        {/* Hamburger — only visible on mobile */}
+        <button className="hamburger" onClick={()=>setMenuOpen(o=>!o)} aria-label="Menu" style={{display:'none', flexDirection:'column', gap:5, padding:8, borderRadius:8, border:'1px solid var(--line-strong)', background:'transparent', cursor:'pointer'}}>
+          <span style={{display:'block', width:22, height:2, background:'var(--ink)', borderRadius:2, transition:'all .2s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'}}></span>
+          <span style={{display:'block', width:22, height:2, background:'var(--ink)', borderRadius:2, transition:'all .2s', opacity: menuOpen ? 0 : 1}}></span>
+          <span style={{display:'block', width:22, height:2, background:'var(--ink)', borderRadius:2, transition:'all .2s', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'}}></span>
+        </button>
+      </header>
+      {/* Mobile menu dropdown */}
+      {menuOpen && (
+        <div style={{position:'fixed', top:73, left:0, right:0, background:'rgba(246,242,234,0.97)', backdropFilter:'blur(16px)', borderBottom:'1px solid var(--line)', zIndex:49, padding:'16px 20px 24px', display:'flex', flexDirection:'column', gap:4}}>
+          {['services','scanning','imports','shop','about','contact'].map(k => (
+            <a key={k} href={`#/${k}`} onClick={e=>{e.preventDefault(); go(k); setMenuOpen(false);}} style={{padding:'14px 16px', fontSize:16, fontWeight:500, borderRadius:10, background: route===k ? 'var(--paper-2)' : 'transparent', color:'var(--ink)', display:'block', textTransform:'capitalize'}}>
+              {ROUTES[k].label}
+            </a>
+          ))}
+          <a href="#/contact" onClick={e=>{e.preventDefault(); go('contact'); setMenuOpen(false);}} style={{marginTop:8, padding:'14px 20px', background:'var(--ink)', color:'var(--bone)', borderRadius:999, textAlign:'center', fontWeight:600, fontSize:14}}>Request a quote →</a>
+        </div>
+      )}
+    </>
+  );
+};
 
 const Ticker = () => {
   const items = ['Scan · Print · Build', 'Creality CR-Scan Raptor — IR structured-light', 'Imports from 23 countries · USA · EU · Asia', '2 – 3 week import delivery', 'WhatsApp +264 83 675 0117', 'MK 3D Printing and Investments CC · Windhoek'];
@@ -120,7 +142,7 @@ const FloatWA = () => (
 
 const SiteFooter = ({ go }) => (
   <footer style={{background:'var(--ink)', color:'var(--bone)', padding:'48px 40px 32px'}}>
-    <div style={{maxWidth:1440, margin:'0 auto', display:'grid', gridTemplateColumns:'1.4fr 1fr 1fr 1fr', gap:40, marginBottom:40}}>
+    <div style={{maxWidth:1440, margin:'0 auto', display:'grid', gridTemplateColumns:'1.4fr 1fr 1fr 1fr', gap:40, marginBottom:40}} className="footer-grid">
       <div>
         <div style={{fontFamily:'var(--f-display)', fontSize:18, fontWeight:500, color:'var(--teal-bright)'}}>MK 3D Printing</div>
         <div style={{fontSize:13, color:'rgba(244,237,222,0.6)', marginTop:6}}>Scan · Print · Build</div>

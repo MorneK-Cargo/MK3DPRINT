@@ -217,7 +217,7 @@ const ScanningFull = () => {
             {applications.map((a) => (
               <div key={a.id} style={{background:'var(--char-2)', borderRadius:16, overflow:'hidden', border:'1px solid rgba(244,237,222,0.08)'}}>
                 <div style={{height:200, overflow:'hidden'}}>
-                  <img src={a.img} alt={a.title} style={{width:'100%', height:'100%', objectFit:'cover', display:'block'}}/>
+                  <img src={a.img} alt={a.title} style={{width:'100%', height:'100%', objectFit: a.id==='reverse' ? 'contain' : a.id==='art' ? 'cover' : 'cover', objectPosition: a.id==='art' ? 'center 30%' : 'center', display:'block', background: a.id==='reverse' ? '#1a2530' : 'transparent'}}/>
                 </div>
                 <div style={{padding:24}}>
                   <h3 style={{fontFamily:'var(--f-display)', fontSize:22, fontWeight:500, marginBottom:8}}>{a.title}</h3>
