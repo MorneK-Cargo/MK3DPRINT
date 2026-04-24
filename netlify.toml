@@ -1,15 +1,10 @@
 [build]
   publish = "."
-  command = ""
-  ignore = "exit 0"
+  command = "echo 'Static site'"
 
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    version = "skip"
+  NODE_ENV = "production"
 
 [[redirects]]
   from = "/*"
