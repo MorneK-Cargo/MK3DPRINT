@@ -1,50 +1,106 @@
 // Page router + individual page shells for MK 3D Print
 
-const Page = ({ children, title, eyebrow, seed = 7 }) => (
-  <main style={{minHeight:'calc(100vh - 120px)', paddingTop: 40, paddingBottom: 80}}>
-    <div style={{maxWidth: 1440, margin: '0 auto', padding: '40px 40px 60px', position:'relative', overflow:'hidden'}}>
-      <TopoLines className="topo" seed={seed}/>
-      <div style={{position:'relative', zIndex:2}}>
-        <div className="eyebrow">{eyebrow}</div>
-        <h1 className="display" style={{fontSize: 'clamp(56px, 8vw, 112px)', marginTop: 16, letterSpacing: '-0.03em'}}>{title}</h1>
+// Reusable section-page hero — matches Cut & Engrave energy
+// with burn-keyword animation on the title and contour-line background
+const PageHero = ({ eyebrow, words = [], italic, lede, seed = 7 }) => {
+  const { LaserBgBeam } = window;
+  return (
+    <section className="page-hero">
+      {LaserBgBeam && <LaserBgBeam variant="hero"/>}
+      <div className="page-hero__inner">
+        <div className="laser-eyebrow">
+          <span className="laser-dot"></span>{eyebrow}
+        </div>
+        <h1 className="page-hero__title">
+          {words.map((w, i) => {
+            const clean = w.replace(/\.$/, '');
+            return (
+              <React.Fragment key={i}>
+                <span className="laser-word laser-word--burn">{clean}.</span>{' '}
+              </React.Fragment>
+            );
+          })}
+          {italic && <em className="laser-italic">{italic}.</em>}
+        </h1>
+        {lede && <p className="page-hero__lede">{lede}</p>}
       </div>
-    </div>
-    {children}
-  </main>
-);
+    </section>
+  );
+};
 
 const HomePage = () => (<><Hero/><ScanPromo/><Services/><Scanning/><Imports/><Shop/><About/><Contact/></>);
 
 const ScanningPage = () => (
-  <Page eyebrow="§ Service / Scanning" seed={8} title={<>3D <em style={{fontFamily:'Instrument Serif, Georgia, serif', fontStyle:'italic', color:'var(--ochre)', fontWeight:400}}>Scanning</em>.</>}>
+  <div className="laser-root">
+    <PageHero
+      eyebrow="Service · Live since 2025"
+      words={['Scan', 'Capture']}
+      italic="Reverse engineer"
+      lede="The only dedicated 3D scanning workshop in Namibia. Sub-millimetre accuracy with the Creality CR-Scan Raptor — turn any physical object into a precise digital model for reproduction, modification, or archival."
+      seed={8}
+    />
     <ScanningFull/>
-  </Page>
+  </div>
 );
 
 const ImportsPage = () => (
-  <Page eyebrow="§ Service / Imports" seed={9} title={<>Direct <em style={{fontFamily:'Instrument Serif, Georgia, serif', fontStyle:'italic', color:'var(--ochre)', fontWeight:400}}>imports</em>.</>}>
+  <div className="laser-root">
+    <PageHero
+      eyebrow="Service · Available on request"
+      words={['Source.', 'Ship']}
+      italic="Deliver"
+      lede="Direct imports from 23 countries — USA, Europe, Asia. Smaller products, significant savings on transport, and a 2–3 week delivery window. Available on request only."
+      seed={9}
+    />
     <Imports/>
-  </Page>
+  </div>
 );
 
 const ShopPage = () => (
-  <Page eyebrow="§ Shop" seed={10} title={<>Ready-made <em style={{fontFamily:'Instrument Serif, Georgia, serif', fontStyle:'italic', color:'var(--ochre)', fontWeight:400}}>prints</em>.</>}>
+  <div className="laser-root">
+    <PageHero
+      eyebrow="Inspiration · Made in Windhoek"
+      words={['Browse', 'Pick']}
+      italic="Print"
+      lede="Hundreds of ready-to-print models, exclusive premium figurines, and original in-stock prints. Don't see what you want? Send any design from Printables, MakerWorld, or Yeggi — we'll print it."
+      seed={10}
+    />
     <Shop/>
-  </Page>
+  </div>
 );
 
 const AboutPage = () => (
-  <Page eyebrow="§ About" seed={11} title={<>About <em style={{fontFamily:'Instrument Serif, Georgia, serif', fontStyle:'italic', color:'var(--ochre)', fontWeight:400}}>MK</em>.</>}>
+  <div className="laser-root">
+    <PageHero
+      eyebrow="About · MK 3D Printing and Investments CC"
+      words={['Local.', 'Honest']}
+      italic="Open"
+      lede="Born during COVID, raised by problem-solving. A one-person Windhoek workshop where scanning, 3D printing, laser fabrication, and direct imports work together as parts of the same answer."
+      seed={11}
+    />
     <About/>
-  </Page>
+  </div>
 );
 
 const ContactPage = () => (<Contact/>);
 
 const ServicesPage = () => (
-  <Page eyebrow="§ Capabilities" seed={12} title={<>Our <em style={{fontFamily:'Instrument Serif, Georgia, serif', fontStyle:'italic', color:'var(--ochre)', fontWeight:400}}>services</em>.</>}>
+  <div className="laser-root">
+    <PageHero
+      eyebrow="Capabilities · Five integrated services"
+      words={['Scan.', 'Print.', 'Cut.', 'Engrave']}
+      italic="Source"
+      lede="One Windhoek workshop. Five services that work together — from broken plastic part to custom branded sticker pack, you don't have to chase three vendors."
+      seed={12}
+    />
     <Services/>
-  </Page>
+  </div>
 );
 
-Object.assign(window, { Page, HomePage, ScanningPage, ImportsPage, ShopPage, AboutPage, ContactPage, ServicesPage });
+// Cut & Engrave page (Coming Soon — fully accessible)
+const LaserPagePublic = () => (typeof window.LaserPage === 'function' ? <window.LaserPage/> : null);
+
+// 3D Printing dedicated page
+const PrintingPagePublic = () => (typeof window.PrintingPage === 'function' ? <window.PrintingPage/> : null);
+
+Object.assign(window, { PageHero, HomePage, ScanningPage, ImportsPage, ShopPage, AboutPage, ContactPage, ServicesPage, LaserPagePublic, PrintingPagePublic });

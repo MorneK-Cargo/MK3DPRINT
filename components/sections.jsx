@@ -6,10 +6,11 @@ const Services = () => {
       num: '01 / SERVICE',
       title: '3D',
       title2: 'Printing',
-      body: 'Precision 3D printing for prototypes, functional parts, and custom solutions tailored to your needs.',
+      body: 'Precision 3D printing for prototypes, functional parts, replacement parts, and custom solutions — tailored to your brief.',
       img: 'assets/bambulab-print.png',
+      fx: 'print',
       feat: [
-        ['Materials', 'Multiple options'],
+        ['Materials', 'PLA · PETG · ABS'],
         ['Detail', 'High precision'],
         ['Lead time', 'Agreed upfront'],
         ['Pricing', 'Cost-effective'],
@@ -17,28 +18,60 @@ const Services = () => {
     },
     {
       num: '02 / SERVICE',
+      title: '3D',
+      title2: 'Scanning',
+      body: 'Capture real objects as precise digital files — for reverse engineering, reproduction, quality control, or archival.',
+      img: 'assets/scanning-automotive-crop.png',
+      fx: 'scan',
+      feat: [
+        ['Capture', 'Sub-mm precision'],
+        ['Use', 'Reverse-eng.'],
+        ['QC', 'Part comparison'],
+        ['Archive', 'Digital models'],
+      ],
+    },
+    {
+      num: '03 / SERVICE',
+      title: 'Cut &',
+      title2: 'Engrave',
+      soon: true,
+      body: 'Laser cutting and photo-grade engraving on wood, leather, acrylic, glass, slate, metal tags, fabric, and more.',
+      img: 'assets/xtool/home-sweet-home.png',
+      fx: 'laser',
+      feat: [
+        ['Power', '20W diode'],
+        ['Materials', '11 types'],
+        ['Precision', '0.08 mm'],
+        ['Launch', 'July 2026'],
+      ],
+    },
+    {
+      num: '04 / SERVICE',
+      title: 'Custom',
+      title2: 'Stickers',
+      soon: true,
+      body: 'Brand stickers, vehicle decals, product labels, packaging — designed, printed, and blade-cut on site.',
+      img: 'assets/custom-stickers.png',
+      fx: 'stickers',
+      feat: [
+        ['Finish', 'Matte · Gloss · Holo'],
+        ['Cut', 'Die or kiss-cut'],
+        ['Use', 'Indoor / Outdoor'],
+        ['Launch', 'July 2026'],
+      ],
+    },
+    {
+      num: '05 / SERVICE',
       title: 'Product',
       title2: 'Imports',
-      body: 'Import smaller products directly from USA, Europe, and Asia. Significant cost savings on transport with fast 2–3 week delivery — without the massive costs of traditional importing. Available on request only.',
-      img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=500&fit=crop',
+      body: 'Import smaller products directly from USA, Europe, and Asia. Significant savings on transport with fast 2–3 week delivery. Available on request.',
+      img: 'assets/amazon-screenshot.png',
+      fx: 'imports',
       feat: [
         ['Regions', 'USA · EU · Asia'],
         ['Delivery', '2 – 3 weeks'],
         ['Savings', 'Significant'],
         ['Source', 'Direct'],
-      ],
-    },
-    {
-      num: '03 / SERVICE',
-      title: '3D',
-      title2: 'Scanning',
-      body: 'Advanced scanning services to digitize physical objects and create precise digital files for reproduction or analysis.',
-      img: 'assets/scanning-automotive-crop.png',
-      feat: [
-        ['Capture', 'Precision'],
-        ['Use', 'Reverse-eng.'],
-        ['QC', 'Part comparison'],
-        ['Archive', 'Digital models'],
       ],
     },
   ];
@@ -48,19 +81,21 @@ const Services = () => {
       <div className="section-head" style={{position:'relative', zIndex:2}}>
         <div>
           <div className="label">§ 01 — Capabilities</div>
-          <h2>Our services.<br/>Scan. Print. Source.</h2>
+          <h2>The full cycle.<br/>Scan. Print. Cut. Engrave. Source.</h2>
         </div>
         <div className="desc">
-          Comprehensive 3D solutions tailored to your needs — built in Windhoek, from a workshop that treats every brief as a one-to-one conversation.
+          Five integrated services from one Windhoek workshop — built so you don't have to chase three vendors for one project.
         </div>
       </div>
       <div className="services">
         {items.map((s, i) => (
           <div className="service" key={i}>
             <div className="num">{s.num}</div>
-            <div className="go">↗</div>
+            <div className="go">{s.soon ? '◉' : '↗'}</div>
+            {s.soon && <div className="service-soon-tag">Coming Soon</div>}
             <div className="visual">
               <img src={s.img} alt={`${s.title} ${s.title2}`} style={{width:'100%', height:'100%', objectFit:'cover', display:'block'}}/>
+              <div className={`service-fx service-fx--${s.fx}`}></div>
             </div>
             <h3>{s.title} <span className="accent">{s.title2}</span></h3>
             <p>{s.body}</p>
@@ -127,6 +162,15 @@ const Scanning = () => {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+
+      <div style={{maxWidth: 1440, margin: '64px auto 0', display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 60, alignItems: 'center'}} className="scan-wrap">
+        <BeforeAfter before="assets/ba-scan.png" after="assets/ba-cad.png" labelBefore="Scan data" labelAfter="CAD model"/>
+        <div>
+          <div className="label" style={{marginBottom: 16}}>Scan → CAD</div>
+          <h3 style={{fontFamily: 'var(--f-display)', fontSize: 30, fontWeight: 500, letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: 14}}>Drag the slider to see the transformation.</h3>
+          <p style={{fontSize: 15.5, lineHeight: 1.6, color: 'var(--char-2)', maxWidth: 480}}>Every scan starts as a dense point mesh captured straight off the physical part. From there we convert it into a clean, editable CAD model — ready for modification, reproduction, or 3D printing.</p>
         </div>
       </div>
     </section>
@@ -425,12 +469,12 @@ const Contact = () => {
           {[['name','Your name'],['subject','Subject / project type']].map(([k,label]) => (
             <div key={k} style={{marginBottom:18}}>
               <label className="mono" style={{display:'block', fontSize:10, color:'rgba(244,237,222,0.5)', marginBottom:6, letterSpacing:'0.12em'}}>{label}</label>
-              <input value={form[k]} onChange={e=>setForm({...form, [k]:e.target.value})} style={{width:'100%', background:'transparent', border:'none', borderBottom:'1px solid rgba(244,237,222,0.25)', padding:'10px 0', fontSize:18, color:'var(--bone)', fontFamily:'var(--f-display)', outline:'none'}}/>
+              <input className="cf-in" value={form[k]} onChange={e=>setForm({...form, [k]:e.target.value})} placeholder={k==='name' ? 'Your full name' : 'e.g. Custom bracket, 3D scan, import quote'} style={{width:'100%', background:'transparent', border:'none', borderBottom:'1px solid rgba(244,237,222,0.25)', padding:'10px 0', fontSize:18, color:'var(--bone)', fontFamily:'var(--f-display)', outline:'none'}}/>
             </div>
           ))}
           <div style={{marginBottom:24}}>
             <label className="mono" style={{display:'block', fontSize:10, color:'rgba(244,237,222,0.5)', marginBottom:6, letterSpacing:'0.12em'}}>Project details</label>
-            <textarea value={form.details} onChange={e=>setForm({...form, details:e.target.value})} rows={5} style={{width:'100%', background:'transparent', border:'1px solid rgba(244,237,222,0.2)', borderRadius:8, padding:12, fontSize:14, color:'var(--bone)', fontFamily:'var(--f-body)', resize:'vertical', outline:'none'}}/>
+            <textarea className="cf-in" value={form.details} onChange={e=>setForm({...form, details:e.target.value})} rows={5} placeholder="Size, material, quantity, deadline — or paste a link to a model you'd like printed" style={{width:'100%', background:'transparent', border:'1px solid rgba(244,237,222,0.2)', borderRadius:8, padding:12, fontSize:14, color:'var(--bone)', fontFamily:'var(--f-body)', resize:'vertical', outline:'none'}}/>
           </div>
           <a href={waHref} target="_blank" rel="noopener" style={{display:'inline-flex', alignItems:'center', gap:10, background:'#25D366', color:'white', padding:'14px 28px', borderRadius:999, fontWeight:600, fontSize:15, textDecoration:'none'}}>
             Open in WhatsApp →
@@ -460,6 +504,18 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div style={{maxWidth:1440, margin:'72px auto 0'}}>
+        <div className="mono" style={{color:'var(--teal-bright)', marginBottom:12}}>Common questions</div>
+        <FAQ items={[
+          ['How is pricing calculated?', 'Every job is quoted individually — material, print time, and finishing all factor in. Send a photo, link, or 3D file on WhatsApp and you\u2019ll get a clear price before anything is printed. No surprises.'],
+          ['How long will my order take?', 'It depends on size and quantity — small parts are often ready within days, and the lead time is always agreed upfront with your quote.'],
+          ['What materials can you print in?', 'PLA, PETG, and ABS. Tell us how the part will be used — outdoors, under load, near heat — and we\u2019ll recommend the right material for the job.'],
+          ['I don\u2019t have a 3D file — can you still help?', 'Absolutely. Send a design from Printables, MakerWorld, or Yeggi, or we can design from photos and measurements — or 3D-scan the original part directly.'],
+          ['How do imports work, and how long do they take?', 'Share a product link or description and we quote the full landed cost — product, shipping, handling, no hidden fees. Once approved, delivery takes 2–3 weeks.'],
+          ['How big or small can a 3D scan be?', 'From 5 mm up to 2 m — jewellery, mechanical parts, sculptures, even automotive components. Feature-rich objects need no markers at all.'],
+        ]}/>
       </div>
     </section>
   );

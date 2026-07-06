@@ -10,6 +10,8 @@ const ROUTES = {
   'shop': { comp: 'ShopPage', label: 'Shop' },
   'about': { comp: 'AboutPage', label: 'About' },
   'contact': { comp: 'ContactPage', label: 'Contact' },
+  '3d-printing': { comp: 'PrintingPagePublic', label: '3D Printing' },
+  'cut-engrave': { comp: 'LaserPagePublic', label: 'Cut & Engrave', soon: true },
 };
 
 const Topbar = ({ route, go }) => {
@@ -22,8 +24,13 @@ const Topbar = ({ route, go }) => {
           <div className="loc">Windhoek · Namibia</div>
         </a>
         <nav className="nav">
-          {['services','scanning','imports','shop','about'].map(k => (
-            <a key={k} href={`#/${k}`} onClick={e=>{e.preventDefault(); go(k);}} className={route===k ? 'active' : ''} style={route===k ? {background:'var(--paper-2)'} : {}}>{ROUTES[k].label}</a>
+          {['services','3d-printing','scanning','cut-engrave','imports','shop','about'].map(k => (
+            <a key={k} href={`#/${k}`} onClick={e=>{e.preventDefault(); go(k);}}
+               className={(route===k ? 'active' : '') + (ROUTES[k].soon ? ' nav--soon' : '')}
+               style={route===k ? {background:'var(--paper-2)'} : {}}>
+              {ROUTES[k].label}
+              {ROUTES[k].soon && <span className="nav-soon-badge">Coming Soon</span>}
+            </a>
           ))}
           <a href="#/contact" onClick={e=>{e.preventDefault(); go('contact');}} className="cta">Request a quote →</a>
         </nav>
@@ -37,9 +44,11 @@ const Topbar = ({ route, go }) => {
       {/* Mobile menu dropdown */}
       {menuOpen && (
         <div style={{position:'fixed', top:73, left:0, right:0, background:'rgba(246,242,234,0.97)', backdropFilter:'blur(16px)', borderBottom:'1px solid var(--line)', zIndex:49, padding:'16px 20px 24px', display:'flex', flexDirection:'column', gap:4}}>
-          {['services','scanning','imports','shop','about','contact'].map(k => (
-            <a key={k} href={`#/${k}`} onClick={e=>{e.preventDefault(); go(k); setMenuOpen(false);}} style={{padding:'14px 16px', fontSize:16, fontWeight:500, borderRadius:10, background: route===k ? 'var(--paper-2)' : 'transparent', color:'var(--ink)', display:'block', textTransform:'capitalize'}}>
-              {ROUTES[k].label}
+          {['services','3d-printing','scanning','cut-engrave','imports','shop','about','contact'].map(k => (
+            <a key={k} href={`#/${k}`} onClick={e=>{e.preventDefault(); go(k); setMenuOpen(false);}}
+               style={{padding:'14px 16px', fontSize:16, fontWeight:500, borderRadius:10, background: route===k ? 'var(--paper-2)' : 'transparent', color:'var(--ink)', display:'flex', alignItems:'center', justifyContent:'space-between', textTransform:'capitalize'}}>
+              <span>{ROUTES[k].label}</span>
+              {ROUTES[k].soon && <span style={{fontFamily:'var(--f-mono)', fontSize:9, letterSpacing:'0.12em', padding:'3px 8px', borderRadius:6, background:'var(--ochre)', color:'#fff', textTransform:'uppercase', fontWeight:600}}>Coming Soon</span>}
             </a>
           ))}
           <a href="#/contact" onClick={e=>{e.preventDefault(); go('contact'); setMenuOpen(false);}} style={{marginTop:8, padding:'14px 20px', background:'var(--ink)', color:'var(--bone)', borderRadius:999, textAlign:'center', fontWeight:600, fontSize:14}}>Request a quote →</a>
@@ -50,7 +59,7 @@ const Topbar = ({ route, go }) => {
 };
 
 const Ticker = () => {
-  const items = ['Scan · Print · Build', 'Creality CR-Scan Raptor — IR structured-light', 'Imports from 23 countries · USA · EU · Asia', '2 – 3 week import delivery', 'WhatsApp +264 83 675 0117', 'MK 3D Printing and Investments CC · Windhoek'];
+  const items = ['Scan · Print · Cut · Engrave · Source', 'Est. 2025 · Namibia’s first 3D scanning workshop', 'New July 2026 — Laser cutting, engraving & custom stickers', 'Creality CR-Scan Raptor · IR structured-light', 'xTool M2 Deluxe — arriving July 2026', 'Imports from 23 countries · USA · EU · Asia', 'WhatsApp +264 83 675 0117', 'MK 3D Printing and Investments CC · Windhoek'];
   return (
     <div className="ticker">
       <div className="track">{items.concat(items).map((t, i) => <span key={i}>{t}</span>)}</div>
@@ -131,15 +140,6 @@ const Tweaks = () => {
   );
 };
 
-const FloatWA = () => (
-  <a href="https://wa.me/264836750117?text=Hi%2C%20I%27m%20interested%20in%20your%203D%20printing%20services" target="_blank" rel="noopener"
-     style={{position:'fixed', bottom: 24, left: 24, width: 56, height: 56, borderRadius: '50%', background: '#25D366', display:'flex', alignItems:'center', justifyContent:'center', boxShadow: '0 10px 30px rgba(0,0,0,0.25)', zIndex: 90, transition: 'transform .2s'}}>
-    <svg viewBox="0 0 32 32" fill="white" width="26" height="26">
-      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.738 5.483 2.031 7.788L0 32l8.463-2.031A15.921 15.921 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.381 19.419c-.406-.206-2.4-1.188-2.775-1.325-.375-.137-.65-.206-.925.206-.275.406-1.063 1.325-1.306 1.594-.238.275-.481.306-.887.1-.406-.206-1.719-.631-3.269-2.019-1.206-1.075-2.019-2.406-2.256-2.813-.238-.406-.025-.625.175-.825.181-.181.406-.481.606-.719.206-.238.275-.406.413-.681.137-.275.069-.512-.031-.719-.1-.206-.925-2.212-1.263-3.031-.331-.8-.669-.688-.925-.7-.238-.013-.512-.013-.787-.013s-.719.1-1.094.512c-.375.413-1.438 1.4-1.438 3.419s1.475 3.969 1.681 4.244c.206.275 2.906 4.431 7.031 6.213.981.425 1.75.681 2.344.875.987.319 1.881.275 2.588.169.787-.119 2.4-.975 2.738-1.919.337-.944.337-1.75.238-1.919-.1-.169-.375-.275-.781-.481z"/>
-    </svg>
-  </a>
-);
-
 const SiteFooter = ({ go }) => (
   <footer style={{background:'var(--ink)', color:'var(--bone)', padding:'48px 40px 32px'}}>
     <div style={{maxWidth:1440, margin:'0 auto', display:'grid', gridTemplateColumns:'1.4fr 1fr 1fr 1fr', gap:40, marginBottom:40}} className="footer-grid">
@@ -154,13 +154,26 @@ const SiteFooter = ({ go }) => (
       </div>
       <div>
         <div className="mono" style={{color:'var(--teal-bright)', marginBottom:12}}>Quick links</div>
-        {['services','scanning','imports','shop','about','contact'].map(k => <a key={k} href={`#/${k}`} onClick={e=>{e.preventDefault(); go(k);}} style={{display:'block', fontSize:13, color:'rgba(244,237,222,0.7)', padding:'4px 0', textTransform:'capitalize'}}>{k}</a>)}
+        {['services','3d-printing','scanning','cut-engrave','imports','shop','about','contact'].map(k => (
+          <a key={k} href={`#/${k}`} onClick={e=>{e.preventDefault(); go(k);}} style={{display:'flex', alignItems:'center', gap:8, fontSize:13, color:'rgba(244,237,222,0.7)', padding:'4px 0', textTransform:'capitalize'}}>
+            <span>{ROUTES[k].label}</span>
+            {ROUTES[k].soon && <span style={{fontFamily:'var(--f-mono)', fontSize:8, letterSpacing:'0.12em', padding:'2px 6px', borderRadius:4, background:'var(--ochre)', color:'#fff', textTransform:'uppercase', fontWeight:600}}>Soon</span>}
+          </a>
+        ))}
       </div>
       <div>
         <div className="mono" style={{color:'var(--teal-bright)', marginBottom:12}}>Contact</div>
         <a href="mailto:info@mk3dprint.org" style={{display:'block', fontSize:13, color:'rgba(244,237,222,0.7)', padding:'4px 0'}}>info@mk3dprint.org</a>
         <a href="https://wa.me/264836750117" target="_blank" rel="noopener" style={{display:'block', fontSize:13, color:'rgba(244,237,222,0.7)', padding:'4px 0'}}>+264 83 675 0117</a>
         <div style={{fontSize:13, color:'rgba(244,237,222,0.5)', padding:'4px 0'}}>Windhoek, Namibia</div>
+        <div style={{display:'flex', gap:10, marginTop:12}}>
+          <a href={window.SOCIALS.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="foot-soc">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href={window.SOCIALS.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="foot-soc">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div style={{paddingTop:20, borderTop:'1px solid rgba(244,237,222,0.1)', fontFamily:'var(--f-mono)', fontSize:10, letterSpacing:'0.14em', textTransform:'uppercase', color:'rgba(244,237,222,0.4)', textAlign:'center'}}>© 2026 mk3dprint.org · MK 3D Printing and Investments CC</div>
@@ -184,6 +197,8 @@ const App = () => {
       window.location.hash = route ? '/' + route : '/';
     }
     window.scrollTo({top:0, behavior:'instant'});
+    const t = setTimeout(() => window.__initReveal && window.__initReveal(), 80);
+    return () => clearTimeout(t);
   }, [route]);
 
   const go = (r) => setRoute(r);
@@ -200,7 +215,8 @@ const App = () => {
         {Comp ? <Comp/> : null}
       </div>
       <SiteFooter go={go}/>
-      <FloatWA/>
+      <FloatSocial/>
+      <BackToTop/>
       <Tweaks/>
     </>
   );

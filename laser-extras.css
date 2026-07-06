@@ -1,0 +1,1337 @@
+/* ═══════════════════════════════════════════════════════════════════
+   LASER PAGE — Additions: animated material icons, stickers,
+   limitations, sketch-to-finished, image-slot styling
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Animated material icons (used in marquee + matcards) ──────── */
+.mi { display: block; flex-shrink: 0; }
+.mi-grain { animation: mi-grain-draw 4s ease-in-out infinite; stroke-dasharray: 30; stroke-dashoffset: 30; }
+@keyframes mi-grain-draw {
+  0%, 100% { stroke-dashoffset: 30; opacity: 0; }
+  30% { opacity: 1; }
+  70% { stroke-dashoffset: 0; opacity: 1; }
+}
+.mi-stitch { animation: mi-dash 6s linear infinite; }
+@keyframes mi-dash { to { stroke-dashoffset: -16; } }
+.mi-stitch-dot { animation: mi-pulse 2s ease-in-out infinite; transform-origin: center; }
+@keyframes mi-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+.mi-shimmer { animation: mi-shimmer-fade 3s ease-in-out infinite; }
+@keyframes mi-shimmer-fade {
+  0%, 100% { opacity: 0.3; transform: translate(0, 0); }
+  50% { opacity: 1; transform: translate(1px, -1px); }
+}
+.mi-line { stroke-dasharray: 18; stroke-dashoffset: 18; animation: mi-grain-draw 3s ease-in-out infinite; }
+.mi-cut-line { animation: mi-dash 3s linear infinite; }
+.mi-peel { animation: mi-peel-anim 3s ease-in-out infinite; transform-origin: 24px 8px; }
+@keyframes mi-peel-anim {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+.mi-weave { animation: mi-weave-shift 8s linear infinite; }
+@keyframes mi-weave-shift { to { background-position: 6px 6px; } }
+.mi-ripple {
+  transform-origin: center;
+  animation: mi-ripple-anim 3s ease-out infinite;
+}
+@keyframes mi-ripple-anim {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+.mi-engrave-line { stroke-dasharray: 18; stroke-dashoffset: 18; animation: mi-grain-draw 4s ease-in-out infinite; }
+.mi-shine {
+  clip-path: polygon(0 0, 20% 0, 35% 100%, 15% 100%);
+  animation: mi-shine-sweep 4s ease-in-out infinite;
+}
+@keyframes mi-shine-sweep {
+  0%, 100% { transform: translateX(-100%); opacity: 0; }
+  50% { transform: translateX(100%); opacity: 0.6; }
+}
+.mi-dot { animation: mi-pulse 2.5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.mi-cork-dot { animation: mi-pulse 3s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mi-grain, .mi-stitch, .mi-stitch-dot, .mi-shimmer, .mi-line, .mi-cut-line,
+  .mi-peel, .mi-weave, .mi-ripple, .mi-engrave-line, .mi-shine, .mi-dot, .mi-cork-dot {
+    animation: none !important;
+  }
+}
+
+/* ── Material card update for new icon component ──────────────── */
+.laser-matcard__top { gap: 12px; }
+.laser-matcard__badge {
+  margin-left: auto;
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--ochre);
+  color: #fff;
+  font-weight: 700;
+}
+.laser-mat .mi { margin-bottom: 8px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION — STICKERS SPOTLIGHT
+   ═══════════════════════════════════════════════════════════════ */
+.laser-stickers {
+  position: relative;
+  padding: 120px 40px;
+  background: var(--paper);
+  overflow: hidden;
+}
+.laser-stickers__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+.laser-stickers__dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--teal) 1px, transparent 1.5px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 60% 80% at 75% 50%, black 0%, transparent 100%);
+  opacity: 0.25;
+}
+.laser-stickers__inner {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.laser-stickers__lede {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--char-2);
+  max-width: 540px;
+  margin-top: 24px;
+}
+.laser-stickers__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.laser-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+.laser-pill span {
+  color: var(--teal-deep);
+  font-size: 10px;
+}
+
+/* Sticker sheet visual */
+.laser-stickers__visual {
+  position: relative;
+}
+.laser-sticker-sheet {
+  position: relative;
+  background: var(--paper-2);
+  border-radius: 24px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  border: 2px dashed rgba(12,30,44,0.12);
+  aspect-ratio: 5 / 4;
+  box-shadow: 0 30px 60px rgba(12,30,44,0.08);
+}
+.laser-sticker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform .3s;
+}
+.laser-sticker:hover { transform: translateY(-4px) rotate(2deg); }
+.laser-sticker--1 { animation: sticker-float 6s ease-in-out infinite; }
+.laser-sticker--2 { animation: sticker-float 6s ease-in-out infinite 0.5s; }
+.laser-sticker--3 { animation: sticker-float 6s ease-in-out infinite 1s; }
+.laser-sticker--4 { animation: sticker-float 6s ease-in-out infinite 1.5s; }
+@keyframes sticker-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(-1.5deg); }
+}
+.laser-cut-anim { animation: mi-dash 3s linear infinite; }
+.laser-sticker-caption {
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--char-2);
+  opacity: 0.55;
+  margin-top: 16px;
+}
+
+@media (max-width: 980px) {
+  .laser-stickers__inner { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION — THE MACHINE (image slot replaces SVG illustration)
+   ═══════════════════════════════════════════════════════════════ */
+.laser-machine__photo-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(244,237,222,0.1);
+  background: #0a1218;
+}
+.laser-machine__photo-frame image-slot {
+  --image-slot-bg: rgba(244,237,222,0.04);
+  --image-slot-border: 1px dashed rgba(47,207,199,0.4);
+  --image-slot-color: rgba(244,237,222,0.55);
+}
+/* Pulsing border for empty slot to invite interaction */
+.laser-machine__photo-frame image-slot:not([data-filled])::before {
+  animation: machine-slot-pulse 3s ease-in-out infinite;
+}
+@keyframes machine-slot-pulse {
+  0%, 100% { box-shadow: inset 0 0 0 1px rgba(47,207,199,0.3); }
+  50% { box-shadow: inset 0 0 0 2px rgba(47,207,199,0.7), 0 0 30px rgba(47,207,199,0.2); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION — LIMITATIONS (honest)
+   ═══════════════════════════════════════════════════════════════ */
+.laser-limits {
+  padding: 120px 40px;
+  background: var(--paper-2);
+  position: relative;
+  overflow: hidden;
+}
+.laser-limits::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0,
+    transparent 80px,
+    rgba(155,59,30,0.025) 80px,
+    rgba(155,59,30,0.025) 81px
+  );
+  pointer-events: none;
+}
+.laser-limits__head {
+  max-width: 1440px;
+  margin: 0 auto 56px;
+  position: relative;
+  z-index: 1;
+}
+.laser-dot--warn {
+  background: var(--ochre);
+  box-shadow: 0 0 12px rgba(197,119,42,0.5);
+}
+.laser-limits__grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+.laser-limit-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 22px 24px;
+  transition: border-color .2s, transform .2s;
+  position: relative;
+}
+.laser-limit-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 22px; right: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ochre), transparent);
+  border-radius: 2px;
+}
+.laser-limit-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ochre);
+}
+.laser-limit-card__icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  display: block;
+  line-height: 1;
+}
+.laser-limit-card__title {
+  font-family: var(--f-display);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.laser-limit-card__body {
+  font-size: 13.5px;
+  color: var(--char-2);
+  line-height: 1.55;
+}
+.laser-limits__note {
+  max-width: 1440px;
+  margin: 40px auto 0;
+  padding: 22px 28px;
+  background: var(--ink);
+  color: var(--bone);
+  border-radius: 16px;
+  font-size: 15px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.laser-limits__note strong { color: var(--teal-bright); }
+@media (max-width: 980px) {
+  .laser-limits__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .laser-limits__grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION — SKETCH TO FINISHED (image slots)
+   ═══════════════════════════════════════════════════════════════ */
+.laser-sketch {
+  padding: 120px 40px;
+  background: var(--paper);
+  position: relative;
+}
+.laser-sketch__head {
+  max-width: 1440px;
+  margin: 0 auto 56px;
+}
+.laser-sketch__grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.laser-sketch-card {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px;
+}
+.laser-sketch-card__cat {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 8px;
+}
+.laser-sketch-card__title {
+  font-family: var(--f-display);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+.laser-sketch-card__pair {
+  display: grid;
+  grid-template-columns: 1fr 32px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.laser-sketch-card__slot { position: relative; }
+.laser-sketch-card__slot image-slot {
+  --image-slot-bg: rgba(12,30,44,0.04);
+  --image-slot-border: 1.5px dashed rgba(12,30,44,0.25);
+  --image-slot-color: var(--char-2);
+}
+.laser-sketch-card__label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--char-2);
+}
+.laser-sketch-card__num {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--teal-bright);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 600;
+}
+.laser-sketch-card__arrow {
+  font-family: var(--f-display);
+  font-size: 32px;
+  color: var(--ochre);
+  text-align: center;
+  font-weight: 400;
+  animation: sketch-arrow-pulse 2s ease-in-out infinite;
+}
+@keyframes sketch-arrow-pulse {
+  0%, 100% { transform: translateX(0); opacity: 0.7; }
+  50% { transform: translateX(4px); opacity: 1; }
+}
+@media (max-width: 980px) {
+  .laser-sketch__grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SERVICES SECTION — animated topic-aligned overlays
+   (matches Cut & Engrave page energy)
+   ═══════════════════════════════════════════════════════════════ */
+.service {
+  position: relative;
+  overflow: hidden;
+}
+.service .visual {
+  position: relative;
+  overflow: hidden;
+}
+/* Common animated overlay container above the visual */
+.service-fx {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.85;
+  z-index: 2;
+}
+/* 3D PRINTING — animated layer-by-layer build effect */
+.service-fx--print::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 9px,
+    rgba(47,207,199,0.4) 9px,
+    rgba(47,207,199,0.4) 10px
+  );
+  mask: linear-gradient(180deg, black 0%, black 50%, transparent 50%, transparent 100%);
+  mask-size: 100% 200%;
+  -webkit-mask: linear-gradient(180deg, black 0%, black 50%, transparent 50%, transparent 100%);
+  -webkit-mask-size: 100% 200%;
+  animation: print-layer-sweep 4s ease-in-out infinite;
+}
+.service-fx--print::after {
+  content: '';
+  position: absolute;
+  left: 10%; right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--teal-bright), transparent);
+  box-shadow: 0 0 12px var(--teal-bright);
+  animation: print-nozzle-sweep 4s ease-in-out infinite;
+}
+@keyframes print-layer-sweep {
+  0%, 100% { mask-position: 0 -100%; -webkit-mask-position: 0 -100%; }
+  50% { mask-position: 0 0%; -webkit-mask-position: 0 0%; }
+}
+@keyframes print-nozzle-sweep {
+  0%, 100% { top: 0%; opacity: 0; }
+  50% { top: 50%; opacity: 1; }
+}
+
+/* IMPORTS — animated traveling dots (cargo) */
+.service-fx--imports::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 120%;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, transparent 0, transparent 12px, rgba(244,237,222,0.4) 12px, rgba(244,237,222,0.4) 16px);
+  animation: import-line-flow 3s linear infinite;
+}
+.service-fx--imports::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--ochre);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--ochre);
+  margin-top: -4px;
+  animation: import-dot-travel 4s linear infinite;
+}
+@keyframes import-line-flow {
+  to { background-position: 16px 0; }
+}
+@keyframes import-dot-travel {
+  0% { left: -10%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+/* SCANNING — scan line sweep */
+.service-fx--scan::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 48%, rgba(47,207,199,0.5) 50%, transparent 52%);
+  background-size: 100% 200%;
+  animation: scan-sweep 3s ease-in-out infinite;
+}
+.service-fx--scan::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(47,207,199,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47,207,199,0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.6;
+}
+@keyframes scan-sweep {
+  0% { background-position: 0 -100%; }
+  50% { background-position: 0 100%; }
+  100% { background-position: 0 300%; }
+}
+
+/* CUT & ENGRAVE service card — laser beam */
+.service-fx--laser::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(197,119,42,0.15), transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(47,207,199,0.1), transparent 50%);
+}
+.service-fx--laser::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 2px;
+  left: -10%;
+  background: linear-gradient(180deg, transparent, var(--teal-bright) 30%, var(--teal-bright) 70%, transparent);
+  box-shadow: 0 0 18px var(--teal-bright);
+  animation: laser-beam-sweep 5s ease-in-out infinite;
+}
+
+/* STICKERS service card */
+.service-fx--stickers::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--teal) 1.5px, transparent 2px);
+  background-size: 24px 24px;
+  opacity: 0.25;
+  animation: sticker-bg-drift 12s linear infinite;
+}
+.service-fx--stickers::after {
+  content: 'STICKER';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  font-family: var(--f-display);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.18);
+  background: var(--ochre);
+  padding: 4px 14px;
+  border-radius: 8px;
+  border: 2px dashed rgba(255,255,255,0.6);
+}
+@keyframes sticker-bg-drift {
+  to { background-position: 24px 24px; }
+}
+
+/* Coming soon badge on service card */
+.service-soon-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--ochre);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  animation: nav-soon-pulse 2.4s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .service-fx--print::before,
+  .service-fx--print::after,
+  .service-fx--imports::before,
+  .service-fx--imports::after,
+  .service-fx--scan::before,
+  .service-fx--laser::after,
+  .service-fx--stickers::before,
+  .sticker-float,
+  .service-soon-tag {
+    animation: none !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   3D PRINTING PAGE — print stage + filament icons
+   ═══════════════════════════════════════════════════════════════════ */
+.print-stage {
+  background: radial-gradient(ellipse at center, #142028, #0a1218);
+}
+.print-bed {
+  position: absolute;
+  left: 8%; right: 8%;
+  bottom: 18%;
+  height: 6px;
+  background: linear-gradient(180deg, #2a3540, #1a2530);
+  border-radius: 2px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.print-bed::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-top: 1px solid rgba(244,237,222,0.1);
+  border-radius: 2px;
+}
+.print-object {
+  position: absolute;
+  left: 50%;
+  bottom: 22%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 90px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.print-object__layer {
+  flex: 1;
+  background: linear-gradient(90deg, var(--teal-bright), var(--teal));
+  opacity: 0;
+  margin-bottom: 0.5px;
+  border-radius: 1px;
+  animation: print-layer-rise 4s ease-out infinite;
+  box-shadow: 0 0 6px rgba(47, 207, 199, 0.4);
+}
+@keyframes print-layer-rise {
+  0% { opacity: 0; transform: translateY(20px) scaleX(0.5); }
+  30% { opacity: 0.9; transform: translateY(0) scaleX(1); }
+  90% { opacity: 0.9; }
+  100% { opacity: 0.6; }
+}
+.print-nozzle {
+  position: absolute;
+  width: 16px;
+  height: 22px;
+  top: 12%;
+  background: linear-gradient(180deg, #3a4550, #1a2530);
+  border-radius: 3px 3px 1px 1px;
+  animation: print-nozzle-bob 4s ease-in-out infinite;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.print-nozzle::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 4px; height: 10px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--ochre), transparent);
+  filter: blur(0.5px);
+}
+@keyframes print-nozzle-bob {
+  0%, 100% { left: 38%; }
+  25% { left: 62%; }
+  50% { left: 38%; }
+  75% { left: 62%; }
+}
+
+/* Filament spool icons */
+.print-mat-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.print-mat-icon__spool {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 4px solid currentColor;
+  background: rgba(255,255,255,0.1);
+  position: relative;
+  animation: spool-rotate 8s linear infinite;
+}
+.print-mat-icon__spool::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 1px dashed currentColor;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.print-mat-icon__spool::after {
+  content: '';
+  position: absolute;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes spool-rotate { to { transform: rotate(360deg); } }
+.print-mat-icon--pla   { color: #1BA7A0; }
+.print-mat-icon--petg  { color: #C5772A; }
+.print-mat-icon--abs   { color: #0C1E2C; }
+.print-mat-icon--tpu   { color: #9B3B1E; }
+.print-mat-icon--wood  { color: #8B6B3A; }
+.print-mat-icon--silk  { color: #D4935A; }
+
+/* Use 4 columns on print gallery to fit */
+.print-gallery__grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1100px) { .print-gallery__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .print-gallery__grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION-PAGE HERO TREATMENT — applied to Scanning, Imports, Shop, About
+   Burn-keyword headline + contour line bg, matches Cut & Engrave energy
+   ═══════════════════════════════════════════════════════════════════ */
+.page-hero {
+  position: relative;
+  padding: 80px 40px 40px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.page-hero__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.page-hero__title {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(56px, 7vw, 112px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin-top: 20px;
+  text-wrap: balance;
+}
+.page-hero__title .laser-italic {
+  font-style: italic;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  color: var(--ochre);
+}
+.page-hero__lede {
+  margin-top: 24px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--char-2);
+  max-width: 700px;
+}
+
+
+/* ── Sketch-to-Finished refinements ─────────────────────────────── */
+.laser-sketch-card__blurb {
+  font-size: 13.5px;
+  color: var(--char-2);
+  line-height: 1.55;
+  margin: -10px 0 20px;
+  max-width: 460px;
+}
+.laser-sketch__source {
+  max-width: 1440px;
+  margin: 32px auto 0;
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--char-2);
+  opacity: 0.7;
+}
+.laser-sketch__source a {
+  color: var(--teal-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* xTool M2 default image fits nicely (transparent bg) */
+.laser-machine__photo-frame image-slot {
+  --image-slot-bg: linear-gradient(135deg, #1a2530, #0a1218);
+}
+
+
+/* ── Home hero — matched to Cut & Engrave burn-keyword style ── */
+.home-hero-h1 {
+  font-family: var(--f-display) !important;
+  font-weight: 500 !important;
+  font-size: clamp(64px, 8vw, 132px) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.035em !important;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.home-hero-h1 .laser-italic {
+  font-style: italic;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  color: var(--ochre);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   3D STICKERS — realistic peel/shadow/gloss preview
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Layout: 3 columns × 2 rows */
+.laser-sticker-sheet {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
+  padding: 32px;
+  aspect-ratio: 3 / 2;
+}
+
+/* Each sticker is a 3D-ish floating shape with shadow + peel + gloss */
+.sticker3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 6px 10px rgba(12, 30, 44, 0.18))
+          drop-shadow(0 1px 3px rgba(12, 30, 44, 0.12));
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: grab;
+}
+.sticker3d:hover {
+  transform: translateY(-6px) rotate(0deg) scale(1.04) !important;
+  z-index: 5;
+}
+.sticker3d:hover .sticker3d__peel {
+  transform: rotate(35deg) translate(2px, -2px) scale(1.1);
+}
+
+/* Individual rotations (slight scatter) */
+.sticker3d--p1 { transform: rotate(-6deg); animation: sticker-bob 6s ease-in-out infinite; }
+.sticker3d--p2 { transform: rotate(4deg);  animation: sticker-bob 6s ease-in-out infinite 0.5s; }
+.sticker3d--p3 { transform: rotate(-3deg); animation: sticker-bob 6s ease-in-out infinite 1s; }
+.sticker3d--p4 { transform: rotate(7deg);  animation: sticker-bob 6s ease-in-out infinite 1.5s; }
+.sticker3d--p5 { transform: rotate(-5deg); animation: sticker-bob 6s ease-in-out infinite 2s; }
+.sticker3d--p6 { transform: rotate(3deg);  animation: sticker-bob 6s ease-in-out infinite 2.5s; }
+@keyframes sticker-bob {
+  0%, 100% { transform: rotate(var(--r, 0deg)) translateY(0); }
+  50% { transform: rotate(var(--r, 0deg)) translateY(-4px); }
+}
+.sticker3d--p1 { --r: -6deg; }
+.sticker3d--p2 { --r: 4deg; }
+.sticker3d--p3 { --r: -3deg; }
+.sticker3d--p4 { --r: 7deg; }
+.sticker3d--p5 { --r: -5deg; }
+.sticker3d--p6 { --r: 3deg; }
+
+/* Sticker body — base */
+.sticker3d__body {
+  position: relative;
+  width: 85%;
+  height: 85%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+}
+.sticker3d--circle .sticker3d__body { border-radius: 50%; aspect-ratio: 1; height: auto; width: 90%; }
+.sticker3d--rect   .sticker3d__body { border-radius: 12px; aspect-ratio: 5/3; height: auto; }
+.sticker3d--hex    .sticker3d__body { clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); aspect-ratio: 1; height: auto; width: 92%; border-radius: 0; }
+.sticker3d--blob   .sticker3d__body { aspect-ratio: 1; height: auto; width: 90%; }
+.sticker3d--pent   .sticker3d__body { aspect-ratio: 1; height: auto; width: 92%; }
+
+/* Content inside */
+.sticker3d__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--f-display);
+  text-align: center;
+  z-index: 2;
+}
+.sticker3d__mk {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+.sticker3d__sub {
+  font-family: var(--f-mono);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  margin-top: 4px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+.sticker3d__scanme {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+.sticker3d__qr {
+  width: 26px; height: 26px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 3px;
+  margin-bottom: 4px;
+  position: relative;
+}
+.sticker3d__qr-grid {
+  width: 100%; height: 100%;
+  background:
+    linear-gradient(90deg, transparent 33%, #000 33%, #000 66%, transparent 66%),
+    linear-gradient(0deg, transparent 33%, #000 33%, #000 66%, transparent 66%),
+    radial-gradient(circle at 20% 20%, #000 0, #000 35%, transparent 35%),
+    radial-gradient(circle at 80% 20%, #000 0, #000 35%, transparent 35%),
+    radial-gradient(circle at 20% 80%, #000 0, #000 35%, transparent 35%);
+  background-size: 100% 100%;
+  filter: contrast(1.2);
+}
+.sticker3d__handmade {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 0.95;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+.sticker3d__wdh {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Holographic body — rainbow shimmer */
+.sticker3d__body--holo {
+  background: linear-gradient(135deg,
+    #ff8ec0 0%,
+    #c89aff 18%,
+    #88ccff 36%,
+    #80f5dd 54%,
+    #ffe082 72%,
+    #ff9cd2 90%,
+    #c89aff 100%);
+  background-size: 200% 200%;
+  animation: holo-shimmer 4s linear infinite;
+  position: relative;
+}
+.sticker3d__body--holo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%);
+  animation: holo-sweep 3s ease-in-out infinite;
+  mix-blend-mode: overlay;
+}
+@keyframes holo-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes holo-sweep {
+  0%, 100% { transform: translateX(-30%); opacity: 0; }
+  50% { transform: translateX(30%); opacity: 1; }
+}
+.sticker3d__holo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.6),
+    1px 1px 0 rgba(180, 80, 200, 0.6),
+    -1px -1px 0 rgba(80, 180, 200, 0.6);
+}
+
+/* Black-only / monochrome sticker */
+.sticker3d__body--mono {
+  background: #fff;
+  border: 1.5px solid #0a0a0a;
+  position: relative;
+}
+.sticker3d__mono-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #0a0a0a;
+}
+.sticker3d__mono-text {
+  font-family: var(--f-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.sticker3d__mono-line {
+  width: 32px;
+  height: 1.5px;
+  background: #0a0a0a;
+}
+.sticker3d__mono-sub {
+  font-family: var(--f-mono);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+.sticker3d__mono-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-family: var(--f-mono);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2px 5px;
+  background: #0a0a0a;
+  color: #fff;
+  border-radius: 3px;
+  z-index: 3;
+}
+
+/* Animated cut line — dashed border around shape */
+.sticker3d__cut-line {
+  position: absolute;
+  inset: 4px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.7);
+  border-radius: inherit;
+  animation: mi-dash 3s linear infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+.sticker3d__cut-line--rect { border-radius: 10px; }
+.sticker3d__cut-line--hex {
+  border: none;
+  background:
+    linear-gradient(135deg, transparent 49%, #fff 49%, #fff 51%, transparent 51%);
+  /* simpler: use outline replacement */
+  border: 1.5px dashed rgba(255,255,255,0.85);
+  clip-path: polygon(25% 4%, 75% 4%, 96% 50%, 75% 96%, 25% 96%, 4% 50%);
+}
+.sticker3d__cut-line--blob { border-radius: 42% 58% 60% 40% / 50% 45% 55% 50%; }
+.sticker3d__cut-line--pent { clip-path: polygon(50% 4%, 96% 35%, 80% 96%, 20% 96%, 4% 35%); border: none; outline: 1.5px dashed rgba(47,207,199,0.85); }
+.sticker3d__cut-line--mono { border-color: #0a0a0a; border-width: 1px; }
+
+/* Glossy highlight overlay */
+.sticker3d__gloss {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.18) 30%,
+    transparent 50%,
+    transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+.sticker3d__gloss--strong {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.25) 25%,
+    transparent 45%,
+    transparent 100%);
+}
+
+/* Peel — folded-up corner */
+.sticker3d__peel {
+  position: absolute;
+  top: 6%; right: 6%;
+  width: 22%; height: 22%;
+  background: linear-gradient(225deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(240, 240, 240, 0.95) 40%,
+    rgba(180, 180, 180, 0.85) 70%,
+    rgba(120, 120, 120, 0.5) 100%);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  filter: drop-shadow(-2px 2px 3px rgba(0, 0, 0, 0.25));
+  transform: rotate(30deg);
+  transform-origin: top right;
+  transition: transform 0.4s;
+  z-index: 4;
+  border-radius: 0 8px 0 0;
+}
+.sticker3d__peel--pent {
+  top: 10%; right: 14%;
+  width: 18%; height: 18%;
+}
+.sticker3d__peel--mono {
+  background: linear-gradient(225deg,
+    #ffffff 0%, #f4f4f4 40%, #c8c8c8 70%, #888 100%);
+}
+
+/* Re-position content/peel for non-circle shapes */
+.sticker3d--circle .sticker3d__peel {
+  top: 8%; right: 14%;
+  width: 18%; height: 18%;
+}
+.sticker3d--hex .sticker3d__peel {
+  top: 8%; right: 22%;
+  width: 16%; height: 16%;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sticker3d,
+  .sticker3d__cut-line,
+  .sticker3d__body--holo,
+  .sticker3d__body--holo::before { animation: none !important; }
+}
+
+/* Smaller layout on narrow screens */
+@media (max-width: 980px) {
+  .laser-sticker-sheet { grid-template-columns: repeat(3, 1fr); aspect-ratio: 3/2; }
+}
+@media (max-width: 640px) {
+  .laser-sticker-sheet { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); aspect-ratio: 2/3; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   M2 IN ACTION — showcase tiles using real xTool product imagery
+   ═══════════════════════════════════════════════════════════════════ */
+.laser-showcase {
+  padding: 120px 40px;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+.laser-showcase__head {
+  max-width: 1440px;
+  margin: 0 auto 56px;
+}
+.laser-showcase__grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(380px, auto);
+  gap: 20px;
+}
+
+.showcase-tile {
+  position: relative;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+  grid-column: span 2;
+}
+.showcase-tile--wide { grid-column: span 4; }
+.showcase-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(12, 30, 44, 0.12);
+  border-color: var(--teal);
+}
+
+.showcase-tile__image {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  background: linear-gradient(135deg, #fafafa, #efefef);
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.showcase-tile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.showcase-tile:hover .showcase-tile__image img {
+  transform: scale(1.04);
+}
+.showcase-tile__shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.45) 50%, transparent 70%);
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+.showcase-tile:hover .showcase-tile__shine {
+  transform: translateX(100%);
+  transition: transform 1.2s ease;
+}
+
+.showcase-tile__copy {
+  padding: 22px 24px 24px;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+}
+.showcase-tile__tag {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  background: var(--teal-light, rgba(27, 167, 160, 0.08));
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.showcase-tile__title {
+  font-family: var(--f-display);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.showcase-tile__body {
+  font-size: 13.5px;
+  color: var(--char-2);
+  line-height: 1.55;
+}
+
+.laser-showcase__source {
+  max-width: 1440px;
+  margin: 32px auto 0;
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--char-2);
+  opacity: 0.65;
+}
+.laser-showcase__source a {
+  color: var(--teal-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .laser-showcase__grid { grid-template-columns: repeat(2, 1fr); }
+  .showcase-tile, .showcase-tile--wide { grid-column: span 1; }
+  .showcase-tile--wide { grid-column: span 2; }
+}
+@media (max-width: 640px) {
+  .laser-showcase__grid { grid-template-columns: 1fr; }
+  .showcase-tile, .showcase-tile--wide { grid-column: span 1; }
+  .showcase-tile__image { min-height: 200px; }
+}
+
+/* ── 3D Printing hero — video stage ─────────────────────────────── */
+.print-stage--video {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+.print-stage--video video {
+  display: block;
+}
+
+/* ── 3D Printing use-case photo cards ───────────────────────────── */
+.laser-case--photo .laser-case__bg {
+  opacity: 1;
+}
+.laser-case--photo .laser-case__bg::after {
+  background: linear-gradient(180deg, rgba(12,30,44,0.15) 0%, rgba(12,30,44,0.55) 50%, rgba(12,30,44,0.96) 100%);
+}
+
+/* ── xTool M2 spotlight — larger, centred image ─────────────────── */
+.laser-machine__photo-frame--xtool {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #f4ede0, #e8dfd0);
+  position: relative;
+  display: block;
+}
+.laser-machine__photo-frame--xtool > img {
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.25));
+}
+
+/* ── Sticker spotlight — real photo stickers ────────────────────── */
+.laser-sticker-sheet--photos {
+  background: transparent;
+  padding: 16px;
+  gap: 28px;
+  align-items: center;
+  justify-items: center;
+}
+.sticker3d--photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.sticker3d__body--photo {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  clip-path: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: visible;
+}
+.sticker3d__body--photo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter:
+    drop-shadow(0 6px 10px rgba(0,0,0,0.18))
+    drop-shadow(0 2px 3px rgba(0,0,0,0.12));
+  transition: transform .4s ease;
+}
+.sticker3d--photo:hover .sticker3d__body--photo img {
+  transform: scale(1.04) rotate(0deg);
+}
+
